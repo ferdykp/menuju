@@ -17,7 +17,7 @@ class TaskController extends Controller
     {
         $this->authorize('view', $workspace);
 
-        $query = $workspace->tasks()->with(['assignee:id,name', 'creator:id,name']);
+        $query = $workspace->tasks()->with(['assignee:id,name', 'creator:id,name', 'milestone:id,title']);
 
         if ($search = trim((string) $request->query('q', ''))) {
             $query->where(fn ($builder) => $builder
@@ -73,7 +73,7 @@ class TaskController extends Controller
         ]);
 
         return response()->json([
-            'task' => (new TaskResource($task->load(['assignee:id,name', 'creator:id,name'])))->resolve(),
+            'task' => (new TaskResource($task->load(['assignee:id,name', 'creator:id,name', 'milestone:id,title'])))->resolve(),
         ], 201);
     }
 
@@ -96,7 +96,7 @@ class TaskController extends Controller
         $task->update($data);
 
         return response()->json([
-            'task' => (new TaskResource($task->refresh()->load(['assignee:id,name', 'creator:id,name'])))->resolve(),
+            'task' => (new TaskResource($task->refresh()->load(['assignee:id,name', 'creator:id,name', 'milestone:id,title'])))->resolve(),
         ]);
     }
 

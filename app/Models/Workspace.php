@@ -42,6 +42,11 @@ class Workspace extends Model
             ->withTimestamps();
     }
 
+    public function milestones(): HasMany
+    {
+        return $this->hasMany(Milestone::class);
+    }
+
     public function invitations(): HasMany
     {
         return $this->hasMany(WorkspaceInvitation::class);

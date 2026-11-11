@@ -28,8 +28,8 @@ npm run dev
 
 Open `http://localhost:8000` in a second terminal after running `php artisan serve`. Local MySQL is exposed on port 3306 with database `menuju`, user `root`, and password `local`. Set a private `APP_KEY` and real credentials per environment; never commit `.env`.
 
-Composer and npm dependencies are now installed and the Vite production build succeeds. The local MySQL container could not start because the Docker daemon is not running; the first migration has only been exercised with SQLite in-memory during the foundation test. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) for the actual status by screen.
+Composer and npm dependencies are installed and the Vite production build succeeds. Docker/MySQL could not be started in the local environment, so migration and feature coverage currently runs on SQLite; MySQL compatibility still needs a real service check. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) for per-screen status and test evidence.
 
 ## Product implementation status
 
-Initial implementation is active: authentication and onboarding flows, workspace membership/invites, a real-data Home summary, and the Checklist CRUD flow are underway. Fifteen Screen IDs are marked **In progress**; none has completed the required browser E2E and visual verification gate. Other modules are not implemented yet. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) before treating any screen as complete.
+Initial implementation is active: authentication and onboarding flows, workspace membership/invites, a real-data Home summary, Checklist tasks, and the Perjalanan milestone timeline are in progress. Eighteen Screen IDs have implementation evidence; none has completed the full desktop/mobile and Stitch visual verification gate. Most other modules are not implemented yet. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) before treating any screen as complete.

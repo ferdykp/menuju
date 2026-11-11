@@ -22,6 +22,7 @@ class UpdateTaskRequest extends FormRequest
             'title' => ['sometimes', 'required', 'string', 'max:200'],
             'description' => ['sometimes', 'nullable', 'string', 'max:2000'],
             'category' => ['sometimes', 'required', 'string', 'max:80'],
+            'milestone_id' => ['sometimes', 'nullable', 'integer', Rule::exists('milestones', 'id')->where(fn ($query) => $query->where('workspace_id', $task->workspace_id))],
             'assignee_id' => [
                 'sometimes',
                 'nullable',

@@ -5,6 +5,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { getRememberedUser, rememberUser } from '../session';
 import HomePage from '../pages/home/HomePage.vue';
 import TasksIndex from '../pages/tasks/TasksIndex.vue';
+import JourneyIndex from '../pages/journey/JourneyIndex.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -124,6 +125,7 @@ function isActive(href) {
 
             <HomePage v-if="route.path === '/app/home' && currentWorkspace" :workspace-id="currentWorkspace.id" :workspace="currentWorkspace" />
             <TasksIndex v-else-if="route.path === '/app/tasks' && currentWorkspace" :workspace-id="currentWorkspace.id" />
+            <JourneyIndex v-else-if="route.path === '/app/journey' && currentWorkspace" :workspace-id="currentWorkspace.id" :wedding-date="currentWorkspace.wedding_date" />
             <div v-else class="foundation-content foundation-placeholder">
                 <div class="eyebrow"><span class="eyebrow__dot"></span> RUANG PERSIAPAN KALIAN</div>
                 <h1>{{ pageName }}</h1>

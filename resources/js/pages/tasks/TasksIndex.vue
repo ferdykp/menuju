@@ -5,12 +5,13 @@ import { computed, onMounted, reactive, ref, watch } from 'vue';
 const props = defineProps({ workspaceId: { type: [String, Number], required: true } });
 const tasks = ref([]);
 const members = ref([]);
+const milestones = ref([]);
 const pagination = ref(null);
 const loading = ref(true);
 const error = ref('');
 const busy = ref(false);
 const filters = reactive({ q: '', status: '', category: '', assignee_id: '' });
-const form = reactive({ title: '', description: '', category: '', assignee_id: '', due_at: '', priority: 'normal', status: 'planned' });
+const form = reactive({ title: '', description: '', category: '', milestone_id: '', assignee_id: '', due_at: '', priority: 'normal', status: 'planned' });
 const searchTimer = ref(null);
 const formErrors = ref({});
 const selectedTask = ref(null);
@@ -29,6 +30,7 @@ function resetForm(task = null) {
         title: task?.title ?? '',
         description: task?.description ?? '',
         category: task?.category ?? '',
+        milestone_id: task?.milestone?.id ? String(task.milestone.id) : '',
         assignee_id: task?.assignee?.id ? String(task.assignee.id) : '',
         due_at: task?.due_at ?? '',
         priority: task?.priority ?? 'normal',
@@ -61,6 +63,11 @@ async function loadMembers() {
     } catch {
         members.value = [];
     }
+}
+
+async function loadMilestones() {
+    try { milestones.value = (await axios.get(`/api/workspaces/${props.workspaceId}/milestones`)).data.milestones; }
+    catch { milestones.value = []; }
 }
 
 function scheduleSearch() {
@@ -101,6 +108,7 @@ async function saveTask() {
     const payload = {
         ...form,
         assignee_id: form.assignee_id || null,
+        milestone_id: form.milestone_id || null,
         due_at: form.due_at || null,
     };
     try {
@@ -163,6 +171,7 @@ watch(() => [filters.status, filters.category, filters.assignee_id], () => load(
 onMounted(() => {
     load();
     loadMembers();
+    loadMilestones();
     if (new URLSearchParams(window.location.search).get('create') === '1') openCreate();
 });
 </script>
@@ -238,6 +247,7 @@ onMounted(() => {
                         <label class="field"><span>Penanggung jawab</span><select v-model="form.assignee_id"><option value="">Belum ditugaskan</option><option v-for="member in members" :key="member.id" :value="String(member.id)">{{ member.name }}</option></select><small v-if="formErrors.assignee_id" class="field-error">{{ formErrors.assignee_id[0] }}</small></label>
                         <label class="field"><span>Prioritas</span><select v-model="form.priority"><option value="low">Rendah</option><option value="normal">Normal</option><option value="high">Tinggi</option></select></label>
                     </div>
+                    <label class="field"><span>Milestone <em>Opsional</em></span><select v-model="form.milestone_id"><option value="">Tanpa milestone</option><option v-for="milestone in milestones" :key="milestone.id" :value="String(milestone.id)">{{ milestone.title }}</option></select><small v-if="formErrors.milestone_id" class="field-error">{{ formErrors.milestone_id[0] }}</small></label>
                     <label v-if="editingTaskId" class="field"><span>Status</span><select v-model="form.status"><option value="planned">Belum dimulai</option><option value="in_progress">Sedang dikerjakan</option><option value="completed">Selesai</option></select></label>
                     <p v-if="formErrors.form" class="form-alert form-alert--error" role="alert">{{ formErrors.form[0] }}</p>
                     <footer class="task-form__actions"><button class="button button--quiet" type="button" @click="closeForm">Batal</button><button class="button button--primary" type="submit" :disabled="busy">{{ busy ? 'Menyimpan…' : 'Simpan tugas' }}</button></footer>
@@ -250,7 +260,7 @@ onMounted(() => {
                 <header class="task-sheet__header"><div><p class="eyebrow">{{ selectedTask.category }} · {{ statusLabel(selectedTask.status) }}</p><h2 id="task-detail-title">{{ selectedTask.title }}</h2></div><button class="icon-button" aria-label="Tutup detail" type="button" @click="selectedTask = null"><FaIcon :icon="['fas', 'xmark']" aria-hidden="true" /></button></header>
                 <div class="task-detail">
                     <p class="task-detail__description">{{ selectedTask.description || 'Belum ada catatan untuk tugas ini.' }}</p>
-                    <dl><div><dt>Tenggat</dt><dd>{{ dateLabel(selectedTask.due_at) }}</dd></div><div><dt>Penanggung jawab</dt><dd>{{ selectedTask.assignee?.name ?? 'Belum ditugaskan' }}</dd></div><div><dt>Prioritas</dt><dd>{{ { high: 'Tinggi', normal: 'Normal', low: 'Rendah' }[selectedTask.priority] }}</dd></div></dl>
+                    <dl><div><dt>Tenggat</dt><dd>{{ dateLabel(selectedTask.due_at) }}</dd></div><div><dt>Milestone</dt><dd>{{ selectedTask.milestone?.title ?? 'Tanpa milestone' }}</dd></div><div><dt>Penanggung jawab</dt><dd>{{ selectedTask.assignee?.name ?? 'Belum ditugaskan' }}</dd></div><div><dt>Prioritas</dt><dd>{{ { high: 'Tinggi', normal: 'Normal', low: 'Rendah' }[selectedTask.priority] }}</dd></div></dl>
                     <div class="task-detail__actions"><button class="button button--quiet" type="button" @click="openEdit(selectedTask)">Ubah tugas</button><button class="button button--quiet button--danger" type="button" @click="showDeleteConfirm = true">Hapus</button><button class="button button--primary" type="button" @click="setStatus(selectedTask, selectedTask.status === 'completed' ? 'planned' : 'completed')">{{ selectedTask.status === 'completed' ? 'Tandai belum selesai' : 'Tandai selesai' }}</button></div>
                 </div>
             </aside>

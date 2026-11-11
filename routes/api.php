@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\MilestoneController;
 use App\Http\Controllers\Api\TaskController;
 use App\Http\Controllers\Api\WorkspaceController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,10 @@ Route::middleware('web')->group(function (): void {
         Route::get('/workspaces/{workspace}/members', [WorkspaceController::class, 'members']);
         Route::get('/workspaces/{workspace}/home', [HomeController::class, 'show']);
         Route::get('/workspaces/{workspace}/tasks', [TaskController::class, 'index']);
+        Route::get('/workspaces/{workspace}/milestones', [MilestoneController::class, 'index']);
+        Route::post('/workspaces/{workspace}/milestones', [MilestoneController::class, 'store']);
+        Route::patch('/workspaces/{workspace}/milestones/{milestone}', [MilestoneController::class, 'update']);
+        Route::delete('/workspaces/{workspace}/milestones/{milestone}', [MilestoneController::class, 'destroy']);
         Route::post('/workspaces/{workspace}/tasks', [TaskController::class, 'store']);
         Route::get('/tasks/{task}', [TaskController::class, 'show']);
         Route::patch('/tasks/{task}', [TaskController::class, 'update']);
