@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"error":"#ba1a1a","focus":"#536A54","primary-fixed-dim":"#bbccb0","surface":"#FFFFFF","inverse-on-surface":"#eff2e7","surface-soft":"#F1EEE8","error-container":"#ffdad6","on-secondary":"#ffffff","primary-fixed":"#d7e8cb","on-background":"#191d16","on-tertiary-container":"#f7d1df","on-tertiary-fixed":"#2a151f","surface-bright":"#f8fbef","surface-tint":"#54634c","on-secondary-container":"#5f665d","surface-dim":"#d8dbd1","tertiary-fixed-dim":"#e1bdcb","inverse-primary":"#bbccb0","secondary-container":"#dee5d8","on-tertiary":"#ffffff","on-primary-fixed-variant":"#3c4b35","on-surface-variant":"#444841","tertiary":"#5c414c","tertiary-fixed":"#ffd8e7","secondary-fixed-dim":"#c2c9bd","background":"#f8fbef","on-surface":"#191d16","surface-container-highest":"#e1e4d9","on-secondary-fixed":"#171d16","accent-hover":"#43503D","danger":"#A43636","outline-variant":"#c5c8be","tertiary-container":"#755864","surface-container-low":"#f2f5ea","border":"#C9CDC6","surface-container-high":"#e6e9de","canvas":"#F8F6F2","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#424940","on-primary":"#ffffff","secondary-fixed":"#dee5d8","on-error-container":"#93000a","on-error":"#ffffff","secondary":"#596057","inverse-surface":"#2e322a","outline":"#757870","on-tertiary-fixed-variant":"#5a3f4b","primary-container":"#55644d","text-primary":"#242821","surface-container":"#ecefe4","on-primary-fixed":"#121f0d","text-secondary":"#676E64","on-primary-container":"#cfe0c3","primary":"#3e4c37","surface-variant":"#e1e4d9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-md":"1rem","margin":"2rem","space-sm":"0.5rem","space-lg":"1.5rem","margin-mobile":"1rem","gutter":"1.5rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"display":["EB Garamond"],"title-md":["Plus Jakarta Sans"],"headline-md":["EB Garamond"],"display-mobile":["EB Garamond"],"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["EB Garamond"],"headline-sm":["EB Garamond"],"numeric-table":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["EB Garamond"],"body-md":["Plus Jakarta Sans"]},"fontSize":{"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display":["48px",{"lineHeight":"56px","fontWeight":"500"}],"title-md":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"600"}],"display-mobile":["36px",{"lineHeight":"44px","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.5px","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"600"}],"numeric-table":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}]}}}}</script></head><body class="bg-canvas text-text-primary font-body-md text-body-md antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface flex flex-col z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Logo MENUJU" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAbH561kZObjSa4WSM1ssnfuuDxkt5TIuHayLcwHvLwRzXykq-cDEKMxgKdpAzBrseW6mYUkbOQKXRbpIxI1D-DOJKz9xz8ssJ5XgwcbF2K8MaNSYVgXUBXicGhBUC8v6xMvK941Q4xZNzo1Sku3ZXohLk3g9kHAu4ghPasM---ejhjVJRqZkI9JmN8i9WJhWyILE6YGRq6zWvCJp66IRt8oM_j-taeTjvp35iHeIVC"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none tracking-tight">MENUJU</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Wedding OS</span></div></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">v2.4</span></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-md" data-active-classes="bg-primary text-on-primary font-title-md shadow-[0_2px_8px_rgba(62,76,55,0.25)]"><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Beranda</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="beranda" href="#"><span>Beranda</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Persiapan</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="perjalanan" href="#"><span>Perjalanan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="checklist" href="#"><span>Checklist</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="acara-dan-jadwal" href="#"><span>Acara &amp; Jadwal</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="kebutuhan" href="#"><span>Kebutuhan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="tamu" href="#"><span>Tamu</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="undangan" href="#"><span>Undangan</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Keuangan</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="ringkasan" href="#"><span>Ringkasan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="tabungan" href="#"><span>Tabungan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="anggaran" href="#"><span>Anggaran</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="transaksi" href="#"><span>Transaksi</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="akun" href="#"><span>Akun</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Lainnya</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="pengaturan" href="#"><span>Pengaturan</span></a></div></nav><div class="p-space-md bg-surface-soft/60 flex flex-col gap-space-sm"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-focus animate-pulse"></span><span class="font-label-sm text-label-sm text-text-secondary">Tersinkron dengan Nadia</span></div><span class="material-symbols-outlined text-text-secondary text-[16px]">sync</span></div><a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-danger transition-colors" data-path="logout" href="#"><span class="font-label-md text-label-md">Keluar Sesi</span><span class="material-symbols-outlined text-[18px]">logout</span></a></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex flex-col"><h1 class="font-title-md text-title-md text-text-primary leading-tight">Pernikahan Dimas &amp; Nadia</h1><span class="font-label-sm text-label-sm text-text-secondary">14 Des 2026 · Bandung, Jawa Barat</span></div><span class="hidden lg:inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">schedule</span><span>H-270 Hari Menuju Akad</span></span></div><div class="flex items-center gap-space-md"><button class="hidden md:flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg bg-surface-soft hover:bg-surface-container text-text-secondary text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span>Cari berkas &amp; data...</span><kbd class="px-1.5 py-0.5 rounded bg-surface font-label-sm text-label-sm">⌘K</kbd></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-text-primary leading-none">Dimas &amp; Nadia</span><span class="font-label-sm text-label-sm text-text-secondary">Couple Space</span></div><div class="relative flex items-center gap-1 cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-jSpaixIbF5W2ttRJQ3cP1unUgcMzq8VIFBw3ON2BdJ946ruGUlFnJaGOW1Y59T-iE6aWa1kHR4-Ok28j5sITeHZHyjYDozGpUj3LlTZpx5tIXJR5RM0bGGsL6MGxu80PqRg5sCx7kIqjURNt10MYJsgiF4MZtW4mso4yhruA-yKPPllbiw1714goD4MpVImmZY9i72hA8yTes4PvPXFlSyPZFnkAo74DXZEO2nA"/><span class="material-symbols-outlined text-text-secondary text-[18px]">expand_more</span></div></div></div></div></header><main class="w-full pt-16 bg-canvas flex-1"><div class="flex flex-col w-full">
+<div class="px-gutter lg:px-margin py-space-lg flex flex-col gap-space-xl max-w-[1400px] mx-auto w-full">
+<!-- Header & Breadcrumb Context -->
+<div class="flex flex-col gap-space-md lg:flex-row lg:items-end lg:justify-between pb-space-sm border-b border-border/40">
+<div class="flex flex-col gap-1.5 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-text-secondary tracking-widest uppercase">Persiapan Pernikahan</span>
+<span class="material-symbols-outlined text-[12px] text-text-secondary">chevron_right</span>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase font-semibold">Acara &amp; Jadwal</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Acara &amp; Jadwal Pernikahan</h1>
+<p class="font-body-md text-body-md text-text-secondary">
+          Kelola rangkaian sesi sakral, koordinasi rundown menit-ke-menit, serta penanggung jawab operasional hari-H secara terstruktur.
+        </p>
+</div>
+<!-- Quick Action Controls -->
+<div class="flex flex-wrap items-center gap-space-sm pt-2 lg:pt-0">
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface text-text-primary border border-border hover:bg-surface-soft transition-all duration-150 shadow-sm font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">description</span>
+<span>Unduh Rundown (PDF)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-surface text-text-primary border border-border hover:bg-surface-soft transition-all duration-150 shadow-sm font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">sync</span>
+<span>Sinkronisasi Kalender</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-2 rounded-lg bg-primary-container text-on-primary hover:bg-accent-hover transition-all duration-150 shadow-md font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Tambah Agenda Acara</span>
+</button>
+</div>
+</div>
+<!-- Editorial Metric Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Card 1: Hari H Countdown -->
+<div class="bg-surface rounded-xl p-space-lg border border-border/80 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-4 -bottom-4 w-28 h-28 rounded-full bg-secondary-container/30 blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Waktu Pelaksanaan</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+              Zona: WIB (UTC+7)
+            </span>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-primary leading-snug">
+            Minggu, 14 Des 2026
+          </div>
+<p class="font-body-md text-body-md text-primary font-medium mt-1">
+            H-270 Hari Menuju Akad Nikah
+          </p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-border/40 flex items-center justify-between font-label-sm text-label-sm text-text-secondary">
+<span>Durasi Estimasi: 6 Jam Operasional</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary">schedule</span>
+</div>
+</div>
+<!-- Card 2: Sesi Struktur -->
+<div class="bg-surface rounded-xl p-space-lg border border-border/80 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-4 -bottom-4 w-28 h-28 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Format Pelaksanaan</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-soft text-text-primary font-label-sm text-label-sm font-semibold">2 Sesi Terjadwal</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-text-primary leading-snug">
+            Akad Adat &amp; Resepsi
+          </div>
+<div class="flex items-center gap-2 mt-2">
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-body-md text-body-md text-text-secondary">08.00–10.30 • Akad Sunda</span>
+<span class="inline-block w-2.5 h-2.5 rounded-full bg-tertiary-container ml-2"></span>
+<span class="font-body-md text-body-md text-text-secondary">11.00–14.00 • Resepsi</span>
+</div>
+</div>
+<div class="pt-space-md mt-space-md border-t border-border/40 flex items-center justify-between font-label-sm text-label-sm text-text-secondary">
+<span>Peralihan Jeda Sesi: 30 Menit Touch-up</span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary">hourglass_empty</span>
+</div>
+</div>
+<!-- Card 3: Status Agenda & Koordinasi -->
+<div class="bg-surface rounded-xl p-space-lg border border-border/80 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-4 -bottom-4 w-28 h-28 rounded-full bg-surface-container-high/60 blur-2xl pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Kesiapan Operasional</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">100% Siap</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary">14 Agenda</span>
+<span class="font-body-md text-body-md text-text-secondary">dari 2 Sesi</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary mt-1">
+            Seluruh rundown telah dipetakan ke 6 Koordinator PIC &amp; 4 Vendor Teknis.
+          </p>
+</div>
+<div class="pt-space-md mt-space-md border-t border-border/40 flex items-center justify-between font-label-sm text-label-sm text-text-secondary">
+<span class="flex items-center gap-1.5 text-primary font-medium">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            Rundown Terkonfirmasi WO
+          </span>
+<span class="material-symbols-outlined text-[18px] text-text-secondary">group</span>
+</div>
+</div>
+</div>
+<!-- Segmented Navigation Views & Filters -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md bg-surface p-1.5 rounded-xl border border-border/70 shadow-sm">
+<div class="flex flex-wrap items-center gap-1">
+<button class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-colors" type="button">
+          Rangkaian Sesi Acara (2)
+        </button>
+<button class="px-space-md py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span>Rundown Menit-ke-Menit</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-soft text-[11px] font-semibold text-text-secondary">14</span>
+</button>
+<button class="px-space-md py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary font-label-md text-label-md transition-colors flex items-center gap-1.5" type="button">
+<span>Daftar PIC &amp; Koordinator</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-soft text-[11px] font-semibold text-text-secondary">6</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm pr-1">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider hidden md:inline">Filter Sesi:</span>
+<select class="bg-surface-soft border border-border/60 rounded-lg px-space-sm py-1.5 text-label-md font-label-md text-text-primary focus:outline-none focus:ring-1 focus:ring-focus">
+<option value="all">Semua Sesi (2)</option>
+<option value="akad">Hanya Akad Nikah</option>
+<option value="resepsi">Hanya Resepsi</option>
+</select>
+</div>
+</div>
+<!-- Sesi Acara Utama (Cards 2 Kolom Komprehensif) -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-space-xl items-start">
+<!-- Sesi 1: Akad Nikah & Adat Sunda -->
+<article class="bg-surface rounded-2xl border border-border/80 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+<!-- Card Header Image & Overview Bar -->
+<div class="relative h-48 w-full bg-surface-soft overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Intimate morning wedding ceremony setup in a serene Bandung venue, elegant Sundanese floral arrangements with white jasmine and soft sage accents, morning golden hour lighting casting calm warm reflections, editorial warm lifestyle photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4ab0N4du0-NpsCl_mhbpmQipfdIFz_wnMrFY8KICbShAiGTPuq8QPLf5QgYSv7fEciBHhM1HdzkYtewinFxeyGVEiae-4JsemG6Zp7VScwgF-KOHFkGmUQZ4vGrIqL7jqtq16xQWxTs9AFF22ZLvgGLpWtawT13S2m5CEoHGLRTKCaj2kwLGEBfQo7TQlONqeIBPB9MFZNMVWlLvHnk_dO21joDucIZPlpZTkJe0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent"></div>
+<div class="absolute top-space-md left-space-md right-space-md flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface/95 backdrop-blur-md text-primary font-label-sm text-label-sm font-semibold tracking-wide shadow-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+              Sesi 01 • Sakral &amp; Khidmat
+            </span>
+<span class="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-white font-label-sm text-label-sm font-medium">
+              150 Tamu Terpilih
+            </span>
+</div>
+<div class="absolute bottom-space-md left-space-md right-space-md text-white">
+<div class="flex items-center gap-2 text-primary-fixed text-label-sm font-label-sm tracking-wider uppercase mb-0.5">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+              08.00 – 10.30 WIB (Durasi 2.5 Jam)
+            </div>
+<h2 class="font-headline-md text-headline-md text-white leading-tight">
+              Akad Nikah &amp; Upacara Adat Sunda
+            </h2>
+</div>
+</div>
+<!-- Meta Specification Grid -->
+<div class="p-space-lg flex flex-col gap-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md p-space-md bg-canvas rounded-xl border border-border/50">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span> Lokasi Area
+              </span>
+<p class="font-title-md text-title-md text-text-primary leading-tight">Masjid &amp; Selasar Utama</p>
+<span class="font-body-md text-body-md text-text-secondary">Puri Ardhya Garini, Lantai 1</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">checkroom</span> Dresscode Acara
+              </span>
+<p class="font-title-md text-title-md text-text-primary leading-tight">Adat Tradisional Sunda</p>
+<span class="font-body-md text-body-md text-text-secondary">Broken White &amp; Nuansa Sage Green</span>
+</div>
+<div class="flex flex-col gap-1 sm:col-span-2 pt-2 border-t border-border/40">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person_check</span> Penanggung Jawab (PIC)
+              </span>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-0.5">
+<span class="font-body-md text-body-md text-text-primary font-medium">Bpk. H. Rahmat Hidayat <span class="text-text-secondary font-normal">(Paman Catin Pria)</span></span>
+<span class="text-text-secondary">•</span>
+<span class="font-body-md text-body-md text-text-primary font-medium">Kang Asep <span class="text-text-secondary font-normal">(Kirana WO Lapangan)</span></span>
+</div>
+</div>
+</div>
+<!-- Structured Rundown Items -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<h3 class="font-title-md text-title-md text-text-primary">Alur Rundown Utama</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">4 Sub-Agenda</span>
+</div>
+<div class="relative pl-6 space-y-4 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[1.5px] before:bg-border">
+<!-- Item 1 -->
+<div class="relative group">
+<div class="absolute -left-[1.85rem] top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface"></div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">07.30 – 08.00</span>
+<h4 class="font-title-md text-title-md text-text-primary text-[15px] leading-snug">Penyambutan Catin Pria &amp; Serah-Terima Seserahan</h4>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">Pengalungan melati oleh Ibunda Nadia kepada Dimas di selasar depan.</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-soft text-[11px] font-semibold text-text-secondary whitespace-nowrap">30 mnt</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative group">
+<div class="absolute -left-[1.85rem] top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface"></div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">08.00 – 09.00</span>
+<h4 class="font-title-md text-title-md text-text-primary text-[15px] leading-snug">Ijab Kabul, Khutbah Nikah &amp; Doa Penghulu</h4>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">Penghulu KUA Coblong didampingi kedua saksi nikah resmi, penandatanganan berkas.</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[11px] font-semibold whitespace-nowrap">Sakral • 60 mnt</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative group">
+<div class="absolute -left-[1.85rem] top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface"></div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">09.00 – 10.15</span>
+<h4 class="font-title-md text-title-md text-text-primary text-[15px] leading-snug">Upacara Sungkeman, Huap Lingkung &amp; Sawer Panganten</h4>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">Prosesi adat Sunda dipandu Mak Lengser &amp; juru kawih kecapi suling.</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-soft text-[11px] font-semibold text-text-secondary whitespace-nowrap">75 mnt</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative group">
+<div class="absolute -left-[1.85rem] top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-surface"></div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">10.15 – 10.30</span>
+<h4 class="font-title-md text-title-md text-text-primary text-[15px] leading-snug">Foto Bersama Keluarga Inti &amp; Ramah Tamah Ringan</h4>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">Sesi foto 5 formasi utama lalu catin berganti busana resepsi di ruang rias VIP.</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-soft text-[11px] font-semibold text-text-secondary whitespace-nowrap">15 mnt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Buttons -->
+<div class="pt-space-md border-t border-border/60 flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-border text-text-primary hover:bg-surface-soft text-label-md font-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">visibility</span>
+<span>Detail Rundown</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-border text-text-primary hover:bg-surface-soft text-label-md font-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">people</span>
+<span>Kelola Tamu (150)</span>
+</button>
+</div>
+<button class="px-3 py-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-soft text-label-md font-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Sesi</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Sesi 2: Resepsi Pernikahan & Jamuan -->
+<article class="bg-surface rounded-2xl border border-border/80 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow">
+<!-- Card Header Image & Overview Bar -->
+<div class="relative h-48 w-full bg-surface-soft overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Grand elegant Indonesian wedding reception ballroom decorated with botanical greenery arches, warm ambient pendant lights, polished wood tables, modern refined Sundanese aesthetic, high end event hall ambiance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoaUSqAjm8M1AMTAFXD-i5wBShntlXayXGPEKR0BVhSdK1xXoNK_JrpivAqn0v4PNQY9r6N-u-IGG317bf0tIDh-CmTTpkr-1tHtoJmRPt_YRHOGHuAIP0EuNJDpxvWfPKIuxbs6bfVQ9oyYCDPzboQDBwobF_WsvR8RE74gt0eVOvwWOwqwAX5qko4dCTFKK9ZneBHYiHuSTOhhlvh_9vBlPeLJ1r_JXYN8E8m5Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent"></div>
+<div class="absolute top-space-md left-space-md right-space-md flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface/95 backdrop-blur-md text-tertiary-container font-label-sm text-label-sm font-semibold tracking-wide shadow-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+              Sesi 02 • Perayaan Akbar
+            </span>
+<span class="px-3 py-1 rounded-full bg-black/40 backdrop-blur-md text-white font-label-sm text-label-sm font-medium">
+              650 Undangan (VIP &amp; Umum)
+            </span>
+</div>
+<div class="absolute bottom-space-md left-space-md right-space-md text-white">
+<div class="flex items-center gap-2 text-primary-fixed text-label-sm font-label-sm tracking-wider uppercase mb-0.5">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+              11.00 – 14.00 WIB (Durasi 3.0 Jam)
+            </div>
+<h2 class="font-headline-md text-headline-md text-white leading-tight">
+              Resepsi Pernikahan &amp; Jamuan Tamu
+            </h2>
+</div>
+</div>
+<!-- Meta Specification Grid -->
+<div class="p-space-lg flex flex-col gap-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md p-space-md bg-canvas rounded-xl border border-border/50">
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span> Lokasi Area
+              </span>
+<p class="font-title-md text-title-md text-text-primary leading-tight">Grand Ballroom</p>
+<span class="font-body-md text-body-md text-text-secondary">Puri Ardhya Garini, Lantai 2</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">checkroom</span> Dresscode Acara
+              </span>
+<p class="font-title-md text-title-md text-text-primary leading-tight">Batik / Gaun Pesta Modern</p>
+<span class="font-body-md text-body-md text-text-secondary">Earthy Botanical / Terakota &amp; Krem</span>
+</div>
+<div class="flex flex-col gap-1 sm:col-span-2 pt-2 border-t border-border/40">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person_check</span> Penanggung Jawab (PIC)
+              </span>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-0.5">
+<span class="font-body-md text-body-md text-text-primary font-medium">Dimas &amp; Nadia <span class="text-text-secondary font-normal">(Couple)</span></span>
+<span class="text-text-secondary">•</span>
+<span class="font-body-md text-body-md text-text-primary font-medium">Mbak Tiara <span class="text-text-secondary font-normal">(Lead WO Kirana Wedding)</span></span>
+</div>
+</div>
+</div>
+<!-- Structured Rundown Items -->
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-1">
+<h3 class="font-title-md text-title-md text-text-primary">Alur Rundown Utama</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">4 Sub-Agenda</span>
+</div>
+<div class="relative pl-6 space-y-4 before:absolute before:left-2 before:top-2 before:bottom-2 before:w-[1.5px] before:bg-border">
+<!-- Item 1 -->
+<div class="relative group">
+<div class="absolute -left-[1.85rem] top-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-surface"></div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">11.00 – 11.15</span>
+<h4 class="font-title-md text-title-md text-text-primary text-[15px] leading-snug">Kirab Pengantin &amp; Tari Rampak Kendang</h4>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">Prosesi arak-arakan mempelai dan keluarga besar menuju pelaminan utama.</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-soft text-[11px] font-semibold text-text-secondary whitespace-nowrap">15 mnt</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative group">
+<div class="absolute -left-[1.85rem] top-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-surface"></div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">11.15 – 11.30</span>
+<h4 class="font-title-md text-title-md text-text-primary text-[15px] leading-snug">Sambutan Perwakilan Kedua Keluarga &amp; Doa Bersama</h4>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">Penyampaian rasa syukur oleh Bpk. Ir. Gunawan Wibisono dilanjutkan doa berkah.</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-soft text-[11px] font-semibold text-text-secondary whitespace-nowrap">15 mnt</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative group">
+<div class="absolute -left-[1.85rem] top-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-surface"></div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">11.30 – 13.30</span>
+<h4 class="font-title-md text-title-md text-text-primary text-[15px] leading-snug">Pemberian Selamat, Foto Bersama &amp; Jamuan Buffet</h4>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">Alur pemberian selamat terbagi per grup VIP dan reguler diiringi akustik jazz.</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[11px] font-semibold whitespace-nowrap">Jamuan • 120 mnt</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative group">
+<div class="absolute -left-[1.85rem] top-1 w-2.5 h-2.5 rounded-full bg-primary-container ring-4 ring-surface"></div>
+<div class="flex items-start justify-between gap-2">
+<div>
+<span class="font-numeric-table text-numeric-table font-semibold text-primary">13.30 – 14.00</span>
+<h4 class="font-title-md text-title-md text-text-primary text-[15px] leading-snug">Lempar Buket Bunga &amp; Farewell Pengantin</h4>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">Sesi interaktif kawan dekat, penyerahan suvenir khusus, dan penutupan resepsi.</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-soft text-[11px] font-semibold text-text-secondary whitespace-nowrap">30 mnt</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Action Buttons -->
+<div class="pt-space-md border-t border-border/60 flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-border text-text-primary hover:bg-surface-soft text-label-md font-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">visibility</span>
+<span>Detail Rundown</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface border border-border text-text-primary hover:bg-surface-soft text-label-md font-label-md transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">people</span>
+<span>Kelola Tamu (650)</span>
+</button>
+</div>
+<button class="px-3 py-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-soft text-label-md font-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit Sesi</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Panel Informasi Venue & Fasilitas Teknis -->
+<section class="bg-surface rounded-2xl border border-border/80 shadow-sm p-space-lg flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-space-sm border-b border-border/40">
+<div>
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-widest">Detail Lokasi &amp; Fasilitas Terverifikasi</span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Gedung Puri Ardhya Garini, Bandung</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+            Sewa Lunas • Terverifikasi di TR-01
+          </span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Kolom Lokasi & Map Pin -->
+<div class="lg:col-span-5 flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Alamat Lengkap</span>
+<p class="font-body-lg text-body-lg text-text-primary font-medium">
+              Jl. Protokol No. 88, Kel. Dago, Coblong, Kota Bandung, Jawa Barat 40135
+            </p>
+<p class="font-body-md text-body-md text-text-secondary">
+              Akses strategis dari gerbang tol Pasteur (20 menit) • Jalur drop-off utama bebas hambatan.
+            </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface border border-border text-text-primary hover:bg-surface-soft text-label-md font-label-md transition-colors" onclick="navigator.clipboard?.writeText('Jl. Protokol No. 88, Coblong, Kota Bandung'); alert('Alamat disalin ke clipboard');" type="button">
+<span class="material-symbols-outlined text-[16px] text-text-secondary">content_copy</span>
+<span>Salin Alamat</span>
+</button>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-soft text-primary hover:bg-surface-container text-label-md font-label-md font-medium transition-colors" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">map</span>
+<span>Buka Google Maps</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+<!-- Mini Map Preview with data-location -->
+<div class="w-full h-44 rounded-xl bg-surface-soft border border-border/70 overflow-hidden relative shadow-inner" data-location="Gedung Puri Ardhya Garini, Coblong, Bandung, Jawa Barat" style="">
+<div class="w-full h-full bg-cover bg-center" data-alt="Stylized topographic roadmap of Bandung city surrounding Coblong district with marked venue location pinpoint in soft botanical olive tones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC11LCvqQQBmEgdlcDV53T5pgMi6V8roUEWNugP36SMwb2ejOFUkm2Yzn-l02x6S_CkqrNMfvZdyxxX7aEwkvs3mHi3D6Yp2MZBxnL0Z6vE1gbqMemrdAgOiSj2RsouwM6qziQBJaZzyViqiU0aYFQcL1fjIpbepmNe4jqVvqSgNjCRn1Ghxa4mKVoLoPr5auL7o-ebemaxZsb_CQTjoQUA9SxvIQiVDDXZBEppidc')"></div>
+<div class="absolute bottom-2 left-2 px-2.5 py-1 rounded-md bg-surface/90 backdrop-blur-md text-[11px] font-label-sm text-text-primary shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">location_on</span>
+              Puri Ardhya Garini Ballroom
+            </div>
+</div>
+</div>
+<!-- Kolom Fasilitas & Kontak Lapangan -->
+<div class="lg:col-span-7 flex flex-col justify-between gap-space-lg bg-canvas p-space-md lg:p-space-lg rounded-xl border border-border/60">
+<div>
+<h3 class="font-title-md text-title-md text-text-primary mb-space-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+              Fasilitas Gedung Terverifikasi
+            </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface border border-border/40">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">theater_comedy</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-text-primary block">Ruang Rias VIP</span>
+<span class="font-body-md text-body-md text-text-secondary text-[12px]">2 Kamar ber-AC + Cermin full body</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface border border-border/40">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">meeting_room</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-text-primary block">Ruang Transit Keluarga</span>
+<span class="font-body-md text-body-md text-text-secondary text-[12px]">Kapasitas 40 orang + Pantry terpisah</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface border border-border/40">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">local_parking</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-text-primary block">Parkir Area Luas</span>
+<span class="font-body-md text-body-md text-text-secondary text-[12px]">200 mobil &amp; 300 motor + Valet space</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface border border-border/40">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">bolt</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-text-primary block">Genset Cadangan 100 kVA</span>
+<span class="font-body-md text-body-md text-text-secondary text-[12px]">Backup otomatis &lt; 5 detik jika padam</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-2 rounded-lg bg-surface border border-border/40 sm:col-span-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">accessible</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-text-primary block">Akses Ram Kursi Roda &amp; Lift Tamu Sepuh</span>
+<span class="font-body-md text-body-md text-text-secondary text-[12px]">Akses ramah lansia dari lobby drop-off langsung menuju area ballroom lantai 2.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Contact Person Box -->
+<div class="pt-space-md border-t border-border/50 flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface p-space-sm rounded-lg border border-border/40">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary font-semibold text-body-md">
+                SW
+              </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-text-primary leading-tight">Ibu Sri Wahyuni</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Building Operations &amp; Booking Manager</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-canvas border border-border hover:bg-surface-soft text-text-primary text-label-md font-label-md transition-colors" href="tel:+6281234567890">
+<span class="material-symbols-outlined text-[16px] text-primary">call</span>
+<span>+62 812-3456-7890</span>
+</a>
+<button class="p-1.5 rounded-md bg-canvas border border-border hover:bg-surface-soft text-text-secondary hover:text-text-primary transition-colors" title="Hubungi WhatsApp" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div></main></div></body></html>

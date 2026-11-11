@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"error":"#ba1a1a","focus":"#536A54","primary-fixed-dim":"#bbccb0","surface":"#FFFFFF","inverse-on-surface":"#eff2e7","surface-soft":"#F1EEE8","error-container":"#ffdad6","on-secondary":"#ffffff","primary-fixed":"#d7e8cb","on-background":"#191d16","on-tertiary-container":"#f7d1df","on-tertiary-fixed":"#2a151f","surface-bright":"#f8fbef","surface-tint":"#54634c","on-secondary-container":"#5f665d","surface-dim":"#d8dbd1","tertiary-fixed-dim":"#e1bdcb","inverse-primary":"#bbccb0","secondary-container":"#dee5d8","on-tertiary":"#ffffff","on-primary-fixed-variant":"#3c4b35","on-surface-variant":"#444841","tertiary":"#5c414c","tertiary-fixed":"#ffd8e7","secondary-fixed-dim":"#c2c9bd","background":"#f8fbef","on-surface":"#191d16","surface-container-highest":"#e1e4d9","on-secondary-fixed":"#171d16","accent-hover":"#43503D","danger":"#A43636","outline-variant":"#c5c8be","tertiary-container":"#755864","surface-container-low":"#f2f5ea","border":"#C9CDC6","surface-container-high":"#e6e9de","canvas":"#F8F6F2","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#424940","on-primary":"#ffffff","secondary-fixed":"#dee5d8","on-error-container":"#93000a","on-error":"#ffffff","secondary":"#596057","inverse-surface":"#2e322a","outline":"#757870","on-tertiary-fixed-variant":"#5a3f4b","primary-container":"#55644d","text-primary":"#242821","surface-container":"#ecefe4","on-primary-fixed":"#121f0d","text-secondary":"#676E64","on-primary-container":"#cfe0c3","primary":"#3e4c37","surface-variant":"#e1e4d9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-md":"1rem","margin":"2rem","space-sm":"0.5rem","space-lg":"1.5rem","margin-mobile":"1rem","gutter":"1.5rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"display":["EB Garamond"],"title-md":["Plus Jakarta Sans"],"headline-md":["EB Garamond"],"display-mobile":["EB Garamond"],"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["EB Garamond"],"headline-sm":["EB Garamond"],"numeric-table":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["EB Garamond"],"body-md":["Plus Jakarta Sans"]},"fontSize":{"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display":["48px",{"lineHeight":"56px","fontWeight":"500"}],"title-md":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"600"}],"display-mobile":["36px",{"lineHeight":"44px","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.5px","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"600"}],"numeric-table":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}]}}}}</script></head><body class="bg-canvas text-text-primary font-body-md text-body-md antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface flex flex-col z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Logo MENUJU" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAbH561kZObjSa4WSM1ssnfuuDxkt5TIuHayLcwHvLwRzXykq-cDEKMxgKdpAzBrseW6mYUkbOQKXRbpIxI1D-DOJKz9xz8ssJ5XgwcbF2K8MaNSYVgXUBXicGhBUC8v6xMvK941Q4xZNzo1Sku3ZXohLk3g9kHAu4ghPasM---ejhjVJRqZkI9JmN8i9WJhWyILE6YGRq6zWvCJp66IRt8oM_j-taeTjvp35iHeIVC"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none tracking-tight">MENUJU</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Wedding OS</span></div></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">v2.4</span></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-md" data-active-classes="bg-primary text-on-primary font-title-md shadow-[0_2px_8px_rgba(62,76,55,0.25)]"><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Beranda</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="beranda" href="#"><span>Beranda</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Persiapan</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="perjalanan" href="#"><span>Perjalanan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="checklist" href="#"><span>Checklist</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="acara-dan-jadwal" href="#"><span>Acara &amp; Jadwal</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="kebutuhan" href="#"><span>Kebutuhan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="tamu" href="#"><span>Tamu</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="undangan" href="#"><span>Undangan</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Keuangan</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="ringkasan" href="#"><span>Ringkasan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="tabungan" href="#"><span>Tabungan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="anggaran" href="#"><span>Anggaran</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="transaksi" href="#"><span>Transaksi</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="akun" href="#"><span>Akun</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Lainnya</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="pengaturan" href="#"><span>Pengaturan</span></a></div></nav><div class="p-space-md bg-surface-soft/60 flex flex-col gap-space-sm"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-focus animate-pulse"></span><span class="font-label-sm text-label-sm text-text-secondary">Tersinkron dengan Nadia</span></div><span class="material-symbols-outlined text-text-secondary text-[16px]">sync</span></div><a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-danger transition-colors" data-path="logout" href="#"><span class="font-label-md text-label-md">Keluar Sesi</span><span class="material-symbols-outlined text-[18px]">logout</span></a></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex flex-col"><h1 class="font-title-md text-title-md text-text-primary leading-tight">Pernikahan Dimas &amp; Nadia</h1><span class="font-label-sm text-label-sm text-text-secondary">14 Des 2026 · Bandung, Jawa Barat</span></div><span class="hidden lg:inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">schedule</span><span>H-270 Hari Menuju Akad</span></span></div><div class="flex items-center gap-space-md"><button class="hidden md:flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg bg-surface-soft hover:bg-surface-container text-text-secondary text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span>Cari berkas &amp; data...</span><kbd class="px-1.5 py-0.5 rounded bg-surface font-label-sm text-label-sm">⌘K</kbd></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-text-primary leading-none">Dimas &amp; Nadia</span><span class="font-label-sm text-label-sm text-text-secondary">Couple Space</span></div><div class="relative flex items-center gap-1 cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-jSpaixIbF5W2ttRJQ3cP1unUgcMzq8VIFBw3ON2BdJ946ruGUlFnJaGOW1Y59T-iE6aWa1kHR4-Ok28j5sITeHZHyjYDozGpUj3LlTZpx5tIXJR5RM0bGGsL6MGxu80PqRg5sCx7kIqjURNt10MYJsgiF4MZtW4mso4yhruA-yKPPllbiw1714goD4MpVImmZY9i72hA8yTes4PvPXFlSyPZFnkAo74DXZEO2nA"/><span class="material-symbols-outlined text-text-secondary text-[18px]">expand_more</span></div></div></div></div></header><main class="w-full pt-16 bg-canvas flex-1"><div class="flex flex-col w-full">
+<!-- Top Navigation & Header Breadcrumbs Area -->
+<div class="w-full px-space-lg py-space-md flex flex-col gap-space-sm bg-surface/50 backdrop-blur-sm">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Persiapan Pernikahan</span>
+<span class="text-text-secondary text-xs">/</span>
+<a class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary hover:text-primary transition-colors" href="#">Acara &amp; Jadwal</a>
+<span class="text-text-secondary text-xs">/</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Edit Sesi 01</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pt-1">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-3">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase tracking-wide">Sesi 01</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary tracking-tight font-display">Akad Nikah &amp; Upacara Adat Sunda</h2>
+</div>
+<p class="font-body-md text-text-secondary mt-1">
+          Kelola konfigurasi detail sesi sakral, tata tertib, pembagian zona lokasi, integrasi rundown mikro, serta penetapan penanggung jawab operasional.
+        </p>
+</div>
+<!-- Action Buttons Top -->
+<div class="flex items-center gap-space-sm self-start lg:self-center shrink-0">
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface hover:bg-surface-soft text-text-primary font-label-md text-label-md shadow-sm transition-all duration-150" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">visibility</span>
+<span>Pratinjau Lembar Panduan</span>
+</button>
+<button class="flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-primary hover:bg-accent-hover text-on-primary font-label-md text-label-md shadow-sm transition-all duration-150" onclick="triggerSaveNotification()" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Simpan Perubahan Sesi</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content Layout Area -->
+<div class="w-full px-space-lg py-space-lg flex flex-col gap-space-lg">
+<!-- Session Status Bar & Quick Metrics Banner -->
+<div class="w-full bg-surface rounded-xl p-space-md shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-md">
+<!-- Operational Status -->
+<div class="flex items-center gap-3 min-w-[240px]">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/60 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Status Kesiapan</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Terkonfirmasi &amp; Siap Operasional</span>
+</div>
+</div>
+<div class="hidden lg:block w-px h-8 bg-surface-container-highest"></div>
+<!-- Waktu & Durasi -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-soft flex items-center justify-center shrink-0 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Waktu &amp; Tanggal</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-text-primary">Minggu, 14 Des 2026 · 08.00 - 10.30 WIB (2,5 Jam)</span>
+</div>
+</div>
+<div class="hidden lg:block w-px h-8 bg-surface-container-highest"></div>
+<!-- Kuota Tamu -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-soft flex items-center justify-center shrink-0 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">group</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Alokasi Tamu Khusus</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-text-primary">150 Tamu (Keluarga Inti &amp; Saksi)</span>
+</div>
+</div>
+<div class="hidden lg:block w-px h-8 bg-surface-container-highest"></div>
+<!-- Kesiapan PIC & Logistik -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-soft flex items-center justify-center shrink-0 text-text-secondary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Petugas &amp; Logistik</span>
+<span class="font-numeric-table text-numeric-table font-semibold text-text-primary">8 PIC Aktif · 7/7 Item Properti Siap</span>
+</div>
+</div>
+</div>
+<!-- Dual Column Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left Column (~65% width = 8 cols out of 12) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Section A: Informasi Pokok Sesi -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">info</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-display">A. Informasi Pokok Sesi</h3>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">Konfigurasi Inti</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md">
+<!-- Nama Sesi -->
+<div class="md:col-span-12 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary" for="session_name">Nama Resmi Sesi Acara</label>
+<input class="w-full px-space-md py-2.5 rounded-lg bg-surface text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-focus shadow-inner" id="session_name" placeholder="Tulis nama sesi..." type="text" value="Akad Nikah &amp; Upacara Adat Sunda"/>
+</div>
+<!-- Klasifikasi Sesi -->
+<div class="md:col-span-12 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary">Klasifikasi &amp; Atmosfer Sesi</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm" id="classification-group">
+<button class="flex items-center justify-center gap-2 py-2.5 px-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" data-class="sakral" type="button">
+<span class="material-symbols-outlined text-[16px]">church</span>
+<span>Sakral / Keagamaan</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-2.5 px-space-sm rounded-lg bg-surface-soft text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all" data-class="resepsi" type="button">
+<span class="material-symbols-outlined text-[16px]">celebration</span>
+<span>Resepsi Formal</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-2.5 px-space-sm rounded-lg bg-surface-soft text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all" data-class="after" type="button">
+<span class="material-symbols-outlined text-[16px]">nightlife</span>
+<span>After Party / Intimate</span>
+</button>
+</div>
+</div>
+<!-- Waktu Mulai & Selesai -->
+<div class="md:col-span-5 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary" for="time_start">Jam Mulai (WIB)</label>
+<div class="relative flex items-center">
+<input class="w-full px-space-md py-2.5 rounded-lg bg-surface text-text-primary font-numeric-table text-numeric-table focus:outline-none focus:ring-2 focus:ring-focus shadow-inner" id="time_start" type="text" value="08:00"/>
+<span class="absolute right-3 material-symbols-outlined text-[18px] text-text-secondary pointer-events-none">schedule</span>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary" for="time_end">Jam Selesai (WIB)</label>
+<div class="relative flex items-center">
+<input class="w-full px-space-md py-2.5 rounded-lg bg-surface text-text-primary font-numeric-table text-numeric-table focus:outline-none focus:ring-2 focus:ring-focus shadow-inner" id="time_end" type="text" value="10:30"/>
+<span class="absolute right-3 material-symbols-outlined text-[18px] text-text-secondary pointer-events-none">schedule</span>
+</div>
+</div>
+<div class="md:col-span-2 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary">Total Durasi</label>
+<div class="h-[44px] flex items-center justify-center px-2 rounded-lg bg-secondary-container/70 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+                150 Menit (2,5 Jam)
+              </div>
+</div>
+<!-- Deskripsi Pengantar Sesi -->
+<div class="md:col-span-12 flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary" for="session_desc">Catatan Khusus &amp; Panduan Atmosfer Sesi</label>
+<textarea class="w-full px-space-md py-2.5 rounded-lg bg-surface text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-focus shadow-inner leading-relaxed" id="session_desc" rows="3">Sesi akad nikah berlangsung khidmat dengan nuansa adat Sunda priangan luhur. Tamu undangan dimohon hadir 15 menit sebelum pembacaan ayat suci Al-Qur'an. Penggunaan alas kaki dilepas di area pelataran karpet mihrab, disiapkan kantong bersegel untuk kenyamaman tamu sepuh.</textarea>
+</div>
+</div>
+</div>
+<!-- Section B: Lokasi & Tata Ruang Spesifik Sesi -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">meeting_room</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-display">B. Lokasi &amp; Tata Ruang Spesifik Sesi</h3>
+</div>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-soft text-text-secondary font-label-sm text-label-sm">Area Utama</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Venue Zone Info -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-lg bg-canvas">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[18px]">pin_drop</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Titik Lokasi Sesi</span>
+</div>
+<h4 class="font-title-md text-title-md text-text-primary">Masjid &amp; Selasar Utama Puri Ardhya Garini</h4>
+<p class="font-body-md text-text-secondary text-sm">Lantai 1 - Sayap Barat (Akses langsung ramp disabilitas dan ruang transit VIP).</p>
+<div class="mt-2 pt-2 flex items-center justify-between text-xs text-text-secondary">
+<span>Kapasitas Efektif: 180 pax</span>
+<span class="text-primary font-medium flex items-center gap-1 cursor-pointer hover:underline">
+<span class="material-symbols-outlined text-[14px]">map</span>
+                  Lihat Denah Tata Ruang
+                </span>
+</div>
+</div>
+<!-- Penataan Ruangan -->
+<div class="flex flex-col gap-space-sm p-space-md rounded-lg bg-canvas">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[18px]">table_restaurant</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-semibold">Konfigurasi Penataan Meja &amp; Kursi</span>
+</div>
+<p class="font-body-md text-text-primary font-medium">Letter U Meja Ijab Qabul dengan Karpet Permadani Beludru</p>
+<ul class="font-body-md text-text-secondary text-sm space-y-1 list-disc list-inside">
+<li>1 Meja Ijab utama jati ukir + 6 bantal duduk beludru emas</li>
+<li>12 Kursi VIP baris terdepan untuk Saksi &amp; Orang Tua Inti</li>
+<li>138 Kursi teater berlapis kain broken white untuk keluarga besar</li>
+</ul>
+</div>
+</div>
+<!-- Dresscode & Standar Busana -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md p-space-md rounded-lg bg-surface-soft/80">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-full bg-surface flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[20px]">styler</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Ketentuan Dresscode Petugas &amp; Tamu Sesi</span>
+<span class="font-body-md text-body-md font-semibold text-text-primary">Adat Tradisional Sunda Priangan</span>
+<span class="font-body-md text-text-secondary text-xs mt-0.5">Pengantin: Kebaya Broken White &amp; Beskap Merak Simpay · Tamu: Sage Green &amp; Batik Parang Klasik</span>
+</div>
+</div>
+<button class="shrink-0 px-3 py-1.5 rounded bg-surface hover:bg-canvas text-text-primary font-label-sm text-label-sm shadow-sm transition-colors" type="button">
+              Ubah Dresscode
+            </button>
+</div>
+</div>
+<!-- Section C: Rangkaian Susunan Rundown Mikro Terintegrasi -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">format_list_bulleted</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-display">C. Susunan Rundown Mikro Menit-ke-Menit</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">4 Sub-Agenda Rangkaian Utama Terkunci Sesi 01</span>
+</div>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-primary-fixed hover:bg-primary-fixed-dim text-on-primary-fixed font-label-md text-label-md transition-all self-start sm:self-center" onclick="alert('Membuka modul EV-03 untuk menambah sub-agenda baru.')" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+<span>+ Tambah Sub-Agenda</span>
+</button>
+</div>
+<!-- Interactive sequence items list -->
+<div class="flex flex-col gap-3" id="rundown-sequence-container">
+<!-- Agenda 1 -->
+<div class="group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-canvas hover:bg-surface-soft/60 transition-all duration-150 gap-4">
+<div class="flex items-start md:items-center gap-3 flex-1 min-w-0">
+<div class="flex items-center text-text-secondary cursor-grab active:cursor-grabbing hover:text-text-primary" title="Geser urutan">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 font-numeric-table text-numeric-table font-semibold text-text-primary">
+                  1
+                </div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-numeric-table text-xs font-semibold px-2 py-0.5 rounded bg-surface text-primary shadow-xs">07.30 - 08.00 WIB (30 mnt)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Penyambutan</span>
+</div>
+<h4 class="font-title-md text-title-md text-text-primary truncate font-display">Penyambutan Catin Pria &amp; Serah-Terima Seserahan</h4>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-text-secondary mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                      PIC: Bpk. H. Rahmat Hidayat
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                      Vendor: Puspa Catering &amp; Kirana WO
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                      12 Baki Seserahan
+                    </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface" title="Sunting detail sub-agenda" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-danger hover:bg-surface" title="Hapus sub-agenda" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Agenda 2 -->
+<div class="group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-canvas hover:bg-surface-soft/60 transition-all duration-150 gap-4">
+<div class="flex items-start md:items-center gap-3 flex-1 min-w-0">
+<div class="flex items-center text-text-secondary cursor-grab active:cursor-grabbing hover:text-text-primary" title="Geser urutan">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 font-numeric-table text-numeric-table font-semibold text-on-primary-fixed">
+                  2
+                </div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-numeric-table text-xs font-semibold px-2 py-0.5 rounded bg-surface text-primary shadow-xs">08.00 - 09.00 WIB (60 mnt)</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">Puncak Sakral</span>
+</div>
+<h4 class="font-title-md text-title-md text-text-primary truncate font-display">Ijab Kabul, Khutbah Nikah &amp; Doa Penghulu KUA</h4>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-text-secondary mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                      PIC: Penghulu KUA Coblong &amp; 2 Saksi
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">mic</span>
+                      Vendor: Audio Puri Ardhya Garini
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                      Meja Ijab &amp; Dokumen SIMKAH
+                    </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface" title="Sunting detail sub-agenda" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-danger hover:bg-surface" title="Hapus sub-agenda" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Agenda 3 -->
+<div class="group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-canvas hover:bg-surface-soft/60 transition-all duration-150 gap-4">
+<div class="flex items-start md:items-center gap-3 flex-1 min-w-0">
+<div class="flex items-center text-text-secondary cursor-grab active:cursor-grabbing hover:text-text-primary" title="Geser urutan">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 font-numeric-table text-numeric-table font-semibold text-text-primary">
+                  3
+                </div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-numeric-table text-xs font-semibold px-2 py-0.5 rounded bg-surface text-primary shadow-xs">09.00 - 10.15 WIB (75 mnt)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Upacara Adat</span>
+</div>
+<h4 class="font-title-md text-title-md text-text-primary truncate font-display">Upacara Sungkeman, Huap Lingkung &amp; Sawer Panganten</h4>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-text-secondary mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                      PIC: Kang Asep (WO) &amp; Mak Lengser
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">theater_comedy</span>
+                      Vendor: Sanggar Gentra Sunda
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">token</span>
+                      Bantal sungkem, kendi, bokor sawer
+                    </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface" title="Sunting detail sub-agenda" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-danger hover:bg-surface" title="Hapus sub-agenda" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+<!-- Agenda 4 -->
+<div class="group relative flex flex-col md:flex-row items-start md:items-center justify-between p-space-md rounded-xl bg-canvas hover:bg-surface-soft/60 transition-all duration-150 gap-4">
+<div class="flex items-start md:items-center gap-3 flex-1 min-w-0">
+<div class="flex items-center text-text-secondary cursor-grab active:cursor-grabbing hover:text-text-primary" title="Geser urutan">
+<span class="material-symbols-outlined text-[20px]">drag_indicator</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 font-numeric-table text-numeric-table font-semibold text-text-primary">
+                  4
+                </div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="font-numeric-table text-xs font-semibold px-2 py-0.5 rounded bg-surface text-primary shadow-xs">10.15 - 10.30 WIB (15 mnt)</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Dokumentasi</span>
+</div>
+<h4 class="font-title-md text-title-md text-text-primary truncate font-display">Foto Bersama Keluarga Inti &amp; Ramah Tamah Ringan</h4>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-text-secondary mt-1">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span>
+                      PIC: Nadia &amp; Dimas (Catin)
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span>
+                      Vendor: Kencana Photography (Drone + Cam 1)
+                    </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">list_alt</span>
+                      Daftar 5 Formasi Foto Keluarga
+                    </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center shrink-0">
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface" title="Sunting detail sub-agenda" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-lg text-text-secondary hover:text-danger hover:bg-surface" title="Hapus sub-agenda" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom micro hint -->
+<div class="p-space-sm rounded-lg bg-surface-soft/60 flex items-center gap-2 text-xs text-text-secondary">
+<span class="material-symbols-outlined text-[16px] text-primary">touch_app</span>
+<span>Tip Penjadwalan: Anda dapat menarik ikon garis pegangan untuk menyesuaikan urutan sub-agenda, atau membuka modul editor mendalam di EV-03.</span>
+</div>
+</div>
+</div>
+<!-- Right Column (~35% width = 4 cols out of 12) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Card 1: Penanggung Jawab Lapangan (PIC Coordination) -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-display">Penanggung Jawab (PIC)</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">4 Penugasan</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Lead PIC Keluarga -->
+<div class="p-3 rounded-lg bg-canvas flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Lead PIC Keluarga</span>
+<span class="px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed text-[10px] font-semibold">Prioritas 1</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-text-primary">Bpk. H. Rahmat Hidayat</span>
+<span class="text-xs text-text-secondary">Paman Catin Pria</span>
+</div>
+<div class="flex items-center gap-1">
+<a class="w-8 h-8 rounded-full bg-surface hover:bg-surface-soft flex items-center justify-center text-text-secondary hover:text-primary transition-colors" href="tel:+6281234567890" title="Telepon">
+<span class="material-symbols-outlined text-[16px]">call</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-surface hover:bg-surface-soft flex items-center justify-center text-text-secondary hover:text-primary transition-colors" href="https://wa.me/6281234567890" target="_blank" title="Kirim Pesan WhatsApp">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Lead PIC WO Lapangan -->
+<div class="p-3 rounded-lg bg-canvas flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Lead PIC Lapangan WO</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-container text-[10px] font-semibold">Stage Manager</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-text-primary">Kang Asep Kurniawan</span>
+<span class="text-xs text-text-secondary">Kirana Wedding Planner</span>
+</div>
+<div class="flex items-center gap-1">
+<a class="w-8 h-8 rounded-full bg-surface hover:bg-surface-soft flex items-center justify-center text-text-secondary hover:text-primary transition-colors" href="tel:+6281987654321" title="Telepon">
+<span class="material-symbols-outlined text-[16px]">call</span>
+</a>
+<a class="w-8 h-8 rounded-full bg-surface hover:bg-surface-soft flex items-center justify-center text-text-secondary hover:text-primary transition-colors" href="https://wa.me/6281987654321" target="_blank" title="Kirim Pesan WhatsApp">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Saksi Nikah -->
+<div class="p-3 rounded-lg bg-surface-soft/60 flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Saksi Pernikahan Sah</span>
+<div class="flex flex-col gap-1.5 text-xs text-text-primary">
+<div class="flex items-center justify-between">
+<span>Saksi Catin Pria:</span>
+<span class="font-medium">Prof. Bambang Soeprapto</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Saksi Catin Wanita:</span>
+<span class="font-medium">Dr. Ir. Gunawan Wibisono</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Vendor Teknis Terhubung (Cross-linked to ND & TR) -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">handshake</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-display">Vendor Terhubung</h3>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Kelola (ND-02)</a>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Vendor 1 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-canvas">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-text-primary">Sanggar Seni Gentra Sunda</span>
+<span class="text-xs text-text-secondary">Upacara Adat &amp; Gamelan</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[11px] font-semibold">DP Lunas (TR-01)</span>
+</div>
+<!-- Vendor 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-canvas">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-text-primary">KUA Kecamatan Coblong</span>
+<span class="text-xs text-text-secondary">Penghulu &amp; Berkas SIMKAH</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-semibold">Terjadwal</span>
+</div>
+<!-- Vendor 3 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-canvas">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-text-primary">Kencana Photography</span>
+<span class="text-xs text-text-secondary">Dokumentasi Ijab &amp; Livestream</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-soft text-text-secondary text-[11px] font-semibold">Ready 07.00 WIB</span>
+</div>
+<!-- Vendor 4 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-canvas">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-medium text-text-primary">Puri Ardhya Garini</span>
+<span class="text-xs text-text-secondary">Audio Sound &amp; Genset 100kVA</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-[11px] font-semibold">Standby</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Daftar Tamu Khusus Sesi Ini (GU-01 Integration) -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">people_alt</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-display">Tamu Khusus Sesi</h3>
+</div>
+<span class="font-numeric-table text-xs font-semibold px-2 py-0.5 rounded bg-surface-soft text-text-primary">150 Kursi</span>
+</div>
+<!-- Progress Tamu -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between text-xs text-text-secondary">
+<span>142 Terkonfirmasi Hadir</span>
+<span>8 Menunggu Respon</span>
+</div>
+<div class="w-full bg-surface-soft rounded-full h-2.5 overflow-hidden flex">
+<div class="bg-primary h-full rounded-full transition-all duration-300" style="width: 94.6%"></div>
+<div class="bg-secondary-fixed h-full rounded-full transition-all duration-300" style="width: 5.4%"></div>
+</div>
+</div>
+<a class="w-full flex items-center justify-center gap-2 py-2 px-space-md rounded-lg bg-canvas hover:bg-surface-soft text-text-primary font-label-md text-label-md transition-colors border-0" href="#">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">filter_list</span>
+<span>Buka Filter Tamu Sesi 01 di Modul Tamu</span>
+</a>
+</div>
+<!-- Card 4: Checklist Logistik & Perlengkapan Wajib -->
+<div class="bg-surface rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">checklist</span>
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-display">Logistik &amp; Perlengkapan</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">4/4 Selesai</span>
+</div>
+<div class="flex flex-col gap-2.5" id="checklist-container">
+<label class="flex items-start gap-3 p-2.5 rounded-lg bg-canvas cursor-pointer hover:bg-surface-soft/70 transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-focus accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-sm text-text-primary font-medium">Berkas SIMKAH &amp; Mahar Logam Mulia</span>
+<span class="text-xs text-text-secondary">25 gram emas antam dalam kotak kaca akrilik</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-2.5 rounded-lg bg-canvas cursor-pointer hover:bg-surface-soft/70 transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-focus accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-sm text-text-primary font-medium">Bantal Sungkeman &amp; Kain Serlak Adat</span>
+<span class="text-xs text-text-secondary">Dua set bantal beludru hijau sage &amp; kendi air suci</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-2.5 rounded-lg bg-canvas cursor-pointer hover:bg-surface-soft/70 transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-focus accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-sm text-text-primary font-medium">Sound Cadangan &amp; 4 Mic Wireless</span>
+<span class="text-xs text-text-secondary">Sudah dilakukan sound-check pada H-1 gladi</span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-2.5 rounded-lg bg-canvas cursor-pointer hover:bg-surface-soft/70 transition-colors">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-focus accent-primary cursor-pointer" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md text-sm text-text-primary font-medium">Ruang Rias Catin Wanita Steril</span>
+<span class="text-xs text-text-secondary">Lantai 1 Sayap Barat siap sejak 05.00 WIB</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Sticky Operational Action Bar -->
+<div class="sticky bottom-0 left-0 right-0 z-30 w-full bg-surface/95 backdrop-blur-md shadow-[0_-4px_16px_rgba(36,40,33,0.06)] px-space-lg py-space-sm">
+<div class="w-full flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<!-- Sync Status Indicator -->
+<div class="flex items-center gap-2 text-text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">cloud_done</span>
+<span>Terakhir disimpan otomatis pada 14.28 WIB oleh Dimas</span>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="px-space-md py-2 rounded-lg bg-surface hover:bg-surface-soft text-text-primary font-label-md text-label-md transition-colors" onclick="history.back()" type="button">
+          Kembali ke Acara &amp; Jadwal
+        </button>
+<button class="px-space-md py-2 rounded-lg text-danger hover:bg-error-container/30 font-label-md text-label-md transition-colors" onclick="confirmDeleteSession()" type="button">
+          Hapus Sesi Ini
+        </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary hover:bg-accent-hover text-on-primary font-label-md text-label-md shadow-sm transition-all duration-150 flex items-center gap-2" onclick="triggerSaveNotification()" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Simpan Perubahan Sesi</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Visual Toast Notification Container -->
+<div class="fixed bottom-20 right-8 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 transition-opacity duration-300 opacity-0 pointer-events-none z-50" id="save-toast">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[20px]">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold">Perubahan Berhasil Disimpan</span>
+<span class="text-xs text-inverse-on-surface/80">Konfigurasi Sesi 01 telah disinkronkan dengan Nadia &amp; Kru Kirana WO.</span>
+</div>
+</div>
+</div>
+<script>
+  // Classification Pill Selector Behavior
+  const classGroup = document.getElementById('classification-group');
+  if (classGroup) {
+    const buttons = classGroup.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => {
+          b.className = 'flex items-center justify-center gap-2 py-2.5 px-space-sm rounded-lg bg-surface-soft text-text-secondary hover:text-text-primary font-label-md text-label-md transition-all';
+        });
+        btn.className = 'flex items-center justify-center gap-2 py-2.5 px-space-sm rounded-lg bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all';
+      });
+    });
+  }
+
+  // Interactive Toast Trigger
+  function triggerSaveNotification() {
+    const toast = document.getElementById('save-toast');
+    if (!toast) return;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 3200);
+  }
+
+  // Delete Guard Dialog
+  function confirmDeleteSession() {
+    if (confirm('Apakah Anda yakin ingin menghapus "Sesi 01 · Akad Nikah & Upacara Adat Sunda"?\n\nTindakan ini akan melepaskan keterkaitan vendor dan rundown mikro yang sudah diatur.')) {
+      alert('Sesi berhasil dihapus dari jadwal utama.');
+    }
+  }
+</script></main></div></body></html>

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"error":"#ba1a1a","focus":"#536A54","primary-fixed-dim":"#bbccb0","surface":"#FFFFFF","inverse-on-surface":"#eff2e7","surface-soft":"#F1EEE8","error-container":"#ffdad6","on-secondary":"#ffffff","primary-fixed":"#d7e8cb","on-background":"#191d16","on-tertiary-container":"#f7d1df","on-tertiary-fixed":"#2a151f","surface-bright":"#f8fbef","surface-tint":"#54634c","on-secondary-container":"#5f665d","surface-dim":"#d8dbd1","tertiary-fixed-dim":"#e1bdcb","inverse-primary":"#bbccb0","secondary-container":"#dee5d8","on-tertiary":"#ffffff","on-primary-fixed-variant":"#3c4b35","on-surface-variant":"#444841","tertiary":"#5c414c","tertiary-fixed":"#ffd8e7","secondary-fixed-dim":"#c2c9bd","background":"#f8fbef","on-surface":"#191d16","surface-container-highest":"#e1e4d9","on-secondary-fixed":"#171d16","accent-hover":"#43503D","danger":"#A43636","outline-variant":"#c5c8be","tertiary-container":"#755864","surface-container-low":"#f2f5ea","border":"#C9CDC6","surface-container-high":"#e6e9de","canvas":"#F8F6F2","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#424940","on-primary":"#ffffff","secondary-fixed":"#dee5d8","on-error-container":"#93000a","on-error":"#ffffff","secondary":"#596057","inverse-surface":"#2e322a","outline":"#757870","on-tertiary-fixed-variant":"#5a3f4b","primary-container":"#55644d","text-primary":"#242821","surface-container":"#ecefe4","on-primary-fixed":"#121f0d","text-secondary":"#676E64","on-primary-container":"#cfe0c3","primary":"#3e4c37","surface-variant":"#e1e4d9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-md":"1rem","margin":"2rem","space-sm":"0.5rem","space-lg":"1.5rem","margin-mobile":"1rem","gutter":"1.5rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"display":["EB Garamond"],"title-md":["Plus Jakarta Sans"],"headline-md":["EB Garamond"],"display-mobile":["EB Garamond"],"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["EB Garamond"],"headline-sm":["EB Garamond"],"numeric-table":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["EB Garamond"],"body-md":["Plus Jakarta Sans"]},"fontSize":{"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display":["48px",{"lineHeight":"56px","fontWeight":"500"}],"title-md":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"600"}],"display-mobile":["36px",{"lineHeight":"44px","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.5px","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"600"}],"numeric-table":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}]}}}}</script></head><body class="bg-canvas text-text-primary font-body-md text-body-md antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface flex flex-col z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Logo MENUJU" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAbH561kZObjSa4WSM1ssnfuuDxkt5TIuHayLcwHvLwRzXykq-cDEKMxgKdpAzBrseW6mYUkbOQKXRbpIxI1D-DOJKz9xz8ssJ5XgwcbF2K8MaNSYVgXUBXicGhBUC8v6xMvK941Q4xZNzo1Sku3ZXohLk3g9kHAu4ghPasM---ejhjVJRqZkI9JmN8i9WJhWyILE6YGRq6zWvCJp66IRt8oM_j-taeTjvp35iHeIVC"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none tracking-tight">MENUJU</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Wedding OS</span></div></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">v2.4</span></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary font-title-md"><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Beranda</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="beranda" href="#"><span class="font-label-md text-label-md">Beranda</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Persiapan</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="perjalanan" href="#"><span class="font-label-md text-label-md">Perjalanan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="checklist" href="#"><span class="font-label-md text-label-md">Checklist</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="acara-dan-jadwal" href="#"><span class="font-label-md text-label-md">Acara &amp; Jadwal</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="kebutuhan" href="#"><span class="font-label-md text-label-md">Kebutuhan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="tamu" href="#"><span class="font-label-md text-label-md">Tamu</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="undangan" href="#"><span class="font-label-md text-label-md">Undangan</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Keuangan</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="ringkasan" href="#"><span class="font-label-md text-label-md">Ringkasan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="tabungan" href="#"><span class="font-label-md text-label-md">Tabungan</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="anggaran" href="#"><span class="font-label-md text-label-md">Anggaran</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="transaksi" href="#"><span class="font-label-md text-label-md">Transaksi</span></a><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="akun" href="#"><span class="font-label-md text-label-md">Akun</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Lainnya</span><a class="flex items-center px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="pengaturan" href="#"><span class="font-label-md text-label-md">Pengaturan</span></a></div></nav><div class="p-space-md bg-surface-soft/60 flex flex-col gap-space-sm"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-focus animate-pulse"></span><span class="font-label-sm text-label-sm text-text-secondary">Tersinkron dengan Nadia</span></div><span class="material-symbols-outlined text-text-secondary text-[16px]">sync</span></div><a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-danger transition-colors" data-path="logout" href="#"><span class="font-label-md text-label-md">Keluar Sesi</span><span class="material-symbols-outlined text-[18px]">logout</span></a></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex flex-col"><h1 class="font-title-md text-title-md text-text-primary leading-tight">Pernikahan Dimas &amp; Nadia</h1><span class="font-label-sm text-label-sm text-text-secondary">14 Des 2026 · Bandung, Jawa Barat</span></div><span class="hidden lg:inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">schedule</span><span>H-270 Hari Menuju Akad</span></span></div><div class="flex items-center gap-space-md"><button class="hidden md:flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg bg-surface-soft hover:bg-surface-container text-text-secondary text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span>Cari berkas &amp; data...</span><kbd class="px-1.5 py-0.5 rounded bg-surface font-label-sm text-label-sm">⌘K</kbd></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-text-primary leading-none">Dimas &amp; Nadia</span><span class="font-label-sm text-label-sm text-text-secondary">Couple Space</span></div><div class="relative flex items-center gap-1 cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-jSpaixIbF5W2ttRJQ3cP1unUgcMzq8VIFBw3ON2BdJ946ruGUlFnJaGOW1Y59T-iE6aWa1kHR4-Ok28j5sITeHZHyjYDozGpUj3LlTZpx5tIXJR5RM0bGGsL6MGxu80PqRg5sCx7kIqjURNt10MYJsgiF4MZtW4mso4yhruA-yKPPllbiw1714goD4MpVImmZY9i72hA8yTes4PvPXFlSyPZFnkAo74DXZEO2nA"/><span class="material-symbols-outlined text-text-secondary text-[18px]">expand_more</span></div></div></div></div></header><main class="w-full pt-16 bg-canvas flex-1"><div class="flex flex-col w-full">
+<!-- Top Editor Header -->
+<header class="w-full bg-surface shadow-sm z-30 px-space-lg py-3 flex flex-wrap items-center justify-between gap-space-md">
+<!-- Left: Navigation & Context -->
+<div class="flex items-center gap-space-md min-w-0">
+<a class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-surface-soft text-text-secondary hover:text-text-primary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="font-label-md text-label-md hidden sm:inline">Perpustakaan Undangan</span>
+</a>
+<div class="h-6 w-px bg-border/60 hidden md:block"></div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-text-primary truncate">Studio Editor: Cinematic Garden Editorial</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm shrink-0">Draft Aktif</span>
+</div>
+<div class="flex items-center gap-1.5 text-text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-focus"></span>
+<span class="font-label-sm text-label-sm">Semua perubahan tersimpan otomatis 2 menit lalu</span>
+</div>
+</div>
+</div>
+<!-- Center: Responsive Preview Modes -->
+<div class="inline-flex p-1 rounded-xl bg-surface-soft shadow-inner">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-label-md text-label-md text-text-secondary hover:text-text-primary transition-all" id="preview-mode-desktop" type="button">
+<span class="material-symbols-outlined text-[18px]">laptop_mac</span>
+<span class="hidden md:inline">Desktop</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface font-label-md text-label-md text-text-primary shadow-sm transition-all" id="preview-mode-mobile" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">smartphone</span>
+<span class="font-semibold">Mobile</span>
+</button>
+</div>
+<!-- Right: Publishing & External Actions -->
+<div class="flex items-center gap-2">
+<button class="px-3 py-2 rounded-lg bg-transparent text-text-secondary hover:bg-surface-soft hover:text-text-primary font-label-md text-label-md transition-colors" type="button">
+        Batal
+      </button>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-soft text-text-primary hover:bg-surface-container font-label-md text-label-md transition-colors" type="button">
+<span>Pratinjau Publik</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-accent-hover text-on-primary font-label-md text-label-md shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+<span>Perbarui &amp; Terbitkan</span>
+</button>
+</div>
+</header>
+<!-- Workspace Canvas -->
+<div class="flex flex-col lg:flex-row flex-1 w-full min-h-[calc(100vh-4rem)] bg-canvas">
+<!-- LEFT PANEL: Accordion Form Settings (~420px) -->
+<aside class="w-full lg:w-[430px] shrink-0 bg-surface shadow-sm flex flex-col h-auto lg:h-[calc(100vh-4rem)] overflow-hidden">
+<!-- Panel Header & Quick Meta -->
+<div class="px-space-lg py-4 bg-surface-bright flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">tune</span>
+<span class="font-label-md text-label-md font-semibold text-text-primary uppercase tracking-wider">Modul Pengaturan Konten</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">6 Bagian</span>
+</div>
+<!-- Scrollable Accordion Stack -->
+<div class="flex-1 overflow-y-auto p-space-md flex flex-col gap-3">
+<!-- Section 1 (Expanded): Sampul & Pasangan -->
+<div class="rounded-xl bg-surface shadow-sm overflow-hidden transition-all" id="section-sampul">
+<button class="w-full px-space-md py-3.5 bg-surface-soft/70 hover:bg-surface-soft flex items-center justify-between text-left transition-colors" onclick="toggleAccordion('section-sampul-body', 'icon-sampul')" type="button">
+<div class="flex items-center gap-2.5">
+<span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">1</span>
+<span class="font-title-md text-title-md text-text-primary text-[15px]">Sampul &amp; Pasangan</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[20px] transition-transform duration-200 rotate-180" id="icon-sampul">expand_more</span>
+</button>
+<div class="p-space-md flex flex-col gap-4" id="section-sampul-body">
+<!-- Cover Photo Uploader -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary font-medium">Foto Cover Utama (Hero)</label>
+<div class="flex items-center gap-3 p-2.5 rounded-xl bg-surface-container-low">
+<div class="relative w-16 h-20 rounded-lg overflow-hidden shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Intimate editorial portrait of an elegant Indonesian couple standing in a sun-drenched botanical greenhouse garden. Warm film tones, soft morning backlight, muted pine greens, and delicate ivory textiles with organic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0HC3nNOdA9HthF5c40gtVnKkg117ye0KOx25hoc3H2Dl9xrZC6gvD3KhCamKQkJ66Ma_O18ftX0tDspW9p-k_nntvc7MEBL1322EcChS2-V90mU716vmjjpr4yFjlw3jzJPCsiBRIMq6YtqeNEz1Cl_nD7fhP_Zt1jE0x99CNrsMQvW1klYaa1QUE-tGg7RcafxOwFJQaCwmU_xxKn9M3AcwUXl16INhpNZ0rE2k"/>
+<span class="absolute bottom-1 right-1 bg-surface/90 rounded px-1 text-[9px] font-semibold text-text-primary">Cover</span>
+</div>
+<div class="flex flex-col gap-1.5 flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-primary font-semibold truncate">dimas_nadia_garden_editorial.jpg</span>
+<span class="font-label-sm text-label-sm text-text-secondary">2.4 MB</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-surface hover:bg-surface-container text-text-primary font-label-sm text-label-sm shadow-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span>
+<span>Ganti Foto</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-surface hover:bg-surface-container text-text-secondary hover:text-text-primary font-label-sm text-label-sm shadow-sm transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">crop</span>
+<span>Atur Fokus</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Couple Callout Names -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary font-medium" for="input-names">Panggilan Mempelai (Display)</label>
+<input class="w-full px-3 py-2.5 rounded-xl bg-surface-container-lowest text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-focus shadow-inner" id="input-names" oninput="updatePreviewTitle(this.value)" type="text" value="Dimas Prasetyo &amp; Nadia Almira"/>
+</div>
+<!-- Tagline / Date badge -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary font-medium" for="input-tagline">Tagline / Tanggal Penting</label>
+<input class="w-full px-3 py-2.5 rounded-xl bg-surface-container-lowest text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-focus shadow-inner" id="input-tagline" oninput="updatePreviewTagline(this.value)" type="text" value="Menuju Hari Bersama · 14 Desember 2026"/>
+</div>
+<!-- Warm Greeting Message -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-text-secondary font-medium" for="input-greeting">Salam Pembuka</label>
+<span class="font-label-sm text-label-sm text-text-secondary">48/120 kata</span>
+</div>
+<textarea class="w-full px-3 py-2 rounded-xl bg-surface-container-lowest text-text-primary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-focus shadow-inner resize-none" id="input-greeting" rows="3">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.</textarea>
+</div>
+</div>
+</div>
+<!-- Section 2: Profil Mempelai -->
+<div class="rounded-xl bg-surface shadow-sm overflow-hidden">
+<button class="w-full px-space-md py-3.5 bg-surface-soft/40 hover:bg-surface-soft flex items-center justify-between text-left transition-colors" onclick="toggleAccordion('section-profil-body', 'icon-profil')" type="button">
+<div class="flex items-center gap-2.5">
+<span class="flex items-center justify-center w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">2</span>
+<span class="font-title-md text-title-md text-text-primary text-[15px]">Profil Mempelai Pria &amp; Wanita</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[20px] transition-transform duration-200" id="icon-profil">expand_more</span>
+</button>
+<div class="hidden p-space-md flex flex-col gap-3" id="section-profil-body">
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Mempelai Pria</span>
+<div class="text-body-md text-text-primary font-medium">Dimas Prasetyo, S.T.</div>
+<div class="text-label-sm text-text-secondary">Putra pertama dari Bpk. Bambang Prasetyo &amp; Ibu Ratna Susanti</div>
+<div class="flex items-center gap-1.5 text-label-sm text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">alternate_email</span>
+<span>@dimasprasetyo</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Mempelai Wanita</span>
+<div class="text-body-md text-text-primary font-medium">Nadia Almira, B.Des.</div>
+<div class="text-label-sm text-text-secondary">Putri kedua dari Bpk. Hendra Wijaya &amp; Ibu Maria Kusuma</div>
+<div class="flex items-center gap-1.5 text-label-sm text-text-secondary">
+<span class="material-symbols-outlined text-[14px]">alternate_email</span>
+<span>@nadialmira</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Rangkaian Acara -->
+<div class="rounded-xl bg-surface shadow-sm overflow-hidden">
+<button class="w-full px-space-md py-3.5 bg-surface-soft/40 hover:bg-surface-soft flex items-center justify-between text-left transition-colors" onclick="toggleAccordion('section-acara-body', 'icon-acara')" type="button">
+<div class="flex items-center gap-2.5">
+<span class="flex items-center justify-center w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">3</span>
+<span class="font-title-md text-title-md text-text-primary text-[15px]">Rangkaian Acara (Akad &amp; Resepsi)</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[20px] transition-transform duration-200" id="icon-acara">expand_more</span>
+</button>
+<div class="hidden p-space-md flex flex-col gap-3" id="section-acara-body">
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-soft">
+<div>
+<span class="font-label-md text-label-md font-semibold text-text-primary">Akad Nikah</span>
+<p class="font-label-sm text-label-sm text-text-secondary">08:00 - 10:00 WIB · Pine Forest Garden</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed text-label-sm">Khidmat</span>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-soft">
+<div>
+<span class="font-label-md text-label-md font-semibold text-text-primary">Resepsi Malam</span>
+<p class="font-label-sm text-label-sm text-text-secondary">18:30 - 21:30 WIB · The Glass Pavilion</p>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed text-label-sm">Selebrasi</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container-high/40 text-text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span>
+<span>Integrasi Google Maps aktif: Jalan Kolonel Masturi, Bandung</span>
+</div>
+</div>
+</div>
+<!-- Section 4: Cerita Cinta & Galeri Foto -->
+<div class="rounded-xl bg-surface shadow-sm overflow-hidden">
+<button class="w-full px-space-md py-3.5 bg-surface-soft/40 hover:bg-surface-soft flex items-center justify-between text-left transition-colors" onclick="toggleAccordion('section-galeri-body', 'icon-galeri')" type="button">
+<div class="flex items-center gap-2.5">
+<span class="flex items-center justify-center w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">4</span>
+<span class="font-title-md text-title-md text-text-primary text-[15px]">Cerita Cinta &amp; Galeri Foto</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-text-secondary">6 Terunggah</span>
+<span class="material-symbols-outlined text-text-secondary text-[20px] transition-transform duration-200" id="icon-galeri">expand_more</span>
+</div>
+</button>
+<div class="hidden p-space-md flex flex-col gap-3" id="section-galeri-body">
+<div class="grid grid-cols-3 gap-2">
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-soft shadow-sm relative group">
+<img class="w-full h-full object-cover" data-alt="Cozy cafe portrait of the bride and groom laughing together over warm coffee mugs in Bandung rain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACWBJ9tQ_e4ycPmIakPOQuQv_mObbC8Q9C2jFAha6b0BlRBuDh6uqZAPo8orwIqKxncLbaOOEe4EyZe00ch_psuD9dDxlo3wnJfWvydz93JK56nnQODMybKGbeoCSN7Ti_qc2cil7lPs_OA7nICVEySRP7eXGTkaTxgItAqWOL7Na4Ja07tlJ_Meh146w5iixtBu4qnJTudZ1xN6vQ7uONqG45mZ-yWHUD2FDzclM"/>
+<span class="absolute inset-0 bg-text-primary/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-on-primary text-[14px]">Edit</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden bg-surface-soft shadow-sm relative group">
+<img class="w-full h-full object-cover" data-alt="Romantic seaside walk during sunset with dramatic warm amber light and wind-blown sheer garments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaryXwgrMskVK6EgwGatsOwx9grZqzrlixMJx2TzJK9-teLXmwvoyD5i-AN76No8P-GWdpXmIEf7oMEDEsrYJUGj7Lol6sAbojqwP9gkDHJJDjqZZxyd18nWSMxJHC7T4rP4hcrf2AbT_fDa2C4DPVOTfFNFnZziEU17E4frmhldo1_QgpemaRPGopAmm19lulP43g-P3mpLaHd5kKwNyPQgiqh1Eu9VZFk1bG0Bs"/>
+<span class="absolute inset-0 bg-text-primary/30 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity text-on-primary text-[14px]">Edit</span>
+</div>
+<div class="aspect-square rounded-lg bg-surface-soft flex flex-col items-center justify-center text-text-secondary hover:bg-surface-container cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[20px]">add_photo_alternate</span>
+<span class="font-label-sm text-label-sm text-[10px] mt-1">+ Tambah</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 5: RSVP & Ucapan -->
+<div class="rounded-xl bg-surface shadow-sm overflow-hidden">
+<button class="w-full px-space-md py-3.5 bg-surface-soft/40 hover:bg-surface-soft flex items-center justify-between text-left transition-colors" onclick="toggleAccordion('section-rsvp-body', 'icon-rsvp')" type="button">
+<div class="flex items-center gap-2.5">
+<span class="flex items-center justify-center w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">5</span>
+<span class="font-title-md text-title-md text-text-primary text-[15px]">Formulir RSVP &amp; Ucapan</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[20px] transition-transform duration-200" id="icon-rsvp">expand_more</span>
+</button>
+<div class="hidden p-space-md flex flex-col gap-3" id="section-rsvp-body">
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-text-primary">Batas Akhir RSVP</span>
+<span class="font-label-sm text-label-sm font-semibold text-text-secondary">30 Nov 2026</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-text-primary">Amplop Digital (BCA &amp; Mandiri)</span>
+<span class="material-symbols-outlined text-focus text-[18px]">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Section 6: Musik Latar & Efek Visual -->
+<div class="rounded-xl bg-surface shadow-sm overflow-hidden">
+<button class="w-full px-space-md py-3.5 bg-surface-soft/40 hover:bg-surface-soft flex items-center justify-between text-left transition-colors" onclick="toggleAccordion('section-audio-body', 'icon-audio')" type="button">
+<div class="flex items-center gap-2.5">
+<span class="flex items-center justify-center w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">6</span>
+<span class="font-title-md text-title-md text-text-primary text-[15px]">Musik Latar &amp; Efek Visual</span>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[20px] transition-transform duration-200" id="icon-audio">expand_more</span>
+</button>
+<div class="hidden p-space-md flex flex-col gap-3" id="section-audio-body">
+<div class="p-3 rounded-lg bg-surface-soft flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">music_note</span>
+<div>
+<span class="font-label-md text-label-md font-medium text-text-primary">Nadhif Basalamah - Penjaga Hati (Acoustic)</span>
+<p class="font-label-sm text-label-sm text-text-secondary">Mulai otomatis setelah tombol klik sampul</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-focus text-[20px]">volume_up</span>
+</div>
+<div class="flex items-center justify-between px-1">
+<span class="font-label-md text-label-md text-text-secondary">Parallax &amp; Efek Partikel Halus</span>
+<div class="w-9 h-5 bg-focus rounded-full relative cursor-pointer">
+<div class="w-4 h-4 bg-surface rounded-full absolute top-0.5 right-0.5 shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel Footer -->
+<div class="p-space-md bg-surface-bright flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2 text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-sm text-label-sm">Format responsif tervalidasi</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-soft hover:bg-surface-container font-label-md text-label-md text-text-primary transition-colors" type="button">
+          Reset Pratinjau
+        </button>
+</div>
+</aside>
+<!-- RIGHT PANEL: Live Interactive Canvas Area -->
+<main class="flex-1 flex flex-col items-center justify-center p-space-md lg:p-space-xl relative overflow-hidden bg-canvas">
+<!-- Top Floating Notice -->
+<div class="absolute top-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface/90 backdrop-blur-md shadow-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-focus opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-focus"></span>
+</span>
+<span class="font-label-sm text-label-sm font-semibold text-text-primary">Live Preview · Terhubung dengan Data Tamu:</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-text-primary">Keluarga Adhitama</span>
+</div>
+<!-- Realistic Mobile Mockup Bezel -->
+<div class="relative w-[375px] h-[760px] max-h-[901px] rounded-[44px] bg-text-primary p-3 shadow-[0_20px_50px_-10px_rgba(25,29,22,0.35)] flex flex-col transition-all duration-300 transform scale-100" id="mockup-frame">
+<!-- Screen Outer Rim & Notch -->
+<div class="relative w-full h-full rounded-[34px] overflow-hidden bg-canvas flex flex-col">
+<!-- Mockup Status Bar -->
+<div class="absolute top-0 inset-x-0 h-10 px-6 flex items-center justify-between z-30 text-on-surface select-none pointer-events-none">
+<span class="font-label-sm text-label-sm font-semibold text-on-primary">09:41</span>
+<!-- Speaker Island -->
+<div class="w-24 h-4 bg-text-primary rounded-full mx-auto"></div>
+<div class="flex items-center gap-1.5 text-on-primary">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<span class="material-symbols-outlined text-[14px]">battery_full</span>
+</div>
+</div>
+<!-- Phone Inner Content (Invitation Hero Simulation) -->
+<div class="relative w-full h-full flex flex-col justify-between text-on-primary overflow-hidden">
+<!-- Full Bleed Botanical Photo Background -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Breathtaking cinematic wedding photography of Dimas and Nadia surrounded by lush eucalyptus leaves and cascading white orchids in a soft morning haze. Warm romantic sun flares filtering through transparent fabrics, editorial minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhHo5hghZlRUMKaOj-BlF-MyiDpC6zyOOWIvgy3ahkugPCevHscGyPhloL6RIkA95L57IknpZJ2P9AAm1TCDnzo9D8CSx0oBr-wwwePf-qq75YGqsddNiWe82XG2OCW4mbr8ekI_AyE7y3uCmnVmLkEtUYoWkkmpRQzot4jPnZnzh3Wl-WD10VaUhSXwfm01tg9qmnmFM1HBuPdtJgBZuuGigfXPWpU2NZM8JhFV4"/>
+<!-- Gradient Scrim for Editorial Readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-text-primary/95 via-text-primary/40 to-text-primary/60"></div>
+</div>
+<!-- Top Welcome Badge -->
+<div class="relative z-10 pt-14 px-6 flex flex-col items-center text-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface/15 backdrop-blur-md font-label-sm text-label-sm tracking-widest uppercase text-on-primary/90">
+<span class="material-symbols-outlined text-[12px]">favorite</span>
+<span>The Wedding Invitation</span>
+</span>
+<p class="mt-3 font-label-sm text-label-sm tracking-wider uppercase text-on-primary/75">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+<h4 class="font-title-md text-title-md text-on-primary font-semibold mt-0.5">Keluarga Adhitama</h4>
+</div>
+<!-- Central Editorial Typography & CTA -->
+<div class="relative z-10 pb-10 px-6 flex flex-col items-center text-center">
+<div class="flex items-center gap-3 w-full justify-center my-2 opacity-60">
+<span class="h-px w-10 bg-on-primary/60"></span>
+<span class="material-symbols-outlined text-[14px]">spa</span>
+<span class="h-px w-10 bg-on-primary/60"></span>
+</div>
+<!-- Live Synchronized Title -->
+<h2 class="font-headline-lg text-headline-lg font-medium tracking-tight text-on-primary leading-tight text-center" id="preview-couple-name">
+                Dimas &amp; Nadia
+              </h2>
+<!-- Live Synchronized Tagline -->
+<p class="font-body-md text-body-md text-on-primary/85 mt-2 max-w-xs font-light" id="preview-couple-tagline">
+                Minggu, 14 Desember 2026 · Bandung, Jawa Barat
+              </p>
+<!-- Open Invitation Interactive Trigger -->
+<button class="mt-6 w-full max-w-[260px] py-3 px-5 rounded-full bg-surface text-text-primary hover:bg-surface-soft font-label-md text-label-md font-semibold tracking-wide flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all" type="button">
+<span class="material-symbols-outlined text-primary text-[18px]">drafts</span>
+<span>Buka Undangan</span>
+</button>
+<span class="mt-4 font-label-sm text-label-sm text-on-primary/60 text-[11px] tracking-wide">
+                *Mohon gunakan mode suara untuk pengalaman terbaik
+              </span>
+</div>
+<!-- Home indicator bar -->
+<div class="relative z-10 pb-2 w-full flex justify-center">
+<div class="w-32 h-1 bg-on-primary/40 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Right Scale/Zoom Controls Floating Toolbar -->
+<div class="absolute bottom-6 right-6 z-20 flex items-center gap-1.5 p-1.5 rounded-xl bg-surface/90 backdrop-blur-md shadow-lg">
+<button class="w-8 h-8 rounded-lg bg-surface-soft hover:bg-surface-container flex items-center justify-center text-text-primary transition-colors" onclick="adjustScale(-0.05)" title="Zoom Out" type="button">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-numeric-table text-numeric-table px-2 font-medium text-text-secondary" id="scale-indicator">100%</span>
+<button class="w-8 h-8 rounded-lg bg-surface-soft hover:bg-surface-container flex items-center justify-center text-text-primary transition-colors" onclick="adjustScale(0.05)" title="Zoom In" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<div class="h-4 w-px bg-border/60 mx-1"></div>
+<button class="flex items-center gap-1 px-2.5 h-8 rounded-lg bg-surface-soft hover:bg-surface-container text-text-primary font-label-sm text-label-sm transition-colors" onclick="resetScale()" title="Fit to Screen" type="button">
+<span class="material-symbols-outlined text-[16px]">fit_screen</span>
+<span class="hidden sm:inline">Fit</span>
+</button>
+</div>
+</main>
+</div>
+</div>
+<script>
+  // Simple interactive logic for accordion modules
+  function toggleAccordion(bodyId, iconId) {
+    const body = document.getElementById(bodyId);
+    const icon = document.getElementById(iconId);
+    if (!body) return;
+    
+    const isHidden = body.classList.contains('hidden');
+    if (isHidden) {
+      body.classList.remove('hidden');
+      if (icon) icon.classList.add('rotate-180');
+    } else {
+      body.classList.add('hidden');
+      if (icon) icon.classList.remove('rotate-180');
+    }
+  }
+
+  // Two-way instant input preview sync
+  function updatePreviewTitle(val) {
+    const target = document.getElementById('preview-couple-name');
+    if (target) {
+      target.textContent = val.trim() ? val : 'Dimas & Nadia';
+    }
+  }
+
+  function updatePreviewTagline(val) {
+    const target = document.getElementById('preview-couple-tagline');
+    if (target) {
+      target.textContent = val.trim() ? val : 'Minggu, 14 Desember 2026 · Bandung, Jawa Barat';
+    }
+  }
+
+  // Mockup zoom / scale utility
+  let currentZoom = 1.0;
+  function adjustScale(delta) {
+    currentZoom = Math.min(Math.max(currentZoom + delta, 0.75), 1.25);
+    applyScale();
+  }
+
+  function resetScale() {
+    currentZoom = 1.0;
+    applyScale();
+  }
+
+  function applyScale() {
+    const frame = document.getElementById('mockup-frame');
+    const indicator = document.getElementById('scale-indicator');
+    if (frame) {
+      frame.style.transform = `scale(${currentZoom})`;
+    }
+    if (indicator) {
+      indicator.textContent = `${Math.round(currentZoom * 100)}%`;
+    }
+  }
+
+  // Device mode switcher visual toggle
+  const btnDesktop = document.getElementById('preview-mode-desktop');
+  const btnMobile = document.getElementById('preview-mode-mobile');
+  const mockupFrame = document.getElementById('mockup-frame');
+
+  if (btnDesktop && btnMobile && mockupFrame) {
+    btnDesktop.addEventListener('click', () => {
+      btnDesktop.classList.remove('bg-transparent', 'text-text-secondary');
+      btnDesktop.classList.add('bg-surface', 'text-text-primary', 'shadow-sm');
+      
+      btnMobile.classList.remove('bg-surface', 'text-text-primary', 'shadow-sm');
+      btnMobile.classList.add('bg-transparent', 'text-text-secondary');
+      
+      // Morph mockup to landscape laptop tablet aesthetic
+      mockupFrame.classList.remove('w-[375px]', 'h-[760px]', 'rounded-[44px]');
+      mockupFrame.classList.add('w-[680px]', 'h-[460px]', 'rounded-[24px]');
+    });
+
+    btnMobile.addEventListener('click', () => {
+      btnMobile.classList.remove('bg-transparent', 'text-text-secondary');
+      btnMobile.classList.add('bg-surface', 'text-text-primary', 'shadow-sm');
+      
+      btnDesktop.classList.remove('bg-surface', 'text-text-primary', 'shadow-sm');
+      btnDesktop.classList.add('bg-transparent', 'text-text-secondary');
+
+      // Return to mobile frame
+      mockupFrame.classList.remove('w-[680px]', 'h-[460px]', 'rounded-[24px]');
+      mockupFrame.classList.add('w-[375px]', 'h-[760px]', 'rounded-[44px]');
+    });
+  }
+</script></main></div></body></html>

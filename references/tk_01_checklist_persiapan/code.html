@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"error":"#ba1a1a","focus":"#536A54","primary-fixed-dim":"#bbccb0","surface":"#FFFFFF","inverse-on-surface":"#eff2e7","surface-soft":"#F1EEE8","error-container":"#ffdad6","on-secondary":"#ffffff","primary-fixed":"#d7e8cb","on-background":"#191d16","on-tertiary-container":"#f7d1df","on-tertiary-fixed":"#2a151f","surface-bright":"#f8fbef","surface-tint":"#54634c","on-secondary-container":"#5f665d","surface-dim":"#d8dbd1","tertiary-fixed-dim":"#e1bdcb","inverse-primary":"#bbccb0","secondary-container":"#dee5d8","on-tertiary":"#ffffff","on-primary-fixed-variant":"#3c4b35","on-surface-variant":"#444841","tertiary":"#5c414c","tertiary-fixed":"#ffd8e7","secondary-fixed-dim":"#c2c9bd","background":"#f8fbef","on-surface":"#191d16","surface-container-highest":"#e1e4d9","on-secondary-fixed":"#171d16","accent-hover":"#43503D","danger":"#A43636","outline-variant":"#c5c8be","tertiary-container":"#755864","surface-container-low":"#f2f5ea","border":"#C9CDC6","surface-container-high":"#e6e9de","canvas":"#F8F6F2","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#424940","on-primary":"#ffffff","secondary-fixed":"#dee5d8","on-error-container":"#93000a","on-error":"#ffffff","secondary":"#596057","inverse-surface":"#2e322a","outline":"#757870","on-tertiary-fixed-variant":"#5a3f4b","primary-container":"#55644d","text-primary":"#242821","surface-container":"#ecefe4","on-primary-fixed":"#121f0d","text-secondary":"#676E64","on-primary-container":"#cfe0c3","primary":"#3e4c37","surface-variant":"#e1e4d9"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xl":"2rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-md":"1rem","margin":"2rem","space-sm":"0.5rem","space-lg":"1.5rem","margin-mobile":"1rem","gutter":"1.5rem"},"fontFamily":{"label-md":["Plus Jakarta Sans"],"display":["EB Garamond"],"title-md":["Plus Jakarta Sans"],"headline-md":["EB Garamond"],"display-mobile":["EB Garamond"],"label-sm":["Plus Jakarta Sans"],"headline-lg-mobile":["EB Garamond"],"headline-sm":["EB Garamond"],"numeric-table":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"headline-lg":["EB Garamond"],"body-md":["Plus Jakarta Sans"]},"fontSize":{"label-md":["13px",{"lineHeight":"18px","fontWeight":"500"}],"display":["48px",{"lineHeight":"56px","fontWeight":"500"}],"title-md":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"600"}],"display-mobile":["36px",{"lineHeight":"44px","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.5px","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","fontWeight":"600"}],"headline-sm":["22px",{"lineHeight":"28px","fontWeight":"600"}],"numeric-table":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}]}}}}</script></head><body class="bg-canvas text-text-primary font-body-md text-body-md antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface flex flex-col z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Logo MENUJU" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrAbH561kZObjSa4WSM1ssnfuuDxkt5TIuHayLcwHvLwRzXykq-cDEKMxgKdpAzBrseW6mYUkbOQKXRbpIxI1D-DOJKz9xz8ssJ5XgwcbF2K8MaNSYVgXUBXicGhBUC8v6xMvK941Q4xZNzo1Sku3ZXohLk3g9kHAu4ghPasM---ejhjVJRqZkI9JmN8i9WJhWyILE6YGRq6zWvCJp66IRt8oM_j-taeTjvp35iHeIVC"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none tracking-tight">MENUJU</span><span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Wedding OS</span></div></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">v2.4</span></div><nav class="flex-1 overflow-y-auto px-space-md py-space-sm flex flex-col gap-space-md" data-active-classes="bg-primary-container text-on-primary font-title-md"><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Beranda</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="beranda" href="#"><span class="material-symbols-outlined text-[20px]">home</span><span>Beranda</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Persiapan</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="perjalanan" href="#"><span class="material-symbols-outlined text-[20px]">timeline</span><span>Perjalanan</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-all duration-150 bg-primary-container text-on-primary font-title-md" data-path="checklist" href="#"><span class="material-symbols-outlined text-[20px]">checklist</span><span>Checklist</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="acara-dan-jadwal" href="#"><span class="material-symbols-outlined text-[20px]">calendar_today</span><span>Acara &amp; Jadwal</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="kebutuhan" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Kebutuhan</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="tamu" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Tamu</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="undangan" href="#"><span class="material-symbols-outlined text-[20px]">drafts</span><span>Undangan</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Keuangan</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="ringkasan" href="#"><span class="material-symbols-outlined text-[20px]">pie_chart</span><span>Ringkasan</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="tabungan" href="#"><span class="material-symbols-outlined text-[20px]">savings</span><span>Tabungan</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="anggaran" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span>Anggaran</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="transaksi" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Transaksi</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="akun" href="#"><span class="material-symbols-outlined text-[20px]">credit_card</span><span>Akun</span></a></div><div class="flex flex-col gap-1"><span class="px-space-sm py-1 font-label-sm text-label-sm text-text-secondary uppercase tracking-wider">Lainnya</span><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-text-primary transition-all duration-150" data-path="pengaturan" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Pengaturan</span></a></div></nav><div class="p-space-md bg-surface-soft/60 flex flex-col gap-space-sm"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-focus animate-pulse"></span><span class="font-label-sm text-label-sm text-text-secondary">Tersinkron dengan Nadia</span></div><span class="material-symbols-outlined text-text-secondary text-[16px]">sync</span></div><a class="flex items-center justify-between px-space-sm py-1.5 rounded-lg text-text-secondary hover:bg-surface-soft hover:text-danger transition-colors" data-path="logout" href="#"><span class="font-label-md text-label-md">Keluar Sesi</span><span class="material-symbols-outlined text-[18px]">logout</span></a></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex flex-col"><h1 class="font-title-md text-title-md text-text-primary leading-tight">Pernikahan Dimas &amp; Nadia</h1><span class="font-label-sm text-label-sm text-text-secondary">14 Des 2026 · Bandung, Jawa Barat</span></div><span class="hidden lg:inline-flex items-center gap-1 px-space-sm py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="material-symbols-outlined text-[14px]">schedule</span><span>H-270 Hari Menuju Akad</span></span></div><div class="flex items-center gap-space-md"><button class="hidden md:flex items-center gap-space-sm px-space-sm py-1.5 rounded-lg bg-surface-soft hover:bg-surface-container text-text-secondary text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span>Cari berkas &amp; data...</span><kbd class="px-1.5 py-0.5 rounded bg-surface font-label-sm text-label-sm">⌘K</kbd></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md text-text-primary leading-none">Dimas &amp; Nadia</span><span class="font-label-sm text-label-sm text-text-secondary">Couple Space</span></div><div class="relative flex items-center gap-1 cursor-pointer"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-jSpaixIbF5W2ttRJQ3cP1unUgcMzq8VIFBw3ON2BdJ946ruGUlFnJaGOW1Y59T-iE6aWa1kHR4-Ok28j5sITeHZHyjYDozGpUj3LlTZpx5tIXJR5RM0bGGsL6MGxu80PqRg5sCx7kIqjURNt10MYJsgiF4MZtW4mso4yhruA-yKPPllbiw1714goD4MpVImmZY9i72hA8yTes4PvPXFlSyPZFnkAo74DXZEO2nA"/><span class="material-symbols-outlined text-text-secondary text-[18px]">expand_more</span></div></div></div></div></header><main class="w-full pt-16 bg-canvas flex-1"><div class="flex flex-col w-full">
+<div class="px-space-xl py-space-lg flex flex-col gap-space-lg max-w-[1280px] w-full mx-auto">
+<!-- Top Context & Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-2">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-xs text-text-secondary">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Persiapan Pernikahan</span>
+<span class="text-[12px] opacity-40">/</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Timeline &amp; Tugas</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight font-display">Checklist Persiapan</h1>
+<p class="font-body-md text-body-md text-text-secondary max-w-xl">
+          Pantau semua tugas menuju hari-H bersama pasangan. Terkoordinasi, terukur, dan selaras.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-accent-hover transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-focus focus:ring-offset-2" id="btn-open-create-modal" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Tambah Tugas</span>
+</button>
+</div>
+</div>
+<!-- Overview Bar & Progress Widget -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center bg-surface p-space-md rounded-xl shadow-sm">
+<div class="md:col-span-4 flex items-center gap-space-md">
+<div class="relative w-12 h-12 flex-shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-soft" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-primary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="39, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-label-sm text-label-sm font-semibold text-text-primary">39%</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary">Kelengkapan Rencana</span>
+<span class="font-title-md text-title-md text-text-primary font-semibold tracking-tight">34 dari 88 Selesai</span>
+</div>
+</div>
+<div class="md:col-span-8 flex flex-wrap md:justify-end items-center gap-space-lg text-text-secondary font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span>54 tugas tersisa</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+<span>34 selesai terlaksana</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-soft px-3 py-1 rounded-full text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-danger">flag</span>
+<span>4 Prioritas Tinggi Bulan Ini</span>
+</div>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="bg-surface rounded-xl p-space-md shadow-sm flex flex-col lg:flex-row gap-space-md justify-between">
+<div class="relative flex-1 min-w-[260px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-canvas text-text-primary placeholder:text-text-secondary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-focus transition-all" id="task-search-input" placeholder="Cari tugas, vendor, atau catatan..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Category Dropdown -->
+<div class="relative">
+<select class="h-11 pl-3 pr-8 rounded-lg bg-canvas text-text-primary font-label-md text-label-md appearance-none focus:outline-none focus:ring-2 focus:ring-focus cursor-pointer">
+<option value="all">Semua Kategori</option>
+<option value="administrasi">Administrasi</option>
+<option value="busana">Busana &amp; Rias</option>
+<option value="resepsi">Resepsi &amp; Katering</option>
+<option value="dokumentasi">Dokumentasi</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-text-secondary text-[18px]">expand_more</span>
+</div>
+<!-- PIC Dropdown -->
+<div class="relative">
+<select class="h-11 pl-3 pr-8 rounded-lg bg-canvas text-text-primary font-label-md text-label-md appearance-none focus:outline-none focus:ring-2 focus:ring-focus cursor-pointer">
+<option value="all">Semua Penanggung Jawab</option>
+<option value="dimas">Dimas</option>
+<option value="nadia">Nadia</option>
+<option value="both">Dimas &amp; Nadia</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-text-secondary text-[18px]">expand_more</span>
+</div>
+<!-- Status Filter -->
+<div class="relative">
+<select class="h-11 pl-3 pr-8 rounded-lg bg-canvas text-text-primary font-label-md text-label-md appearance-none focus:outline-none focus:ring-2 focus:ring-focus cursor-pointer">
+<option value="pending">Status: Belum Selesai</option>
+<option value="all">Semua Status</option>
+<option value="completed">Selesai</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-text-secondary text-[18px]">expand_more</span>
+</div>
+<button class="h-11 w-11 flex items-center justify-center rounded-lg bg-canvas text-text-secondary hover:text-text-primary hover:bg-surface-soft transition-colors" title="Reset filter">
+<span class="material-symbols-outlined text-[20px]">filter_alt_off</span>
+</button>
+</div>
+</div>
+<!-- Task List Groups -->
+<div class="flex flex-col gap-space-lg">
+<!-- Group 1: Bulan Ini -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-display">Bulan Ini</h2>
+<span class="font-label-sm text-label-sm text-text-secondary">November 2026 · H-270</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary bg-surface-soft px-2.5 py-0.5 rounded-full font-medium">3 Tugas Mendesak</span>
+</div>
+<div class="bg-surface rounded-xl shadow-sm overflow-hidden flex flex-col divide-y divide-surface-soft">
+<!-- Item 1 -->
+<div class="task-row group flex items-center justify-between p-space-md hover:bg-surface-soft/60 transition-colors cursor-pointer" onclick="openDrawer('Uji rasa menu katering', 'Katering', '18 Nov 2026', 'Nadia', 'Prioritas Tinggi', 'Tinjauan rasa paket 800 pax bersama keluarga inti di Plataran Bandung.')">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<label class="relative flex items-center cursor-pointer p-1" onclick="event.stopPropagation()">
+<input class="peer sr-only task-checkbox" type="checkbox"/>
+<div class="w-5 h-5 rounded bg-surface border-2 border-outline peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[15px] text-on-primary opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</label>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary task-title group-hover:text-primary transition-colors truncate">Uji rasa menu katering</span>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-0.5">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container">Katering</span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span> 18 Nov 2026
+                  </span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Nadia
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md flex-shrink-0">
+<span class="hidden sm:inline-flex font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-error-container text-danger font-medium items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">priority_high</span> Prioritas Tinggi
+              </span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-text-primary" title="Ubah Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-danger" title="Hapus Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="task-row group flex items-center justify-between p-space-md hover:bg-surface-soft/60 transition-colors cursor-pointer" onclick="openDrawer('DP Fotografer &amp; Videografer', 'Dokumentasi', '20 Nov 2026', 'Dimas', 'Prioritas Sedang', 'Konfirmasi jadwal tim dokumentasi dan pelunasan termin 1 (30%).')">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<label class="relative flex items-center cursor-pointer p-1" onclick="event.stopPropagation()">
+<input class="peer sr-only task-checkbox" type="checkbox"/>
+<div class="w-5 h-5 rounded bg-surface border-2 border-outline peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[15px] text-on-primary opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</label>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary task-title group-hover:text-primary transition-colors truncate">DP Fotografer &amp; Videografer</span>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-0.5">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container">Dokumentasi</span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span> 20 Nov 2026
+                  </span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Dimas
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md flex-shrink-0">
+<span class="hidden sm:inline-flex font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-soft text-text-secondary font-medium items-center gap-1">
+                Prioritas Sedang
+              </span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-text-primary" title="Ubah Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-danger" title="Hapus Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="task-row group flex items-center justify-between p-space-md hover:bg-surface-soft/60 transition-colors cursor-pointer" onclick="openDrawer('Pengurusan berkas KUA Kecamatan', 'Administrasi', '28 Nov 2026', 'Dimas', 'Prioritas Tinggi', 'Menyerahkan surat pengantar kelurahan N1, N2, dan fotokopi KTP calon mempelai serta wali nikah.')">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<label class="relative flex items-center cursor-pointer p-1" onclick="event.stopPropagation()">
+<input class="peer sr-only task-checkbox" type="checkbox"/>
+<div class="w-5 h-5 rounded bg-surface border-2 border-outline peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[15px] text-on-primary opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</label>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary task-title group-hover:text-primary transition-colors truncate">Pengurusan berkas KUA Kecamatan</span>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-0.5">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container">Administrasi</span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span> 28 Nov 2026
+                  </span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Dimas
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md flex-shrink-0">
+<span class="hidden sm:inline-flex font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-error-container text-danger font-medium items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">priority_high</span> Prioritas Tinggi
+              </span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-text-primary" title="Ubah Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-danger" title="Hapus Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Group 2: 3-4 Bulan Menuju Acara -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-space-xs py-1">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+<h2 class="font-headline-sm text-headline-sm text-text-primary font-display">3-4 Bulan Menuju Acara</h2>
+<span class="font-label-sm text-label-sm text-text-secondary">Desember 2026 – Januari 2027</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary bg-surface-soft px-2.5 py-0.5 rounded-full font-medium">3 Tugas Terjadwal</span>
+</div>
+<div class="bg-surface rounded-xl shadow-sm overflow-hidden flex flex-col divide-y divide-surface-soft">
+<!-- Item 4 -->
+<div class="task-row group flex items-center justify-between p-space-md hover:bg-surface-soft/60 transition-colors cursor-pointer" onclick="openDrawer('Pemesanan souvenir dan box kemasan', 'Souvenir', '15 Des 2026', 'Nadia', 'Prioritas Normal', 'Review mockup personalisasi inisial wax stamp &amp; kemasan ramah lingkungan.')">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<label class="relative flex items-center cursor-pointer p-1" onclick="event.stopPropagation()">
+<input class="peer sr-only task-checkbox" type="checkbox"/>
+<div class="w-5 h-5 rounded bg-surface border-2 border-outline peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[15px] text-on-primary opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</label>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary task-title group-hover:text-primary transition-colors truncate">Pemesanan souvenir dan box kemasan</span>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-0.5">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container">Souvenir</span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span> 15 Des 2026
+                  </span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Nadia
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md flex-shrink-0">
+<span class="hidden sm:inline-flex font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-soft text-text-secondary font-medium">
+                Normal
+              </span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-text-primary" title="Ubah Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-danger" title="Hapus Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="task-row group flex items-center justify-between p-space-md hover:bg-surface-soft/60 transition-colors cursor-pointer" onclick="openDrawer('Penyusunan susunan rundown akad &amp; resepsi', 'Acara', '10 Jan 2027', 'Dimas &amp; Nadia', 'Prioritas Tinggi', 'Sinkronisasi rundown bersama Wedding Organizer, MC, dan keluarga kedua belah pihak.')">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<label class="relative flex items-center cursor-pointer p-1" onclick="event.stopPropagation()">
+<input class="peer sr-only task-checkbox" type="checkbox"/>
+<div class="w-5 h-5 rounded bg-surface border-2 border-outline peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[15px] text-on-primary opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</label>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary task-title group-hover:text-primary transition-colors truncate">Penyusunan susunan rundown akad &amp; resepsi</span>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-0.5">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container">Acara</span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span> 10 Jan 2027
+                  </span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">group</span> Dimas &amp; Nadia
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md flex-shrink-0">
+<span class="hidden sm:inline-flex font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-error-container text-danger font-medium items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">priority_high</span> Prioritas Tinggi
+              </span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-text-primary" title="Ubah Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-danger" title="Hapus Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="task-row group flex items-center justify-between p-space-md hover:bg-surface-soft/60 transition-colors cursor-pointer" onclick="openDrawer('Fitting baju keluarga dan bridesmaid', 'Busana', '22 Jan 2027', 'Nadia', 'Prioritas Sedang', 'Fitting kedua di butik Raden Sirait, pengambilan seragam keluarga inti.')">
+<div class="flex items-center gap-space-md min-w-0 flex-1">
+<label class="relative flex items-center cursor-pointer p-1" onclick="event.stopPropagation()">
+<input class="peer sr-only task-checkbox" type="checkbox"/>
+<div class="w-5 h-5 rounded bg-surface border-2 border-outline peer-checked:bg-primary-container peer-checked:border-primary-container flex items-center justify-center transition-all">
+<span class="material-symbols-outlined text-[15px] text-on-primary opacity-0 peer-checked:opacity-100">check</span>
+</div>
+</label>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-primary task-title group-hover:text-primary transition-colors truncate">Fitting baju keluarga dan bridesmaid</span>
+<div class="flex flex-wrap items-center gap-x-space-sm gap-y-1 mt-0.5">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container">Busana</span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">event</span> 22 Jan 2027
+                  </span>
+<span class="font-label-sm text-label-sm text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">person</span> Nadia
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md flex-shrink-0">
+<span class="hidden sm:inline-flex font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-soft text-text-secondary font-medium">
+                Sedang
+              </span>
+<div class="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" onclick="event.stopPropagation()">
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-text-primary" title="Ubah Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-1.5 rounded-md hover:bg-surface text-text-secondary hover:text-danger" title="Hapus Tugas" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Editorial Note / Micro Insight -->
+<div class="p-space-lg rounded-xl bg-surface-soft/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-text-primary font-serif">Catatan Persiapan Minggu Ini</span>
+<p class="font-body-md text-body-md text-text-secondary mt-0.5">
+            Penyelesaian berkas KUA memiliki tenggat tetap di H-3 bulan. Pastikan berkas dari kelurahan asal Dimas telah dilegalisasi pekan ini.
+          </p>
+</div>
+</div>
+<button class="px-space-md py-2 rounded-lg bg-surface text-text-primary font-label-md text-label-md hover:bg-surface-container transition-colors shadow-sm self-end md:self-auto flex-shrink-0" type="button">
+        Buka Panduan KUA
+      </button>
+</div>
+<!-- Footer & Pagination -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-2 pb-space-xl text-text-secondary font-label-md text-label-md">
+<span>Menampilkan 6 tugas aktif dari total 88 tugas terdaftar</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1.5 rounded-lg bg-surface hover:bg-surface-soft disabled:opacity-40 transition-colors shadow-sm" disabled="">
+          Sebelumnya
+        </button>
+<span class="px-3 py-1.5 text-text-primary font-semibold">1</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface hover:bg-surface-soft transition-colors shadow-sm">
+          Selanjutnya
+        </button>
+</div>
+</div>
+</div>
+<!-- TASK DETAIL DRAWER (TK-03 Component) -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-200" id="task-drawer-backdrop">
+<div class="fixed right-0 top-0 bottom-0 w-full max-w-lg bg-surface shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-out flex flex-col" id="task-drawer">
+<!-- Drawer Header -->
+<div class="p-space-lg flex items-center justify-between bg-surface-soft/40">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-medium" id="drawer-category-badge">Kategori</span>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-error-container text-danger font-medium" id="drawer-priority-badge">Prioritas</span>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface hover:text-text-primary transition-colors" id="btn-close-drawer">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Body -->
+<div class="flex-1 overflow-y-auto p-space-lg flex flex-col gap-space-lg">
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-md text-headline-md text-text-primary font-display leading-tight" id="drawer-title">Detail Tugas</h2>
+<span class="font-label-sm text-label-sm text-text-secondary">Dibuat otomatis oleh Alur Panduan Pernikahan</span>
+</div>
+<div class="flex flex-col gap-space-md p-space-md rounded-xl bg-canvas">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Tenggat Waktu</span>
+<span class="font-label-md text-label-md text-text-primary font-medium" id="drawer-deadline">18 Nov 2026</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Penanggung Jawab (PIC)</span>
+<span class="font-label-md text-label-md text-text-primary font-medium" id="drawer-pic">Nadia</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Status Pelaksanaan</span>
+<span class="inline-flex items-center gap-1.5 font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              Sedang Berjalan
+            </span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">Catatan &amp; Instruksi</span>
+<p class="font-body-md text-body-md text-text-primary leading-relaxed bg-surface-soft/40 p-space-md rounded-xl" id="drawer-notes">
+            Tidak ada catatan tambahan untuk tugas ini.
+          </p>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-secondary font-medium">Lampiran Dokumen</span>
+<div class="p-space-md rounded-xl bg-canvas flex items-center justify-between hover:bg-surface-soft transition-colors cursor-pointer">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">description</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-text-primary font-medium">Lembar_Evaluasi_Menu.pdf</span>
+<span class="font-label-sm text-label-sm text-text-secondary">1.2 MB · Diunggah oleh Nadia</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[18px]">download</span>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Action -->
+<div class="p-space-lg bg-surface-soft/40 flex items-center justify-between gap-space-md">
+<button class="px-space-md py-2.5 rounded-lg text-danger hover:bg-error-container/40 font-label-md text-label-md transition-colors" type="button">
+          Hapus Tugas
+        </button>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2.5 rounded-lg bg-surface hover:bg-surface-soft text-text-primary font-label-md text-label-md shadow-sm transition-colors" id="btn-close-drawer-secondary" type="button">
+            Tutup
+          </button>
+<button class="px-space-md py-2.5 rounded-lg bg-primary-container hover:bg-accent-hover text-on-primary font-label-md text-label-md shadow-sm transition-colors" type="button">
+            Tandai Selesai
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- CREATE TASK MODAL -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-200 flex items-center justify-center p-4" id="create-modal-backdrop">
+<div class="w-full max-w-lg bg-surface rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-all duration-200 flex flex-col" id="create-modal">
+<div class="p-space-lg bg-surface-soft/40 flex items-center justify-between">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-text-primary font-display">Tambah Tugas Baru</h3>
+<span class="font-label-sm text-label-sm text-text-secondary">Rencanakan agenda agar tidak ada yang terlewat</span>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface hover:text-text-primary transition-colors" id="btn-close-create-modal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="p-space-lg flex flex-col gap-space-md" id="create-task-form">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary">Judul Tugas</label>
+<input class="h-11 px-3.5 rounded-lg bg-canvas text-text-primary placeholder:text-text-secondary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-focus transition-all" placeholder="Contoh: Pengambilan cincin kawin di pengrajin" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary">Kategori</label>
+<select class="h-11 px-3 rounded-lg bg-canvas text-text-primary font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-focus">
+<option>Administrasi</option>
+<option>Busana &amp; Rias</option>
+<option>Resepsi &amp; Katering</option>
+<option>Dokumentasi</option>
+<option>Souvenir</option>
+<option>Acara</option>
+</select>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary">Penanggung Jawab</label>
+<select class="h-11 px-3 rounded-lg bg-canvas text-text-primary font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-focus">
+<option>Dimas</option>
+<option>Nadia</option>
+<option>Dimas &amp; Nadia</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary">Tenggat Waktu</label>
+<input class="h-11 px-3 rounded-lg bg-canvas text-text-primary font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-focus" type="date"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary">Prioritas</label>
+<select class="h-11 px-3 rounded-lg bg-canvas text-text-primary font-label-md text-label-md focus:outline-none focus:ring-2 focus:ring-focus">
+<option>Prioritas Normal</option>
+<option>Prioritas Sedang</option>
+<option>Prioritas Tinggi</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-text-secondary">Catatan Ringkas</label>
+<textarea class="p-3 rounded-lg bg-canvas text-text-primary placeholder:text-text-secondary font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-focus transition-all resize-none" placeholder="Tuliskan detail kontak vendor, syarat berkas, atau hal penting lainnya..." rows="3"></textarea>
+</div>
+<div class="pt-space-sm flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2.5 rounded-lg bg-surface hover:bg-surface-soft text-text-primary font-label-md text-label-md transition-colors" id="btn-cancel-create-modal" type="button">
+            Batal
+          </button>
+<button class="px-space-md py-2.5 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-accent-hover transition-colors shadow-sm" type="submit">
+            Simpan Tugas
+          </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interactions & State logic
+  function setupChecklistInteractions() {
+    // Checkbox styling state
+    const checkboxes = document.querySelectorAll('.task-checkbox');
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        const titleEl = this.closest('.task-row').querySelector('.task-title');
+        if (this.checked) {
+          titleEl.classList.add('line-through', 'text-text-secondary');
+          titleEl.classList.remove('text-text-primary');
+        } else {
+          titleEl.classList.remove('line-through', 'text-text-secondary');
+          titleEl.classList.add('text-text-primary');
+        }
+      });
+    });
+
+    // Drawer Logic
+    const drawerBackdrop = document.getElementById('task-drawer-backdrop');
+    const drawer = document.getElementById('task-drawer');
+    const closeDrawerBtn = document.getElementById('btn-close-drawer');
+    const closeDrawerSecondary = document.getElementById('btn-close-drawer-secondary');
+
+    window.openDrawer = function(title, category, deadline, pic, priority, notes) {
+      document.getElementById('drawer-title').textContent = title;
+      document.getElementById('drawer-category-badge').textContent = category;
+      document.getElementById('drawer-deadline').textContent = deadline;
+      document.getElementById('drawer-pic').textContent = pic;
+      document.getElementById('drawer-priority-badge').textContent = priority;
+      document.getElementById('drawer-notes').textContent = notes;
+
+      drawerBackdrop.classList.remove('hidden');
+      setTimeout(() => {
+        drawerBackdrop.classList.remove('opacity-0');
+        drawer.classList.remove('translate-x-full');
+      }, 10);
+    };
+
+    function closeDrawer() {
+      drawer.classList.add('translate-x-full');
+      drawerBackdrop.classList.add('opacity-0');
+      setTimeout(() => {
+        drawerBackdrop.classList.add('hidden');
+      }, 300);
+    }
+
+    if (closeDrawerBtn) closeDrawerBtn.addEventListener('click', closeDrawer);
+    if (closeDrawerSecondary) closeDrawerSecondary.addEventListener('click', closeDrawer);
+    if (drawerBackdrop) {
+      drawerBackdrop.addEventListener('click', function(e) {
+        if (e.target === drawerBackdrop) closeDrawer();
+      });
+    }
+
+    // Modal Logic
+    const createModalBackdrop = document.getElementById('create-modal-backdrop');
+    const createModal = document.getElementById('create-modal');
+    const openCreateBtn = document.getElementById('btn-open-create-modal');
+    const closeCreateBtn = document.getElementById('btn-close-create-modal');
+    const cancelCreateBtn = document.getElementById('btn-cancel-create-modal');
+    const form = document.getElementById('create-task-form');
+
+    function openCreateModal() {
+      createModalBackdrop.classList.remove('hidden');
+      setTimeout(() => {
+        createModalBackdrop.classList.remove('opacity-0');
+        createModal.classList.remove('scale-95');
+      }, 10);
+    }
+
+    function closeCreateModal() {
+      createModal.classList.add('scale-95');
+      createModalBackdrop.classList.add('opacity-0');
+      setTimeout(() => {
+        createModalBackdrop.classList.add('hidden');
+      }, 200);
+    }
+
+    if (openCreateBtn) openCreateBtn.addEventListener('click', openCreateModal);
+    if (closeCreateBtn) closeCreateBtn.addEventListener('click', closeCreateModal);
+    if (cancelCreateBtn) cancelCreateBtn.addEventListener('click', closeCreateModal);
+    if (createModalBackdrop) {
+      createModalBackdrop.addEventListener('click', function(e) {
+        if (e.target === createModalBackdrop) closeCreateModal();
+      });
+    }
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        closeCreateModal();
+      });
+    }
+  }
+
+  // Self execution when loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupChecklistInteractions);
+  } else {
+    setupChecklistInteractions();
+  }
+</script></main></div></body></html>
