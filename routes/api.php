@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\GuestController;
 use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\Api\MilestoneController;
 use App\Http\Controllers\Api\TaskController;
@@ -38,6 +39,11 @@ Route::middleware('web')->group(function (): void {
         Route::post('/workspaces/{workspace}/milestones', [MilestoneController::class, 'store']);
         Route::patch('/workspaces/{workspace}/milestones/{milestone}', [MilestoneController::class, 'update']);
         Route::delete('/workspaces/{workspace}/milestones/{milestone}', [MilestoneController::class, 'destroy']);
+        Route::get('/workspaces/{workspace}/guests', [GuestController::class, 'index']);
+        Route::post('/workspaces/{workspace}/guests', [GuestController::class, 'store']);
+        Route::get('/guests/{guest}', [GuestController::class, 'show']);
+        Route::patch('/guests/{guest}', [GuestController::class, 'update']);
+        Route::delete('/guests/{guest}', [GuestController::class, 'destroy']);
         Route::post('/workspaces/{workspace}/tasks', [TaskController::class, 'store']);
         Route::get('/tasks/{task}', [TaskController::class, 'show']);
         Route::patch('/tasks/{task}', [TaskController::class, 'update']);

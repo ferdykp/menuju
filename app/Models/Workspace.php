@@ -56,4 +56,9 @@ class Workspace extends Model
     {
         return $this->hasMany(Task::class);
     }
+
+    public function guests(): HasMany
+    {
+        return $this->hasMany(Guest::class);
+    }
 }

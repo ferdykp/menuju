@@ -32,4 +32,4 @@ Composer and npm dependencies are installed and the Vite production build succee
 
 ## Product implementation status
 
-Initial implementation is active: authentication and onboarding flows, workspace membership/invites, a real-data Home summary, Checklist tasks, and the Perjalanan milestone timeline are in progress. Eighteen Screen IDs have implementation evidence; none has completed the full desktop/mobile and Stitch visual verification gate. Most other modules are not implemented yet. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) before treating any screen as complete.
+Initial implementation is active: authentication and onboarding, workspace membership/invites, a real-data Home summary, Checklist tasks, Perjalanan milestones, and core guest management are in progress. Twenty-three Screen IDs have implementation evidence; none has completed the full desktop/mobile and Stitch visual verification gate. Guest import and most other modules are not implemented yet. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) before treating any screen as complete.
