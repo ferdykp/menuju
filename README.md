@@ -28,7 +28,7 @@ npm run dev
 
 Open `http://localhost:8000` in a second terminal after running `php artisan serve`. Local MySQL is exposed on port 3306 with database `menuju`, user `root`, and password `local`. Set a private `APP_KEY` and real credentials per environment; never commit `.env`.
 
-Dependency installation and build are not yet verified in this environment because Packagist DNS was unavailable during project creation. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) for the actual status by screen.
+Composer and npm dependencies are now installed and the Vite production build succeeds. The local MySQL container could not start because the Docker daemon is not running; the first migration has only been exercised with SQLite in-memory during the foundation test. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) for the actual status by screen.
 
 ## Product implementation status
 

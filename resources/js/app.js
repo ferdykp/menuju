@@ -21,7 +21,7 @@ import {
     faPeopleGroup,
     faPlus,
     faRotate,
-    faSparkles,
+    faLeaf,
     faWallet,
     faXmark,
 } from '@fortawesome/free-solid-svg-icons';
@@ -31,7 +31,7 @@ library.add(
     faArrowRight, faBars, faCalendarDays, faCheck, faChevronDown,
     faChevronLeft, faChevronRight, faCircleCheck, faClock, faEllipsis,
     faHouse, faMoneyBillWave, faPeopleGroup, faPlus, faRotate,
-    faSparkles, faWallet, faXmark,
+    faLeaf, faWallet, faXmark,
 );
 
 const router = createRouter({

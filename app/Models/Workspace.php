@@ -13,6 +13,8 @@ class Workspace extends Model
     use HasFactory;
     use SoftDeletes;
 
+    protected $attributes = ['timezone' => 'Asia/Jakarta'];
+
     protected $fillable = [
         'owner_id',
         'name',

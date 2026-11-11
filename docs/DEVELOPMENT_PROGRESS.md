@@ -6,12 +6,12 @@
 
 | Workstream | Status | Evidence / next step |
 |---|---|---|
-| Laravel project scaffold | In progress | Composer manifest and Laravel entry points added; dependency resolution blocked by unavailable Packagist DNS. |
-| Vue 3 JavaScript + Vite + Tailwind | In progress | Vite, Vue, Tailwind v4 and Font Awesome dependencies declared; install/build pending. |
-| Design tokens and shared shell | In progress | Warm ivory/sage palette, local font packages, icon setup, responsive navigation shell, and reduced-motion baseline added; visual review pending. |
+| Laravel project scaffold | Implemented | Laravel 13.42 installed; PHP syntax and route registration checked; SQLite-backed schema test passes. MySQL migration not run because Docker daemon and local MySQL service are unavailable. |
+| Vue 3 JavaScript + Vite + Tailwind | Implemented | Vue 3, Vite 7, Tailwind 4, Font Awesome and local fonts installed; production asset build passes. |
+| Design tokens and shared shell | In progress | Warm ivory/sage palette, responsive navigation, local font packages and reduced-motion baseline added; narrow preview rendered. Wide-desktop comparison against Stitch is still pending. |
 | Authentication and onboarding | Not started | — |
 | Screen-level implementation | 0 / 77 implemented | Per-screen rows below. |
-| Functional verification | 0 / 77 verified | No tests or UI verification run yet. |
+| Functional verification | 0 / 77 verified | Foundation suite: 3 tests passed (health endpoint, Vue shell response, workspace schema/relations); no Screen ID feature flow is implemented or verified yet. |
 
 ## Screen inventory coverage
 
@@ -97,7 +97,7 @@
 
 ## Reference inventory audit
 
-Available Stitch page frames were mapped to their closest Screen IDs above. The supplied references contain 31 `code.html` + `screen.png` page pairs (28 desktop/application and 3 public mobile invitation frames) plus 2 standalone wedding-photo assets; several inventory entries have no dedicated frame, and some detail/preview views only have a contextual nearest match. The auth, onboarding, shared system states, and remaining missing screens are not represented as dedicated HTML/PNG pairs.
+Available Stitch page frames were mapped to their closest Screen IDs above. In this checkout the HTML/PNG screen folders are directly under `references/` (only `DESIGN.md` is inside `references/stitch/`), so the tracker links the files where they were supplied. There are 31 `code.html` + `screen.png` page pairs (28 desktop/application and 3 public mobile invitation frames) plus 2 standalone wedding-photo assets; several inventory entries have no dedicated frame, and some detail/preview views only have a contextual nearest match. The auth, onboarding, shared system states, and remaining missing screens are not represented as dedicated HTML/PNG pairs.
 
 | Reference artifact | Screen ID | Mapping note |
 |---|---|---|

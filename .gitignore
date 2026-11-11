@@ -10,5 +10,6 @@
 /bootstrap/cache/*.php
 /.env
 /.phpunit.cache
+/.phpunit.result.cache
 /coverage
 .DS_Store

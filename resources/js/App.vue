@@ -32,7 +32,7 @@ const navigation = [
     },
     {
         label: 'Kebutuhan',
-        icon: 'sparkles',
+        icon: 'leaf',
         href: '/app/needs',
         group: 'persiapan',
     },
