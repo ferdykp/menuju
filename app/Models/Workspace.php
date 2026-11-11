@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Workspace extends Model
@@ -26,7 +27,7 @@ class Workspace extends Model
 
     protected function casts(): array
     {
-        return ['wedding_date' => 'date'];
+        return ['wedding_date' => 'date', 'onboarding_completed_at' => 'datetime'];
     }
 
     public function owner(): BelongsTo
@@ -39,5 +40,15 @@ class Workspace extends Model
         return $this->belongsToMany(User::class, 'workspace_members')
             ->withPivot(['role', 'status'])
             ->withTimestamps();
+    }
+
+    public function invitations(): HasMany
+    {
+        return $this->hasMany(WorkspaceInvitation::class);
+    }
+
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(Task::class);
     }
 }

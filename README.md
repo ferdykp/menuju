@@ -32,4 +32,4 @@ Composer and npm dependencies are now installed and the Vite production build su
 
 ## Product implementation status
 
-The application is at its initial foundation stage. The current welcome view is a foundation placeholder, not a completed auth/onboarding flow. All 77 Screen IDs remain unimplemented and unverified until their functional and visual acceptance work is recorded in the tracker.
+Initial implementation is active: authentication and onboarding flows, workspace membership/invites, a real-data Home summary, and the Checklist CRUD flow are underway. Fifteen Screen IDs are marked **In progress**; none has completed the required browser E2E and visual verification gate. Other modules are not implemented yet. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) before treating any screen as complete.
