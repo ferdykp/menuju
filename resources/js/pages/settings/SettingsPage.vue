@@ -5,14 +5,16 @@ import { useRoute, useRouter } from 'vue-router';
 import ConfirmDialog from '../../components/ConfirmDialog.vue';
 import { useConfirmDialog } from '../../composables/useConfirmDialog';
 import { useUnsavedForm } from '../../composables/useUnsavedForm';
+import { useToast } from '../../composables/toastBus';
 
 const props = defineProps({ workspace: { type: Object, required: true }, user: { type: Object, required: true } });
 const emit = defineEmits(['updated']);
 const { open: confirmOpen, options: confirmOptions, confirm: askConfirm, finish: finishConfirm } = useConfirmDialog();
+const { success: notifySuccess } = useToast();
 const route = useRoute(); const router = useRouter();
 const tabs = [{ id: 'couple', label: 'Profil pasangan' }, { id: 'workspace', label: 'Workspace & acara' }, { id: 'access', label: 'Akses partner' }, { id: 'account', label: 'Akun saya' }, { id: 'privacy', label: 'Privasi & berbagi' }];
 const initialTab = tabs.some((tab) => tab.id === route.query.tab) ? route.query.tab : 'couple';
-const active = ref(initialTab); const members = ref([]); const loading = ref(true); const saving = ref(false); const error = ref(''); const message = ref(''); const inviteEmail = ref('');
+const active = ref(initialTab); const members = ref([]); const loading = ref(true); const saving = ref(false); const error = ref(''); const inviteEmail = ref('');
 const couple = reactive({ partner_one_name: props.workspace.partner_one_name || '', partner_two_name: props.workspace.partner_two_name || '' });
 const workspace = reactive({ name: props.workspace.name || '', wedding_date: props.workspace.wedding_date || '', timezone: props.workspace.timezone || 'Asia/Jakarta' });
 const profile = reactive({ name: props.user.name || '', email: props.user.email || '' });
@@ -23,8 +25,8 @@ function restoreActiveForm() { const form = activeForm(); if (form && snapshots.
 const settingsGuard = useUnsavedForm({ isOpen: computed(() => true), isDirty: activeDirty, confirm: askConfirm, onDiscard: restoreActiveForm, title: 'Perubahan pengaturan belum disimpan', message: 'Jika berpindah halaman sekarang, perubahan yang belum disimpan akan dibuang.' });
 const timezones = ['Asia/Jakarta','Asia/Makassar','Asia/Jayapura','Asia/Singapore','Asia/Kuala_Lumpur','UTC'];
 async function load() { loading.value = true; error.value = ''; try { members.value = (await axios.get(`/api/workspaces/${props.workspace.id}/members`)).data.members; } catch { error.value = 'Informasi akses belum berhasil dimuat.'; } finally { loading.value = false; } }
-function notify(text) { message.value = text; window.setTimeout(() => { message.value = ''; }, 3500); }
-async function selectTab(id) { if (id === active.value || !await settingsGuard.requestClose()) return; active.value = id; error.value = ''; message.value = ''; router.replace({ query: { ...route.query, tab: id === 'couple' ? undefined : id } }); }
+function notify(text) { notifySuccess(text); }
+async function selectTab(id) { if (id === active.value || !await settingsGuard.requestClose()) return; active.value = id; error.value = ''; router.replace({ query: { ...route.query, tab: id === 'couple' ? undefined : id } }); }
 watch(() => route.query.tab, (tab) => { active.value = tabs.some((item) => item.id === tab) ? tab : 'couple'; });
 async function save() { saving.value = true; error.value = ''; try {
     if (active.value === 'couple' || active.value === 'workspace') { const { data } = await axios.patch(`/api/workspaces/${props.workspace.id}/settings`, { ...workspace, ...couple, wedding_date: workspace.wedding_date || null }); emit('updated', { ...props.user, workspaces: props.user.workspaces.map((w) => w.id === data.workspace.id ? data.workspace : w) }); }

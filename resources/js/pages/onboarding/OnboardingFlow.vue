@@ -3,9 +3,11 @@ import axios from 'axios';
 import { computed, reactive, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { getRememberedUser, rememberUser } from '../../session';
+import { useToast } from '../../composables/toastBus';
 
 const props = defineProps({ step: { type: String, required: true } });
 const router = useRouter();
+const { success: notifySuccess } = useToast();
 const busy = ref(false);
 const errorSummary = ref('');
 const errors = ref({});
@@ -99,6 +101,7 @@ async function finish(skipInvite = false) {
             workspaces: (current.workspaces ?? []).map((workspace) => String(workspace.id) === String(data.workspace.id) ? data.workspace : workspace),
         });
         sessionStorage.removeItem('menuju-onboarding');
+        notifySuccess('Workspace kalian siap. Selamat merencanakan bersama!');
         await router.push('/onboarding/done');
     } catch (error) {
         errors.value = error.response?.data?.errors ?? {};

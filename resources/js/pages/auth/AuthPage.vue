@@ -48,6 +48,10 @@ const googleAuthUrl = computed(() => {
     return `/auth/google/redirect?flow=${props.mode}&redirect=${encodeURIComponent(redirect)}`;
 });
 
+function rememberGoogleAuthAttempt() {
+    window.sessionStorage.setItem('menuju-google-auth-pending', '1');
+}
+
 async function submit() {
     busy.value = true;
     errors.value = {};
@@ -160,7 +164,7 @@ function validPostAuthPath(path) {
                     <p class="auth-description">{{ description }}</p>
 
                     <template v-if="(mode === 'login' || mode === 'register') && (mode !== 'register' || registrationStage === 'details')">
-                        <a class="button button--google" :href="googleAuthUrl">
+                        <a class="button button--google" :href="googleAuthUrl" @click="rememberGoogleAuthAttempt">
                             <svg aria-hidden="true" viewBox="0 0 48 48" class="google-mark">
                                 <path fill="#4285F4" d="M48 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h13.52c-.59 3.04-2.3 5.62-4.85 7.35l7.85 6.09C45.1 38.09 48 31.8 48 24.55Z" />
                                 <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.85-6.09c-2.18 1.46-4.96 2.32-8.06 2.32-6.19 0-11.43-4.18-13.3-9.8l-8.09 6.26C6.55 42.73 14.62 48 24 48Z" />
