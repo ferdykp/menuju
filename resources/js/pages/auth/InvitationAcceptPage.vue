@@ -38,7 +38,7 @@ async function accept() {
 
 <template>
     <main class="invite-accept-page">
-        <RouterLink to="/welcome" class="brand" aria-label="MENUJU"><span class="brand__mark">m</span><span class="brand__name">menuju</span></RouterLink>
+        <RouterLink to="/welcome" class="brand" aria-label="MENUJU"><img class="brand__mark" :src="'/images/brand/menuju-logo.png'" alt=""><span class="brand__name">menuju</span></RouterLink>
         <section class="invite-accept-card">
             <div class="auth-mark auth-mark--success" aria-hidden="true"><FaIcon :icon="['fas', 'people-group']" /></div>
             <p class="eyebrow">UNDANGAN PARTNER</p>

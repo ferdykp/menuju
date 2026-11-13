@@ -112,7 +112,7 @@ async function finish(skipInvite = false) {
 <template>
     <main class="onboarding-page">
         <header class="onboarding-header">
-            <RouterLink to="/welcome" class="brand" aria-label="Kembali ke MENUJU"><span class="brand__mark">m</span><span class="brand__name">menuju</span></RouterLink>
+            <RouterLink to="/welcome" class="brand" aria-label="Kembali ke MENUJU"><img class="brand__mark" :src="'/images/brand/menuju-logo.png'" alt=""><span class="brand__name">menuju</span></RouterLink>
             <div class="onboarding-progress" :aria-label="`Langkah ${stepNumber} dari 4`">
                 <span v-for="n in 4" :key="n" :class="{ 'onboarding-progress__step--active': n <= stepNumber }"></span>
             </div>

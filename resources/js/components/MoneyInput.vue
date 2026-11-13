@@ -90,7 +90,7 @@ watch(() => props.modelValue, (value) => {
 </template>
 
 <style scoped>
-.money-field{display:flex;align-items:center;width:100%;min-width:0;border:1px solid #bdc3b8;border-radius:8px;background:#fff;overflow:hidden}.money-field:focus-within{border-color:#3e5b3d;box-shadow:0 0 0 3px #3e5b3d29}.money-field__prefix{align-self:stretch;display:flex;align-items:center;padding:0 0 0 11px;color:#72796f;font-size:12px}.money-field input{min-width:0;width:100%;border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;padding:11px 10px!important;font:13px var(--font-body)!important;font-variant-numeric:tabular-nums}.money-field input:focus{outline:0!important;box-shadow:none!important}
+.money-field{display:flex;align-items:center;width:100%;min-width:0;border:1px solid var(--border);border-radius:8px;background:var(--surface);overflow:hidden}.money-field:focus-within{border-color:var(--focus);box-shadow:0 0 0 3px color-mix(in srgb, var(--focus) 16%, transparent)}.money-field__prefix{align-self:stretch;display:flex;align-items:center;padding:0 0 0 11px;color:var(--text-secondary);font-size:12px}.money-field input{min-width:0;width:100%;border:0!important;outline:0!important;box-shadow:none!important;background:transparent!important;padding:11px 10px!important;font:13px var(--font-body)!important;font-variant-numeric:tabular-nums}.money-field input:focus{outline:0!important;box-shadow:none!important}
 .money-field__prefix { font-size: 14px; }
 .money-field input { font-size: 16px !important; }
 </style>

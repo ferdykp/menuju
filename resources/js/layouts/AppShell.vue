@@ -144,7 +144,7 @@ function isActive(href) {
     <div class="app-frame">
         <aside class="sidebar" :class="{ 'sidebar--open': menuOpen }" aria-label="Navigasi utama">
             <RouterLink class="brand" to="/app/home" aria-label="MENUJU, beranda">
-                <span class="brand__mark">m</span><span class="brand__name">menuju</span>
+                <img class="brand__mark" :src="'/images/brand/menuju-logo.png'" alt=""><span class="brand__name">menuju</span>
             </RouterLink>
 
             <div class="workspace-switcher" aria-label="Workspace aktif">
@@ -189,7 +189,7 @@ function isActive(href) {
                 <button class="icon-button" aria-label="Buka navigasi" @click="mobilePanel = ''; menuOpen = true">
                     <FaIcon :icon="['fas', 'bars']" aria-hidden="true" />
                 </button>
-                <RouterLink class="brand brand--mobile" to="/app/home"><span class="brand__mark">m</span><span class="brand__name">menuju</span></RouterLink>
+                <RouterLink class="brand brand--mobile" to="/app/home"><img class="brand__mark" :src="'/images/brand/menuju-logo.png'" alt=""><span class="brand__name">menuju</span></RouterLink>
                 <button class="profile-chip__avatar mobile-header__account-trigger" type="button" :aria-label="`Buka menu akun ${accountName}`" :aria-expanded="accountMenuOpen" aria-haspopup="menu" aria-controls="account-menu" @click.stop="toggleAccountMenu($event)">{{ accountName.slice(0, 1) }}</button>
             </header>
 

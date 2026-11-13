@@ -26,11 +26,11 @@ const to = computed(() => Number(props.pagination.to ?? Math.min(currentPage.val
 </template>
 
 <style scoped>
-.pagination-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 17px;border-top:1px solid #e9eae3;color:#5f675c;font:13px/1.4 var(--font-body)}
+.pagination-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 17px;border-top:1px solid #e9eae3;color:var(--text-secondary);font:13px/1.4 var(--font-body)}
 .pagination-controls p{margin:0}
 .pagination-controls>div{display:flex;align-items:center;gap:12px}
-.pagination-controls button{min-height:36px;padding:0 12px;border:1px solid #d9ddd4;border-radius:8px;background:#fff;color:#40583a;font:600 13px var(--font-body);cursor:pointer}
+.pagination-controls button{min-height:36px;padding:0 12px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--accent);font:600 13px var(--font-body);cursor:pointer}
 .pagination-controls button:disabled{color:#969b93;background:#f6f6f2;cursor:not-allowed}
-.pagination-controls button:focus-visible{outline:3px solid #3e5b3d55;outline-offset:2px}
+.pagination-controls button:focus-visible{outline:3px solid color-mix(in srgb, var(--focus) 33%, transparent);outline-offset:2px}
 @media(max-width:600px){.pagination-controls{align-items:flex-start;flex-direction:column}.pagination-controls>div{width:100%;justify-content:space-between;gap:8px}.pagination-controls button{padding:0 9px}}
 </style>

@@ -127,7 +127,7 @@ function validPostAuthPath(path) {
     <main class="auth-page">
         <section class="auth-story" aria-label="Tentang MENUJU">
             <RouterLink to="/welcome" class="brand auth-brand" aria-label="MENUJU">
-                <span class="brand__mark">m</span><span class="brand__name">menuju</span>
+                <img class="brand__mark" :src="'/images/brand/menuju-logo.png'" alt=""><span class="brand__name">menuju</span>
             </RouterLink>
             <div class="auth-story__body">
                 <div class="eyebrow"><span class="eyebrow__dot"></span> RENCANAKAN BERSAMA</div>

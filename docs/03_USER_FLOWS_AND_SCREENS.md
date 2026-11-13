@@ -19,7 +19,7 @@
 | ON-03 | Onboarding | Undang partner (skip allowed) | P | Kirim undangan |
 | ON-04 | Onboarding | Selesai | P | Ke beranda |
 | HM-01 | Beranda | Home populated | P | Buka prioritas teratas |
-| HM-02 | Beranda | Home new workspace | S | Buat tugas pertama |
+| HM-02 | Beranda | Home with sparse/new workspace data | S | Keep summary cards visible; explain each missing dataset and link to its create/manage screen |
 | JR-01 | Perjalanan | Timeline milestone | P | Lihat milestone |
 | JR-02 | Perjalanan | Detail milestone | P | Lihat tugas terkait |
 | JR-03 | Perjalanan | Add/edit milestone | M | Simpan |

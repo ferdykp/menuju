@@ -10,21 +10,24 @@ Kata kunci: warm, focused, timeless, contemporary, effortless, human, understate
 
 **Anti-pattern:** semua informasi dalam card, banyak border dalam border, form berdampingan dengan table, teks dekoratif berlebihan, header berganda, gradient terus-menerus, animasi tanpa makna, konten serupa pada menu berbeda.
 
-## 2. Foundations — usulan token awal, boleh disesuaikan lewat visual testing
+## 2. Foundations — Premium Romantic Burgundy & Warm Cream
 | Token | Nilai awal | Fungsi |
 |---|---|---|
-| `--canvas` | `#F7F4ED` | Background warm ivory |
-| `--surface` | `#FFFFFF` | Form, panel, modal |
-| `--surface-soft` | `#EFEEE5` | Alternatif ringan |
-| `--text-primary` | `#242821` | Teks utama |
-| `--text-secondary` | `#5F675C` | Deskripsi dengan kontras lebih kuat |
-| `--accent` | `#405A39` | CTA botanical yang lebih tegas |
-| `--accent-hover` | `#32492F` | Hover |
-| `--border` | `#BDC3B8` | Outline field yang terlihat |
+| `--burgundy-deep` | `#551D2B` | Heading, teks utama, dan emphasis |
+| `--burgundy` | `#762B40` | Primary action dan accent brand |
+| `--canvas` | `#F6F0E6` | Background Warm Cream |
+| `--surface` | `#FFFDF9` | Ivory untuk form, panel, dan modal |
+| `--surface-soft` | `#EEE4D6` | Permukaan lembut untuk selected state |
+| `--champagne` | `#E6D9C7` | Border halus dan dekorasi |
+| `--dusty-rose` | `#A66C75` | Accent terbatas |
+| `--text-secondary` | `#654B52` | Deskripsi dengan kontras lebih kuat |
+| `--border` | `#9E8974` | Outline field yang terlihat (3.29:1 pada Ivory) |
 | `--danger` | `#A43636` | Error/destructive |
-| `--focus` | `#3E5B3D` | Focus outline |
+| `--success` | `#28704B` | Success |
+| `--warning` | `#8A5A12` | Warning |
+| `--focus` | `#762B40` | Focus outline |
 
-Warna ini **starting point**, bukan warna final yang dipaksakan. Verifikasi kontras untuk teks, border, status, dan interactive states. Warna tidak boleh jadi satu-satunya penanda status.
+Theme dashboard MENUJU dipakai pada autentikasi, onboarding, dan aplikasi perencanaan. Tema undangan publik yang dipilih pasangan tetap independen. Rasio kontras yang dihitung: teks utama pada canvas 11.60:1, teks sekunder pada Ivory 7.71:1, dan teks putih pada primary action 9.44:1. Warna tidak boleh jadi satu-satunya penanda status.
 
 ## 3. Typography
 - Headline/hero: editorial serif elegan (misalnya Cormorant Garamond atau yang cocok setelah uji); hanya untuk headline terpilih.
