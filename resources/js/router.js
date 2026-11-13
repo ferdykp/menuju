@@ -1,34 +1,41 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import AuthPage from './pages/auth/AuthPage.vue';
-import OnboardingFlow from './pages/onboarding/OnboardingFlow.vue';
-import AppShell from './layouts/AppShell.vue';
-import InvitationAcceptPage from './pages/auth/InvitationAcceptPage.vue';
 import axios from 'axios';
 import { getRememberedUser, rememberUser } from './session';
+import { confirmUnsavedChanges } from './unsavedChanges';
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/', redirect: '/welcome' },
-        { path: '/welcome', name: 'welcome', component: AuthPage, props: { mode: 'welcome' } },
-        { path: '/login', name: 'login', component: AuthPage, props: { mode: 'login' } },
-        { path: '/register', name: 'register', component: AuthPage, props: { mode: 'register' } },
-        { path: '/forgot-password', name: 'forgot-password', component: AuthPage, props: { mode: 'forgot' } },
-        { path: '/reset-password', name: 'reset-password', component: AuthPage, props: { mode: 'reset' } },
-        { path: '/invite/:token', name: 'invite', component: InvitationAcceptPage },
-        { path: '/onboarding/workspace', name: 'onboarding-workspace', component: OnboardingFlow, props: { step: 'workspace' } },
-        { path: '/onboarding/couple', name: 'onboarding-couple', component: OnboardingFlow, props: { step: 'couple' } },
-        { path: '/onboarding/invite', name: 'onboarding-invite', component: OnboardingFlow, props: { step: 'invite' } },
-        { path: '/onboarding/done', name: 'onboarding-done', component: OnboardingFlow, props: { step: 'done' } },
-        { path: '/app/:pathMatch(.*)*', name: 'app', component: AppShell },
+        { path: '/welcome', name: 'welcome', component: () => import('./pages/auth/AuthPage.vue'), props: { mode: 'welcome' } },
+        { path: '/login', name: 'login', component: () => import('./pages/auth/AuthPage.vue'), props: { mode: 'login' } },
+        { path: '/register', name: 'register', component: () => import('./pages/auth/AuthPage.vue'), props: { mode: 'register' } },
+        { path: '/forgot-password', name: 'forgot-password', component: () => import('./pages/auth/AuthPage.vue'), props: { mode: 'forgot' } },
+        { path: '/reset-password', name: 'reset-password', component: () => import('./pages/auth/AuthPage.vue'), props: { mode: 'reset' } },
+        { path: '/invite/:token', name: 'invite', component: () => import('./pages/auth/InvitationAcceptPage.vue') },
+        { path: '/w/:slug', name: 'public-invitation', component: () => import('./pages/invitations/PublicInvitationPage.vue') },
+        { path: '/onboarding/workspace', name: 'onboarding-workspace', component: () => import('./pages/onboarding/OnboardingFlow.vue'), props: { step: 'workspace' } },
+        { path: '/onboarding/couple', name: 'onboarding-couple', component: () => import('./pages/onboarding/OnboardingFlow.vue'), props: { step: 'couple' } },
+        { path: '/onboarding/invite', name: 'onboarding-invite', component: () => import('./pages/onboarding/OnboardingFlow.vue'), props: { step: 'invite' } },
+        { path: '/onboarding/done', name: 'onboarding-done', component: () => import('./pages/onboarding/OnboardingFlow.vue'), props: { step: 'done' } },
+        { path: '/app/:pathMatch(.*)*', name: 'app', component: () => import('./layouts/AppShell.vue') },
         { path: '/:pathMatch(.*)*', redirect: '/welcome' },
     ],
-    scrollBehavior() {
+    scrollBehavior(to) {
+        if (to.hash) {
+            return {
+                el: to.hash,
+                top: 90,
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+            };
+        }
         return { top: 0 };
     },
 });
 
 router.beforeEach(async (to) => {
+    if (!await confirmUnsavedChanges()) return false;
+
     const needsSession = to.name === 'app' || to.name === 'invite' || String(to.name).startsWith('onboarding-');
     if (!needsSession) return true;
 

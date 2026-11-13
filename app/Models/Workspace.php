@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Workspace extends Model
@@ -61,4 +62,14 @@ class Workspace extends Model
     {
         return $this->hasMany(Guest::class);
     }
+
+    public function events(): HasMany { return $this->hasMany(Event::class); }
+    public function needs(): HasMany { return $this->hasMany(Need::class); }
+    public function needCategories(): HasMany { return $this->hasMany(NeedCategory::class); }
+    public function invitation(): HasOne { return $this->hasOne(Invitation::class); }
+    public function financialAccounts(): HasMany { return $this->hasMany(FinancialAccount::class); }
+    public function financialTransactions(): HasMany { return $this->hasMany(FinancialTransaction::class); }
+    public function budgetCategories(): HasMany { return $this->hasMany(BudgetCategory::class); }
+    public function savingsGoals(): HasMany { return $this->hasMany(SavingsGoal::class); }
+    public function paymentObligations(): HasMany { return $this->hasMany(PaymentObligation::class); }
 }

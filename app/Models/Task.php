@@ -15,6 +15,7 @@ class Task extends Model
     protected $fillable = [
         'workspace_id',
         'milestone_id',
+        'event_id',
         'created_by',
         'assignee_id',
         'title',
@@ -39,6 +40,11 @@ class Task extends Model
     public function milestone(): BelongsTo
     {
         return $this->belongsTo(Milestone::class);
+    }
+
+    public function event(): BelongsTo
+    {
+        return $this->belongsTo(Event::class);
     }
 
     public function creator(): BelongsTo

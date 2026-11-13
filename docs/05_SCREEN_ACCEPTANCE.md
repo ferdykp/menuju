@@ -19,6 +19,7 @@ Gunakan satu baris untuk **setiap ID** di `03_USER_FLOWS_AND_SCREENS.md`.
 **Prinsip:** tabel ini hanya contoh awal; *wajib* diperluas ke seluruh ID inventaris, bukan hanya baris di atas. Jangan mengubah “Not started” menjadi “Verified” tanpa hasil uji.
 
 ## 3. Checklist UI per index
+- [ ] Filter acara mendukung semua acara, acara tertentu, dan tugas umum; ringkasan progres mengikuti acara yang dipilih.
 - [ ] H1 jelas, tidak diulang di card besar.
 - [ ] Satu primary action tampak dalam 5 detik.
 - [ ] List/table/gallery menjadi konten utama sesuai domain.
@@ -30,6 +31,7 @@ Gunakan satu baris untuk **setiap ID** di `03_USER_FLOWS_AND_SCREENS.md`.
 - [ ] Empty/loading/error/populated dapat ditinjau.
 
 ## 4. Checklist form/modals/drawers
+- [ ] Form tugas dapat mengaitkan tugas ke acara secara opsional dan mempertahankan pilihan pada edit.
 - [ ] Form terpisah dari index (kecuali settings atau workflow dengan alasan jelas).
 - [ ] Input memiliki label, border, focus, error dan disabled state.
 - [ ] Save, cancel, close bekerja; unsaved changes diproteksi.
@@ -39,6 +41,11 @@ Gunakan satu baris untuk **setiap ID** di `03_USER_FLOWS_AND_SCREENS.md`.
 - [ ] Error API tidak menampilkan stack trace ke end user.
 - [ ] Aksi destructive meminta konfirmasi akurat.
 
+## Checklist per acara
+- [ ] Detail acara menampilkan tugas terkait, jumlah selesai, dan persentase progres; tugas umum tidak ikut dihitung.
+- [ ] Tombol dari detail acara membuka Checklist terfilter dan tombol tambah membuka form dengan acara tersebut terpilih.
+- [ ] Menghapus acara melepas tugas ke Umum tanpa menghapus tugasnya.
+
 ## 5. Checklist keuangan
 - [ ] Seluruh field uang pakai `id-ID` dengan `Rp` dan separator ribuan.
 - [ ] Nilai API tidak menyimpan string berformat mata uang.
@@ -46,6 +53,11 @@ Gunakan satu baris untuk **setiap ID** di `03_USER_FLOWS_AND_SCREENS.md`.
 - [ ] Jumlah dalam dashboard sesuai data sumber.
 - [ ] Setoran ≠ pemasukan otomatis kecuali workflow jelas.
 - [ ] Kebutuhan yang direncanakan ≠ transaksi yang sudah dibayar.
+- [ ] Kategori kebutuhan dipilih dari daftar workspace; tambah kategori baru tersedia dari form tanpa mengetik ulang label untuk setiap item.
+- [ ] Filter kategori menampilkan jumlah item, estimasi belum dibeli, dan realisasi pembelian kategori tersebut.
+- [ ] Form kebutuhan menyediakan pilihan satu acara aktif pada workspace atau “Umum / tanpa acara”; filter acara membatasi daftar kebutuhan dan dapat direset.
+- [ ] Detail acara menunjukkan kebutuhan tertaut, jumlah item, subtotal estimasi belum dibeli dan realisasi pembelian; keadaan tanpa item memiliki pesan dan CTA yang jelas.
+- [ ] Menghapus acara tidak menghapus kebutuhan; kebutuhan terkait menjadi “Umum / tanpa acara”, termasuk catatan yang sudah diarsipkan.
 - [ ] Transfer rekening tidak dihitung sebagai pengeluaran total.
 - [ ] Penghapusan/pembatalan transaksi mengikuti aturan audit.
 - [ ] User tidak melihat akun/workspace lain.

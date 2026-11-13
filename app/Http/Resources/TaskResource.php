@@ -18,6 +18,10 @@ class TaskResource extends JsonResource
                 'id' => $this->milestone->id,
                 'title' => $this->milestone->title,
             ] : null),
+            'event' => $this->whenLoaded('event', fn () => $this->event ? [
+                'id' => $this->event->id,
+                'title' => $this->event->title,
+            ] : null),
             'assignee' => $this->whenLoaded('assignee', fn () => $this->assignee ? [
                 'id' => $this->assignee->id,
                 'name' => $this->assignee->name,

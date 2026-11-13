@@ -8,11 +8,15 @@ const props = defineProps({ mode: { type: String, required: true } });
 const router = useRouter();
 const route = useRoute();
 const busy = ref(false);
-const notice = ref('');
-const errorSummary = ref('');
+const registrationStage = ref(route.query.verify_email ? 'verify' : 'details');
+const verificationCode = ref('');
+const notice = ref(route.query.oauth_notice === 'otp_sent' ? 'Kode konfirmasi dikirim ke email Google kamu.' : '');
+const errorSummary = ref(route.query.oauth_error === 'otp_delivery_failed' ? 'Email OTP belum terkirim. Periksa SMTP, lalu pilih kirim ulang kode.' : '');
 const errors = ref({});
 const form = reactive({ name: '', email: '', password: '', password_confirmation: '', remember: false });
-form.email = typeof route.query.email === 'string' ? route.query.email : '';
+form.email = typeof route.query.verify_email === 'string'
+    ? route.query.verify_email
+    : typeof route.query.email === 'string' ? route.query.email : '';
 
 const title = computed(() => ({
     welcome: 'Rencanakan hari spesial dengan lebih tenang.',
@@ -30,6 +34,20 @@ const description = computed(() => ({
     reset: 'Gunakan kata sandi yang kuat dan mudah kamu ingat.',
 }[props.mode]));
 
+const googleError = computed(() => ({
+    google_not_configured: 'Login Google belum aktif. Konfigurasi OAuth aplikasi terlebih dahulu.',
+    invalid_state: 'Sesi Google tidak valid. Silakan coba lagi.',
+    cancelled: 'Proses Google dibatalkan.',
+    unavailable: 'Layanan Google sedang tidak dapat dijangkau. Coba lagi.',
+    failed: 'Login Google belum berhasil. Silakan coba lagi.',
+    unverified_email: 'Google belum mengonfirmasi alamat email akun ini.',
+    account_conflict: 'Akun Google ini sudah terhubung ke akun MENUJU lain.',
+}[route.query.oauth_error] ?? 'Login Google belum berhasil. Silakan coba lagi.'));
+const googleAuthUrl = computed(() => {
+    const redirect = typeof route.query.redirect === 'string' ? route.query.redirect : '';
+    return `/auth/google/redirect?flow=${props.mode}&redirect=${encodeURIComponent(redirect)}`;
+});
+
 async function submit() {
     busy.value = true;
     errors.value = {};
@@ -38,7 +56,14 @@ async function submit() {
 
     try {
         if (props.mode === 'register') {
-            const { data } = await axios.post('/api/auth/register', form);
+            if (registrationStage.value === 'details') {
+                const { data } = await axios.post('/api/auth/register', form);
+                registrationStage.value = 'verify';
+                notice.value = data.message;
+                return data;
+            }
+
+            const { data } = await axios.post('/api/auth/register/verify', { email: form.email, code: verificationCode.value });
             rememberUser(data.user);
             router.push(validPostAuthPath(route.query.redirect) ?? '/onboarding/workspace');
             return data;
@@ -72,6 +97,22 @@ async function submit() {
     } catch (error) {
         errors.value = error.response?.data?.errors ?? {};
         errorSummary.value = error.response?.data?.message ?? 'Belum berhasil. Periksa kembali isianmu dan coba lagi.';
+    } finally {
+        busy.value = false;
+    }
+}
+
+async function resendRegistrationCode() {
+    busy.value = true;
+    errors.value = {};
+    errorSummary.value = '';
+    notice.value = '';
+    try {
+        const { data } = await axios.post('/api/auth/register/resend-code', { email: form.email });
+        notice.value = data.message;
+    } catch (error) {
+        errors.value = error.response?.data?.errors ?? {};
+        errorSummary.value = error.response?.data?.message ?? 'Kode belum berhasil dikirim ulang.';
     } finally {
         busy.value = false;
     }
@@ -118,7 +159,22 @@ function validPostAuthPath(path) {
                     <h1>{{ title }}</h1>
                     <p class="auth-description">{{ description }}</p>
 
+                    <template v-if="(mode === 'login' || mode === 'register') && (mode !== 'register' || registrationStage === 'details')">
+                        <a class="button button--google" :href="googleAuthUrl">
+                            <svg aria-hidden="true" viewBox="0 0 48 48" class="google-mark">
+                                <path fill="#4285F4" d="M48 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h13.52c-.59 3.04-2.3 5.62-4.85 7.35l7.85 6.09C45.1 38.09 48 31.8 48 24.55Z" />
+                                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.91-5.8l-7.85-6.09c-2.18 1.46-4.96 2.32-8.06 2.32-6.19 0-11.43-4.18-13.3-9.8l-8.09 6.26C6.55 42.73 14.62 48 24 48Z" />
+                                <path fill="#FBBC05" d="M10.7 28.63A14.4 14.4 0 0 1 9.92 24c0-1.6.28-3.15.78-4.63l-8.09-6.26A23.9 23.9 0 0 0 0 24c0 3.87.93 7.53 2.61 10.89l8.09-6.26Z" />
+                                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.55 5.27 2.61 13.11l8.09 6.26C12.57 13.68 17.81 9.5 24 9.5Z" />
+                            </svg>
+                            Lanjutkan dengan Google
+                        </a>
+                        <div class="auth-divider"><span>atau dengan email</span></div>
+                        <p v-if="route.query.oauth_error" class="form-alert form-alert--error" role="alert">{{ googleError }}</p>
+                    </template>
+
                     <form class="auth-form" novalidate @submit.prevent="submit">
+                        <template v-if="mode !== 'register' || registrationStage === 'details'">
                         <label v-if="mode === 'register'" class="field">
                             <span>Nama kamu</span>
                             <input v-model.trim="form.name" autocomplete="name" placeholder="Contoh: Ayu Pratami" :aria-invalid="Boolean(errors.name)" required>
@@ -141,6 +197,16 @@ function validPostAuthPath(path) {
                             <span>Ulangi kata sandi</span>
                             <input v-model="form.password_confirmation" type="password" autocomplete="new-password" placeholder="Ketik ulang kata sandi" required>
                         </label>
+                        </template>
+
+                        <template v-else>
+                            <p class="auth-description">Masukkan kode enam digit yang kami kirim ke <strong>{{ form.email }}</strong>.</p>
+                            <label class="field">
+                                <span>Kode konfirmasi</span>
+                                <input v-model.trim="verificationCode" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="[0-9]{6}" placeholder="000000" :aria-invalid="Boolean(errors.code)" required>
+                                <small v-if="errors.code" class="field-error">{{ errors.code[0] }}</small>
+                            </label>
+                        </template>
 
                         <div v-if="mode === 'login'" class="auth-form__options">
                             <label class="check-field"><input v-model="form.remember" type="checkbox"><span>Ingat saya</span></label>
@@ -151,10 +217,15 @@ function validPostAuthPath(path) {
                         <p v-if="notice" class="form-alert form-alert--success" role="status">{{ notice }}</p>
 
                         <button class="button button--primary auth-submit" type="submit" :disabled="busy">
-                            <span>{{ busy ? 'Mohon tunggu…' : mode === 'login' ? 'Masuk' : mode === 'register' ? 'Buat akun' : mode === 'forgot' ? 'Kirim tautan' : 'Simpan kata sandi' }}</span>
+                            <span>{{ busy ? 'Mohon tunggu…' : mode === 'login' ? 'Masuk' : mode === 'register' ? registrationStage === 'details' ? 'Kirim kode konfirmasi' : 'Konfirmasi email' : mode === 'forgot' ? 'Kirim tautan' : 'Simpan kata sandi' }}</span>
                             <FaIcon v-if="!busy" :icon="['fas', 'arrow-right']" aria-hidden="true" />
                         </button>
                     </form>
+
+                    <div v-if="mode === 'register' && registrationStage === 'verify'" class="auth-form__options">
+                        <button class="text-link" type="button" :disabled="busy" @click="resendRegistrationCode">Kirim ulang kode</button>
+                        <button class="text-link" type="button" :disabled="busy" @click="registrationStage = 'details'; verificationCode = ''; notice = ''; errorSummary = ''">Ubah email</button>
+                    </div>
 
                     <p v-if="mode === 'login'" class="auth-switch">Belum punya akun? <RouterLink to="/register">Daftar gratis</RouterLink></p>
                     <p v-else class="auth-switch"><RouterLink to="/login">Kembali ke masuk</RouterLink></p>

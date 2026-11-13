@@ -3,6 +3,7 @@ import axios from 'axios';
 import { computed, onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
+import { formatRupiah } from '../../utils/money';
 const props = defineProps({ workspaceId: { type: [String, Number], required: true }, workspace: { type: Object, required: true } });
 const loading = ref(true);
 const error = ref('');
@@ -71,13 +72,25 @@ onMounted(load);
             </div>
 
             <template v-else>
-                <section class="home-metrics" aria-label="Progres persiapan">
+                <section class="home-metrics" aria-label="Progres rencana dan bersama">
                     <article class="home-metric">
                         <span class="home-metric__label">PROGRES CHECKLIST</span>
                         <h2>Kesiapan rencana</h2>
-                        <div class="home-metric__value"><strong>{{ data.tasks.completed }} <small>dari {{ data.tasks.total }} selesai</small></strong><b>{{ data.tasks.completion_percent }}%</b></div>
+                        <div class="home-metric__value"><strong><AnimatedNumber :value="data.tasks.completed" /> <small>dari {{ data.tasks.total }} selesai</small></strong><b><AnimatedNumber :value="data.tasks.completion_percent" suffix="%" /></b></div>
                         <div class="progress-track"><span :style="{ width: `${data.tasks.completion_percent}%` }"></span></div>
                         <p>{{ data.tasks.open }} tugas masih perlu perhatian</p>
+                    </article>
+                    <article class="home-metric home-metric--compact">
+                        <span class="home-metric__label">KAS BERSAMA</span><h2>Target tabungan</h2>
+                        <div class="home-metric__value"><strong><AnimatedNumber :value="data.finance.saved" currency /></strong><b><AnimatedNumber :value="data.finance.savings_target ? Math.min(100, Math.round(data.finance.saved / data.finance.savings_target * 100)) : 0" suffix="%" /></b></div>
+                        <div class="progress-track"><span :style="{ width: `${data.finance.savings_target ? Math.min(100, data.finance.saved / data.finance.savings_target * 100) : 0}%` }"></span></div>
+                        <p>dari target {{ formatRupiah(data.finance.savings_target) }}</p><RouterLink class="text-link" to="/app/savings">Lihat tabungan <FaIcon :icon="['fas', 'arrow-right']" aria-hidden="true" /></RouterLink>
+                    </article>
+                    <article class="home-metric home-metric--compact">
+                        <span class="home-metric__label">KEHADIRAN UNDANGAN</span><h2>Konfirmasi tamu</h2>
+                        <div class="home-metric__value"><strong><AnimatedNumber :value="data.guests.attending" /> <small>hadir</small></strong><b><AnimatedNumber :value="data.guests.total ? Math.round(data.guests.attending / data.guests.total * 100) : 0" suffix="%" /></b></div>
+                        <div class="progress-track"><span :style="{ width: `${data.guests.total ? Math.min(100, data.guests.attending / data.guests.total * 100) : 0}%` }"></span></div>
+                        <p>{{ data.guests.invited }} undangan terkirim dari {{ data.guests.total }} tamu</p><RouterLink class="text-link" to="/app/guests">Lihat daftar tamu <FaIcon :icon="['fas', 'arrow-right']" aria-hidden="true" /></RouterLink>
                     </article>
                     <article class="home-next">
                         <div class="eyebrow"><span class="eyebrow__dot"></span> LANGKAH PENTING BERIKUTNYA</div>
@@ -90,6 +103,12 @@ onMounted(load);
                             </RouterLink>
                         </div>
                         <div v-else class="home-task-empty">Belum ada tugas dengan tenggat minggu ini. Kalian bisa menambahkan satu dari checklist.</div>
+                    </article>
+                    <article class="home-payment">
+                        <div class="eyebrow"><span class="eyebrow__dot"></span> JATUH TEMPO TERDEKAT</div>
+                        <template v-if="data.next_payment"><h2>{{ data.next_payment.title }}</h2><p>{{ formatDate(data.next_payment.due_at) }}</p><strong>{{ formatRupiah(data.next_payment.total_amount) }}</strong><RouterLink class="button button--primary" to="/app/budgets">Lihat pembayaran</RouterLink></template>
+                        <p v-else class="home-task-empty">Belum ada pembayaran terjadwal.</p>
+                        <div v-if="data.next_event" class="home-event"><span class="eyebrow">ACARA BERIKUTNYA</span><strong>{{ data.next_event.title }}</strong><small>{{ formatDate(data.next_event.event_date) }} · {{ data.next_event.venue_name || 'Lokasi belum ditentukan' }}</small><RouterLink class="text-link" to="/app/events">Lihat acara <FaIcon :icon="['fas','arrow-right']" /></RouterLink></div>
                     </article>
                 </section>
                 <section v-if="data.tasks.open === 0" class="home-congrats"><FaIcon :icon="['fas', 'circle-check']" aria-hidden="true" /><span>Semua tugas selesai. Luangkan waktu untuk menikmati progres kalian.</span></section>

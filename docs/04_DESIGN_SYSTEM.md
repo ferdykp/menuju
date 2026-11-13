@@ -13,16 +13,16 @@ Kata kunci: warm, focused, timeless, contemporary, effortless, human, understate
 ## 2. Foundations — usulan token awal, boleh disesuaikan lewat visual testing
 | Token | Nilai awal | Fungsi |
 |---|---|---|
-| `--canvas` | `#F8F6F2` | Background warm ivory |
+| `--canvas` | `#F7F4ED` | Background warm ivory |
 | `--surface` | `#FFFFFF` | Form, panel, modal |
-| `--surface-soft` | `#F1EEE8` | Alternatif ringan |
+| `--surface-soft` | `#EFEEE5` | Alternatif ringan |
 | `--text-primary` | `#242821` | Teks utama |
-| `--text-secondary` | `#676E64` | Deskripsi |
-| `--accent` | `#55644D` | CTA muted botanical |
-| `--accent-hover` | `#43503D` | Hover |
-| `--border` | `#C9CDC6` | Outline field yang terlihat |
+| `--text-secondary` | `#5F675C` | Deskripsi dengan kontras lebih kuat |
+| `--accent` | `#405A39` | CTA botanical yang lebih tegas |
+| `--accent-hover` | `#32492F` | Hover |
+| `--border` | `#BDC3B8` | Outline field yang terlihat |
 | `--danger` | `#A43636` | Error/destructive |
-| `--focus` | `#536A54` | Focus outline |
+| `--focus` | `#3E5B3D` | Focus outline |
 
 Warna ini **starting point**, bukan warna final yang dipaksakan. Verifikasi kontras untuk teks, border, status, dan interactive states. Warna tidak boleh jadi satu-satunya penanda status.
 

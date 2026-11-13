@@ -26,9 +26,21 @@ php artisan migrate
 npm run dev
 ```
 
+Seed the local development workspace after migrating:
+
+```sh
+php artisan db:seed
+```
+
+`DatabaseSeeder` calls `MenujuDemoSeeder`, which creates an idempotent, connected sample workspace covering onboarding/membership, milestones and tasks, events and agenda, guests/RSVP, invitation and gallery, needs, accounts/transactions, budgets/payments, and savings/deposits. The sample invitation is always left as a **draft**. Seeder execution is restricted to `local` and `testing` environments. Demo sign-in accounts are `ayu@demo.menuju.test` and `bima@demo.menuju.test`; the default password is `password` and can be overridden with `MENUJU_DEMO_PASSWORD` in the local environment. Do not use these demo credentials outside local development.
+
 Open `http://localhost:8000` in a second terminal after running `php artisan serve`. Local MySQL is exposed on port 3306 with database `menuju`, user `root`, and password `local`. Set a private `APP_KEY` and real credentials per environment; never commit `.env`.
 
-Composer and npm dependencies are installed and the Vite production build succeeds. Docker/MySQL could not be started in the local environment, so migration and feature coverage currently runs on SQLite; MySQL compatibility still needs a real service check. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) for per-screen status and test evidence.
+Composer and npm dependencies are installed and the Vite production build succeeds. Feature coverage currently runs on SQLite. A local MySQL 9 daemon is present, but its root credentials do not match the documented local development credentials and Docker is unavailable, so MySQL migration/feature verification remains pending. See [`docs/DEVELOPMENT_PROGRESS.md`](docs/DEVELOPMENT_PROGRESS.md) for per-screen status and test evidence.
+
+## Production readiness
+
+This repository is not yet cleared for a public production launch. Use [`docs/PRODUCTION_DEPLOYMENT.md`](docs/PRODUCTION_DEPLOYMENT.md) for the release gates and provider-neutral server setup notes. `.env.production.example` is a safe configuration reference; inject real secrets through the server's environment/secret manager, and never copy local demo values into production.
 
 ## Product implementation status
 

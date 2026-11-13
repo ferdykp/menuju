@@ -39,7 +39,7 @@ class GuestController extends Controller
                 'per_page' => $guests->perPage(), 'total' => $guests->total(),
                 'summary' => [
                     'total' => $base->count(),
-                    'attending' => (clone $base)->where('rsvp_status', 'attending')->sum(DB::raw('1 + plus_ones')),
+                    'attending' => (clone $base)->where('rsvp_status', 'attending')->sum(DB::raw('1 + rsvp_plus_ones')),
                     'pending' => (clone $base)->where('rsvp_status', 'pending')->count(),
                     'declined' => (clone $base)->where('rsvp_status', 'declined')->count(),
                 ],
@@ -66,6 +66,71 @@ class GuestController extends Controller
         return response()->json(['guest' => $guest], 201);
     }
 
+    public function previewImport(Request $request, Workspace $workspace): JsonResponse
+    {
+        $this->authorize('view', $workspace);
+        $data = $request->validate(['guests' => ['required', 'array', 'min:1', 'max:500']] + $this->importRowRules());
+        $existingEmails = $workspace->guests()->whereNotNull('email')->pluck('email')
+            ->map(fn ($email) => mb_strtolower(trim($email)))->flip()->all();
+        $seen = [];
+        $eligible = [];
+        $duplicates = [];
+
+        foreach ($data['guests'] as $index => $row) {
+            $email = isset($row['email']) && trim($row['email']) !== '' ? mb_strtolower(trim($row['email'])) : null;
+            $sourceRow = (int) ($row['source_row'] ?? $index + 2);
+            if ($email && isset($existingEmails[$email])) {
+                $duplicates[] = ['row' => $sourceRow, 'email' => $email, 'reason' => 'Email sudah ada di daftar tamu.'];
+                continue;
+            }
+            if ($email && isset($seen[$email])) {
+                $duplicates[] = ['row' => $sourceRow, 'email' => $email, 'reason' => 'Email berulang di dalam file.'];
+                continue;
+            }
+            if ($email) $seen[$email] = true;
+            $eligible[] = $row + ['email' => $email];
+        }
+
+        return response()->json(['eligible' => $eligible, 'duplicates' => $duplicates]);
+    }
+
+    public function import(Request $request, Workspace $workspace): JsonResponse
+    {
+        $this->authorize('view', $workspace);
+        $data = $request->validate(['guests' => ['required', 'array', 'min:1', 'max:500']] + $this->importRowRules());
+        $existing = $workspace->guests()->whereNotNull('email')->pluck('email')->map(fn ($email) => mb_strtolower(trim($email)))->all();
+        $seen = array_fill_keys($existing, true);
+        $created = 0;
+        $duplicates = [];
+        DB::transaction(function () use ($data, $workspace, $request, &$seen, &$created, &$duplicates): void {
+            foreach ($data['guests'] as $index => $row) {
+                $email = isset($row['email']) ? mb_strtolower(trim($row['email'])) : null;
+                if ($email && isset($seen[$email])) { $duplicates[] = ['row' => (int) ($row['source_row'] ?? $index + 2), 'email' => $email, 'reason' => 'Email sudah ada di daftar tamu.']; continue; }
+                if ($email) $seen[$email] = true;
+                $workspace->guests()->create([
+                    'created_by' => $request->user()->id, 'name' => trim($row['name']), 'email' => $email,
+                    'phone' => $row['phone'] ?? null, 'group_name' => $row['group_name'] ?? null,
+                    'side' => $row['side'] ?? 'shared', 'invitation_status' => 'not_sent', 'rsvp_status' => 'pending',
+                    'plus_ones' => 0, 'notes' => null,
+                ]);
+                $created++;
+            }
+        });
+        return response()->json(['created' => $created, 'duplicates' => $duplicates], 201);
+    }
+
+    private function importRowRules(): array
+    {
+        return [
+            'guests.*.name' => ['required', 'string', 'max:160'],
+            'guests.*.email' => ['nullable', 'email', 'max:255'],
+            'guests.*.phone' => ['nullable', 'string', 'max:40'],
+            'guests.*.group_name' => ['nullable', 'string', 'max:100'],
+            'guests.*.side' => ['nullable', Rule::in(['bride', 'groom', 'shared'])],
+            'guests.*.source_row' => ['nullable', 'integer', 'min:2', 'max:10000'],
+        ];
+    }
+
     public function show(Guest $guest): JsonResponse
     {
         $this->authorize('view', $guest);
@@ -81,6 +146,9 @@ class GuestController extends Controller
         $this->ensureUniqueEmail($guest->workspace, $email, $guest->id);
         if (isset($data['email'])) {
             $data['email'] = mb_strtolower(trim($data['email']));
+        }
+        if (array_key_exists('rsvp_status', $data)) {
+            $data['rsvp_plus_ones'] = $data['rsvp_status'] === 'attending' ? (int) ($data['plus_ones'] ?? $guest->rsvp_plus_ones ?? 0) : 0;
         }
         $guest->update($data);
 

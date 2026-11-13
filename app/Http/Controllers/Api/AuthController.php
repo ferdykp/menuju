@@ -4,11 +4,15 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
+use App\Mail\RegistrationVerificationCode;
 use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
@@ -19,11 +23,104 @@ class AuthController extends Controller
 {
     public function register(RegisterRequest $request): JsonResponse
     {
-        $user = User::create($request->validated());
+        $data = $request->validated();
+        $code = (string) random_int(100000, 999999);
+
+        DB::table('pending_email_verifications')->updateOrInsert(
+            ['email' => $data['email']],
+            [
+                'name' => $data['name'],
+                'password' => Hash::make($data['password']),
+                'google_id' => null,
+                'code_hash' => Hash::make($code),
+                'expires_at' => now()->addMinutes(10),
+                'attempts' => 0,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        );
+
+        $this->sendRegistrationCode($data['email'], $code);
+
+        return response()->json(['message' => 'Kode konfirmasi telah dikirim ke email kamu.', 'email' => $data['email']], 202);
+    }
+
+    public function verifyRegistration(Request $request): JsonResponse
+    {
+        $data = $request->validate([
+            'email' => ['required', 'email:rfc', 'max:255'],
+            'code' => ['required', 'digits:6'],
+        ]);
+        $email = Str::lower(trim($data['email']));
+
+        $user = DB::transaction(function () use ($email, $data): ?User {
+            $pending = DB::table('pending_email_verifications')->where('email', $email)->lockForUpdate()->first();
+
+            if (! $pending || now()->greaterThan($pending->expires_at) || $pending->attempts >= 5) {
+                return null;
+            }
+
+            if (! Hash::check($data['code'], $pending->code_hash)) {
+                DB::table('pending_email_verifications')->where('email', $email)->increment('attempts');
+                return null;
+            }
+
+            $user = User::firstOrCreate(
+                ['email' => $email],
+                [
+                    'name' => $pending->name,
+                    'password' => $pending->password,
+                    'google_id' => $pending->google_id,
+                    'email_verified_at' => now(),
+                ],
+            );
+
+            if ($pending->google_id && $user->google_id && $user->google_id !== $pending->google_id) {
+                throw ValidationException::withMessages(['code' => 'Akun Google ini sudah terhubung ke akun MENUJU lain.']);
+            }
+            if ($pending->google_id && ! $user->google_id) {
+                $user->forceFill(['google_id' => $pending->google_id])->save();
+            }
+            DB::table('pending_email_verifications')->where('email', $email)->delete();
+
+            return $user;
+        });
+
+        if (! $user) {
+            throw ValidationException::withMessages(['code' => 'Kode tidak valid, terlalu banyak dicoba, atau sudah kedaluwarsa. Kirim kode baru untuk mencoba lagi.']);
+        }
+
         Auth::login($user);
         $request->session()->regenerate();
 
-        return response()->json(['user' => $this->userPayload($user)], 201);
+        return response()->json(['user' => $this->userPayload($user)]);
+    }
+
+    public function resendRegistrationCode(Request $request): JsonResponse
+    {
+        $data = $request->validate(['email' => ['required', 'email:rfc', 'max:255']]);
+        $email = Str::lower(trim($data['email']));
+        $pending = DB::table('pending_email_verifications')->where('email', $email)->first();
+
+        if (! $pending) {
+            throw ValidationException::withMessages(['email' => 'Mulai pendaftaran kembali untuk menerima kode konfirmasi.']);
+        }
+
+        $code = (string) random_int(100000, 999999);
+        DB::table('pending_email_verifications')->where('email', $email)->update([
+            'code_hash' => Hash::make($code),
+            'expires_at' => now()->addMinutes(10),
+            'attempts' => 0,
+            'updated_at' => now(),
+        ]);
+        $this->sendRegistrationCode($email, $code);
+
+        return response()->json(['message' => 'Kode konfirmasi baru telah dikirim.']);
+    }
+
+    private function sendRegistrationCode(string $email, string $code): void
+    {
+        Mail::to($email)->send(new RegistrationVerificationCode($code));
     }
 
     public function login(Request $request): JsonResponse

@@ -11,7 +11,8 @@ class FoundationTest extends TestCase
         $this->getJson('/api/health')
             ->assertOk()
             ->assertJsonPath('name', 'MENUJU')
-            ->assertJsonPath('status', 'ok');
+            ->assertJsonPath('status', 'ok')
+            ->assertJsonPath('checks.database', 'ok');
     }
 
     public function test_root_serves_the_vue_application_shell(): void

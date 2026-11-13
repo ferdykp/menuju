@@ -14,12 +14,12 @@ class Guest extends Model
 
     protected $fillable = [
         'workspace_id', 'created_by', 'name', 'email', 'phone', 'group_name', 'side',
-        'invitation_status', 'rsvp_status', 'plus_ones', 'notes',
+        'invitation_status', 'rsvp_status', 'plus_ones', 'rsvp_plus_ones', 'notes',
     ];
 
     protected function casts(): array
     {
-        return ['plus_ones' => 'integer'];
+        return ['plus_ones' => 'integer', 'rsvp_plus_ones' => 'integer'];
     }
 
     public function workspace(): BelongsTo

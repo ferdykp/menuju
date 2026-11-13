@@ -40,6 +40,7 @@ LAINNYA
 | Area | Keputusan | Alasan |
 |---|---|---|
 | Perjalanan vs Checklist | **Terpisah**, saling taut | Timeline milestone ≠ daftar tugas harian |
+| Acara vs Checklist | **Terpisah**, saling taut | Detail acara menampilkan progres; tugas per acara tetap dibuat dan dikelola di Checklist |
 | Kebutuhan vs Anggaran | **Terpisah**, relasi data | Item belanja ≠ rencana kategori biaya |
 | Tabungan vs Akun | **Terpisah**, relasi alokasi | Tujuan menabung ≠ saldo rekening |
 | Transaksi vs Akun | **Terpisah**, taut dari detail akun | Riwayat aktivitas ≠ daftar sumber dana |

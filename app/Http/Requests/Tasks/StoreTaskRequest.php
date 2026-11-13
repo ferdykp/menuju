@@ -23,6 +23,7 @@ class StoreTaskRequest extends FormRequest
             'description' => ['nullable', 'string', 'max:2000'],
             'category' => ['required', 'string', 'max:80'],
             'milestone_id' => ['nullable', 'integer', Rule::exists('milestones', 'id')->where(fn ($query) => $query->where('workspace_id', $workspace->id))],
+            'event_id' => ['nullable', 'integer', Rule::exists('events', 'id')->where(fn ($query) => $query->where('workspace_id', $workspace->id)->whereNull('deleted_at'))],
             'assignee_id' => [
                 'nullable',
                 'integer',

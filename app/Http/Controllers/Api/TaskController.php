@@ -17,7 +17,7 @@ class TaskController extends Controller
     {
         $this->authorize('view', $workspace);
 
-        $query = $workspace->tasks()->with(['assignee:id,name', 'creator:id,name', 'milestone:id,title']);
+        $query = $workspace->tasks()->with(['assignee:id,name', 'creator:id,name', 'milestone:id,title', 'event:id,title']);
 
         if ($search = trim((string) $request->query('q', ''))) {
             $query->where(fn ($builder) => $builder
@@ -31,6 +31,12 @@ class TaskController extends Controller
             }
         }
 
+        if ($request->query('event_id') === 'none') {
+            $query->whereNull('event_id');
+        } elseif ($request->filled('event_id')) {
+            $query->where('event_id', $request->integer('event_id'));
+        }
+
         $tasks = $query
             ->orderByRaw('due_at IS NULL')
             ->orderBy('due_at')
@@ -38,8 +44,14 @@ class TaskController extends Controller
             ->paginate(min(max((int) $request->query('per_page', 20), 1), 50))
             ->withQueryString();
 
-        $total = $workspace->tasks()->count();
-        $completed = $workspace->tasks()->where('status', 'completed')->count();
+        $summaryQuery = $workspace->tasks();
+        if ($request->query('event_id') === 'none') {
+            $summaryQuery->whereNull('event_id');
+        } elseif ($request->filled('event_id')) {
+            $summaryQuery->where('event_id', $request->integer('event_id'));
+        }
+        $total = (clone $summaryQuery)->count();
+        $completed = (clone $summaryQuery)->where('status', 'completed')->count();
 
         return response()->json([
             'data' => TaskResource::collection($tasks)->resolve(),
@@ -73,7 +85,7 @@ class TaskController extends Controller
         ]);
 
         return response()->json([
-            'task' => (new TaskResource($task->load(['assignee:id,name', 'creator:id,name', 'milestone:id,title'])))->resolve(),
+            'task' => (new TaskResource($task->load(['assignee:id,name', 'creator:id,name', 'milestone:id,title', 'event:id,title'])))->resolve(),
         ], 201);
     }
 
@@ -82,7 +94,7 @@ class TaskController extends Controller
         $this->authorize('view', $task);
 
         return response()->json([
-            'task' => (new TaskResource($task->load(['assignee:id,name', 'creator:id,name'])))->resolve(),
+            'task' => (new TaskResource($task->load(['assignee:id,name', 'creator:id,name', 'milestone:id,title', 'event:id,title'])))->resolve(),
         ]);
     }
 
@@ -96,7 +108,7 @@ class TaskController extends Controller
         $task->update($data);
 
         return response()->json([
-            'task' => (new TaskResource($task->refresh()->load(['assignee:id,name', 'creator:id,name', 'milestone:id,title'])))->resolve(),
+            'task' => (new TaskResource($task->refresh()->load(['assignee:id,name', 'creator:id,name', 'milestone:id,title', 'event:id,title'])))->resolve(),
         ]);
     }
 

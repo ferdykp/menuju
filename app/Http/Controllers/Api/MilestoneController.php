@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Milestone;
 use App\Models\Workspace;
+use App\Support\PaginationMeta;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -14,16 +15,22 @@ class MilestoneController extends Controller
     {
         abort_unless($workspace->members()->where('users.id', $request->user()->id)->wherePivot('status', 'active')->exists(), 403);
 
-        $milestones = $workspace->milestones()
+        $query = $workspace->milestones()
             ->withCount('tasks')
             ->withCount(['tasks as completed_tasks_count' => fn ($query) => $query->where('status', 'done')])
             ->with(['tasks:id,milestone_id,title,status,due_at,assignee_id'])
             ->orderByRaw('target_date is null')
             ->orderBy('target_date')
-            ->orderBy('sort_order')
-            ->get();
+            ->orderBy('sort_order');
+        $milestones = $query->paginate(min(max($request->integer('per_page', 20), 1), 100));
+        $total = $workspace->milestones()->count();
+        $completed = $workspace->milestones()->where('status', 'done')->count();
 
-        return response()->json(['milestones' => $milestones->map(fn (Milestone $milestone) => $this->serialize($milestone))]);
+        return response()->json([
+            'milestones' => $milestones->getCollection()->map(fn (Milestone $milestone) => $this->serialize($milestone)),
+            'pagination' => PaginationMeta::from($milestones),
+            'summary' => ['total' => $total, 'completed' => $completed],
+        ]);
     }
 
     public function store(Request $request, Workspace $workspace)

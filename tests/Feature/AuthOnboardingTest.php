@@ -5,8 +5,10 @@ namespace Tests\Feature;
 use App\Models\User;
 use App\Models\Workspace;
 use App\Models\WorkspaceInvitation;
+use App\Mail\RegistrationVerificationCode;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Tests\TestCase;
 
 class AuthOnboardingTest extends TestCase
@@ -15,6 +17,7 @@ class AuthOnboardingTest extends TestCase
 
     public function test_registration_creates_a_session_and_hashes_the_password(): void
     {
+        Mail::fake();
         $response = $this->postJson('/api/auth/register', [
             'name' => 'Ayu Pratami',
             'email' => 'ayu@example.test',
@@ -22,7 +25,23 @@ class AuthOnboardingTest extends TestCase
             'password_confirmation' => 'Wedding2027',
         ]);
 
-        $response->assertCreated()
+        $response->assertAccepted()
+            ->assertJsonPath('email', 'ayu@example.test');
+
+        $code = null;
+        Mail::assertSent(RegistrationVerificationCode::class, function (RegistrationVerificationCode $mail) use (&$code): bool {
+            $code = $mail->code;
+            return true;
+        });
+        $this->assertIsString($code);
+        $this->assertGuest();
+        $this->assertDatabaseHas('pending_email_verifications', ['email' => 'ayu@example.test']);
+        $this->assertDatabaseMissing('users', ['email' => 'ayu@example.test']);
+
+        $this->postJson('/api/auth/register/verify', [
+            'email' => 'ayu@example.test',
+            'code' => $code,
+        ])->assertOk()
             ->assertJsonPath('user.name', 'Ayu Pratami')
             ->assertJsonPath('user.workspaces', []);
 

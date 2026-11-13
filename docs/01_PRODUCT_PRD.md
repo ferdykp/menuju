@@ -58,6 +58,7 @@
 - **Transaksi:** catatan mutasi riil, transfer antar-akun tidak dihitung sebagai pemasukan/pengeluaran eksternal dua kali.
 - **Anggaran:** rencana alokasi biaya per kategori/event; bukan bukti pengeluaran.
 - **Kebutuhan:** daftar item/jasa yang ingin dibeli; estimasi tidak mengurangi saldo.
+- Setiap kebutuhan dapat ditautkan ke satu acara aktif di workspace atau dibiarkan sebagai kebutuhan umum. Detail acara menampilkan jumlah item, estimasi kebutuhan yang belum dibeli, dan realisasi kebutuhan yang telah dibeli. Menghapus acara melepas relasinya tanpa menghapus kebutuhan.
 - **Pembayaran:** kewajiban/termin dan realisasi, dihubungkan ke transaksi saat pembayaran benar-benar terjadi.
 - **Vendor:** penyedia jasa, bukan kategori anggaran; data dapat direlasikan.
 - **Tamu:** identitas dan status undangan/RSVP; akses publik tidak membuka data tamu lain.
@@ -76,13 +77,13 @@
 | AUTH-01 | Daftar, login, reset password | Validasi dan status jelas, sesi aman |
 | WS-01 | Membuat workspace & mengundang partner | Pengguna tahu siapa punya akses |
 | HOME-01 | Ringkasan prioritas | Menjawab “apa selanjutnya?” tanpa lebih dari beberapa blok utama |
-| TASK-01 | CRUD tugas, deadline, assignee | List dapat difilter dan status berubah konsisten |
+| TASK-01 | CRUD tugas, deadline, assignee, dan tautan tugas ke acara | Checklist dapat difilter menurut acara atau tugas umum; progres acara menghitung tugas acara tersebut saja |
 | JOURNEY-01 | Timeline milestone | Tidak menggandakan halaman checklist |
 | EVENT-01 | Kelola detail acara dan jadwal | Tanggal, timezone, lokasi terlihat jelas |
 | SAVE-01 | CRUD target, setoran, histori | Rekonsiliasi target dan catatan konsisten |
 | CASH-01 | CRUD akun & transaksi | Saldo/transfer tidak double counted |
 | BUD-01 | Kelola kategori & anggaran | Planned vs actual jelas |
-| NEED-01 | CRUD kebutuhan & status pembelian | Estimasi ≠ pengeluaran aktual |
+| NEED-01 | CRUD kebutuhan, kategori workspace, filter dan rekap per kategori/acara | Estimasi dan realisasi terpisah; item pada satu kategori atau acara dapat dijumlahkan |
 | GUEST-01 | CRUD tamu, cari/filter, impor | Isolasi workspace dan duplicate handling |
 | INV-01 | Buat/edit/preview/publish undangan | Preview mirip hasil publik, unpublished privat |
 | RSVP-01 | Tamu RSVP melalui token/link aman | Status terkirim tanpa akses data lain |

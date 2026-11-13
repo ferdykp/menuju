@@ -28,10 +28,10 @@
 | TK-03 | Checklist | Task detail | D | Ubah status |
 | TK-04 | Checklist | Delete task confirmation | M | Hapus / batal |
 | EV-01 | Acara & Jadwal | Event overview | P | Tambah acara/agenda |
-| EV-02 | Acara & Jadwal | Event detail/editor | P | Simpan informasi |
+| EV-02 | Acara & Jadwal | Event detail/editor | P | Tinjau kebutuhan acara dan simpan informasi |
 | EV-03 | Acara & Jadwal | Agenda item form | M | Simpan agenda |
-| ND-01 | Kebutuhan | Needs index/table | P | Tambah kebutuhan |
-| ND-02 | Kebutuhan | Add/edit need | D | Simpan |
+| ND-01 | Kebutuhan | Needs index/table | P | Filter kategori/acara dan tinjau subtotal estimasi/realisasi |
+| ND-02 | Kebutuhan | Add/edit need | D | Pilih kategori/acara atau buat kategori baru, lalu simpan |
 | ND-03 | Kebutuhan | Need detail | P | Catat pembelian |
 | ND-04 | Kebutuhan | Record purchase | M | Konfirmasi pembelian |
 | ND-05 | Kebutuhan | Delete confirmation | M | Hapus / batal |
@@ -103,6 +103,8 @@
 ### Flow C — Belanja hingga pembayaran
 `ND-01 → ND-02 → ND-01 → ND-03 → ND-04 → TR-02 (jika real payment) → ND-03`
 - Kebutuhan baru tetap berstatus rencana.
+- Kebutuhan boleh ditautkan ke satu acara atau disimpan sebagai kebutuhan umum; filter acara dan detail EV-02 menampilkan kebutuhan beserta subtotalnya.
+- Menghapus acara mengosongkan tautan kebutuhan (menjadi umum), tetapi tidak menghapus catatan kebutuhan.
 - Pembelian/pembayaran harus jelas apakah sudah lunas, DP, atau belum dibayar; hindari pencatatan ganda.
 
 ### Flow D — Guest to RSVP
@@ -112,6 +114,10 @@
 
 ### Flow E — Checklist
 `HM-01 → TK-01 → TK-02 → TK-01 → TK-03 → HM-01`
+- Tugas dapat ditautkan secara opsional ke satu acara; yang tidak ditautkan tetap masuk ke Umum.
+- Filter Checklist menyediakan Semua acara, acara tertentu, dan Umum / tanpa acara. Progres saat difilter mengikuti hasil acara tersebut.
+- Detail acara menampilkan jumlah dan progres tugas terkait serta tautan ke Checklist yang sudah difilter. Pengelolaan tugas tetap dilakukan di Checklist.
+- Menghapus acara melepas tautan tugas menjadi umum, tanpa menghapus tugas. Milestone tetap menjadi tahap persiapan yang terpisah.
 - Deadline penting tampil di Home; tidak tampil sebagai form berulang.
 
 ## 4. Pola form standar
