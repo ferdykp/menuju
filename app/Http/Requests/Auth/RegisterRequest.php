@@ -25,4 +25,14 @@ class RegisterRequest extends FormRequest
             'password' => ['required', 'confirmed', Password::min(10)->letters()->numbers()],
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'password.min' => 'Kata sandi harus terdiri dari minimal 10 karakter.',
+            'password.letters' => 'Kata sandi harus memuat setidaknya satu huruf.',
+            'password.numbers' => 'Kata sandi harus memuat setidaknya satu angka.',
+            'password.confirmed' => 'Konfirmasi kata sandi belum sama.',
+        ];
+    }
 }

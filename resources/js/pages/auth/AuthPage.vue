@@ -14,6 +14,12 @@ const notice = ref(route.query.oauth_notice === 'otp_sent' ? 'Kode konfirmasi di
 const errorSummary = ref(route.query.oauth_error === 'otp_delivery_failed' ? 'Email OTP belum terkirim. Periksa SMTP, lalu pilih kirim ulang kode.' : '');
 const errors = ref({});
 const form = reactive({ name: '', email: '', password: '', password_confirmation: '', remember: false });
+const passwordRequirements = computed(() => [
+    { key: 'length', label: '10 karakter', met: form.password.length >= 10 },
+    { key: 'letter', label: '1 huruf', met: /\p{L}/u.test(form.password) },
+    { key: 'number', label: '1 angka', met: /\d/.test(form.password) },
+]);
+const passwordMatches = computed(() => form.password_confirmation.length > 0 && form.password === form.password_confirmation);
 form.email = typeof route.query.verify_email === 'string'
     ? route.query.verify_email
     : typeof route.query.email === 'string' ? route.query.email : '';
@@ -194,12 +200,19 @@ function validPostAuthPath(path) {
                         <label v-if="mode === 'login' || mode === 'register' || mode === 'reset'" class="field">
                             <span>Kata sandi</span>
                             <input v-model="form.password" type="password" :autocomplete="mode === 'login' ? 'current-password' : 'new-password'" placeholder="Minimal 10 karakter" :aria-invalid="Boolean(errors.password)" required>
+                            <div v-if="mode === 'register' || mode === 'reset'" class="password-checklist" aria-label="Syarat kata sandi">
+                                <span v-for="requirement in passwordRequirements" :key="requirement.key" class="password-checklist__item" :class="{ 'is-valid': requirement.met }">
+                                    <span aria-hidden="true">{{ requirement.met ? '✓' : '·' }}</span>{{ requirement.label }}
+                                </span>
+                            </div>
                             <small v-if="errors.password" class="field-error">{{ errors.password[0] }}</small>
                         </label>
 
                         <label v-if="mode === 'register' || mode === 'reset'" class="field">
                             <span>Ulangi kata sandi</span>
-                            <input v-model="form.password_confirmation" type="password" autocomplete="new-password" placeholder="Ketik ulang kata sandi" required>
+                            <input v-model="form.password_confirmation" type="password" autocomplete="new-password" placeholder="Ketik ulang kata sandi" :aria-invalid="Boolean(form.password_confirmation) && !passwordMatches" required>
+                            <small v-if="form.password_confirmation" class="password-match" :class="{ 'is-match': passwordMatches }" aria-live="polite"><span aria-hidden="true">{{ passwordMatches ? '✓' : '·' }}</span>{{ passwordMatches ? 'Kata sandi cocok' : 'Kata sandi belum cocok' }}</small>
+                            <small v-if="errors.password_confirmation" class="field-error">{{ errors.password_confirmation[0] }}</small>
                         </label>
                         </template>
 
