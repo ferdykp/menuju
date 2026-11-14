@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\RecordsWorkspaceActivity;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -10,6 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Event extends Model
 {
     use SoftDeletes;
+    use RecordsWorkspaceActivity;
 
     protected $fillable = ['workspace_id', 'created_by', 'title', 'event_type', 'event_date', 'start_time', 'end_time', 'timezone', 'venue_name', 'address', 'notes'];
 

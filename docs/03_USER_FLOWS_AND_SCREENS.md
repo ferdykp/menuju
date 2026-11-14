@@ -1,5 +1,5 @@
 # MENUJU — User Flows, Screen Inventory & Interaction Map
-**Versi:** 1.0 · **Status:** Proposed design requirements
+**Versi:** 1.1 · **Status:** Proposed design requirements
 
 ## 1. Konvensi
 - **P** = halaman penuh; **M** = modal; **D** = drawer; **S** = UI state; **PUBLIC** = layar tamu.
@@ -30,11 +30,15 @@
 | EV-01 | Acara & Jadwal | Event overview | P | Tambah acara/agenda |
 | EV-02 | Acara & Jadwal | Event detail/editor | P | Tinjau kebutuhan acara dan simpan informasi |
 | EV-03 | Acara & Jadwal | Agenda item form | M | Simpan agenda |
-| ND-01 | Kebutuhan | Needs index/table | P | Filter kategori/acara dan tinjau subtotal estimasi/realisasi |
-| ND-02 | Kebutuhan | Add/edit need | D | Pilih kategori/acara atau buat kategori baru, lalu simpan |
+| ND-01 | Kebutuhan | Needs index/table | P | Filter kategori/acara/PIC dan tinjau subtotal estimasi/realisasi per PIC |
+| ND-02 | Kebutuhan | Add/edit need | D | Pilih kategori/acara/PIC atau buat kategori baru, lalu simpan |
 | ND-03 | Kebutuhan | Need detail | P | Catat pembelian |
 | ND-04 | Kebutuhan | Record purchase | M | Konfirmasi pembelian |
 | ND-05 | Kebutuhan | Delete confirmation | M | Hapus / batal |
+| AS-01 | Aset | Asset index | P | Tambah aset |
+| AS-02 | Aset | Add/edit asset | D | Simpan |
+| AS-03 | Aset | Asset detail & valuation history | P | Perbarui nilai / alokasikan |
+| AS-04 | Aset | Allocate/release asset to need | M | Simpan alokasi |
 | GU-01 | Tamu | Guest index | P | Tambah tamu |
 | GU-02 | Tamu | Add/edit guest | D | Simpan |
 | GU-03 | Tamu | Guest detail | D | Lihat status |
@@ -54,6 +58,9 @@
 | PF-03 | Undangan publik | RSVP form | PUBLIC section | Kirim RSVP |
 | PF-04 | Undangan publik | RSVP success/error | S | Lihat hasil / ulang |
 | FN-01 | Keuangan | Finance overview | P | Buka prioritas keuangan |
+| CL-01 | Aktivitas & Keputusan | Workspace activity feed | P | Tinjau perubahan |
+| CL-02 | Aktivitas & Keputusan | Decision create/edit | D | Simpan keputusan |
+| CL-03 | Aktivitas & Keputusan | Decision detail/status | P | Catat hasil keputusan |
 | SV-01 | Tabungan | Savings index | P | Buat target |
 | SV-02 | Tabungan | Create/edit goal | M | Simpan |
 | SV-03 | Tabungan | Savings detail | P | Catat setoran |
@@ -87,7 +94,7 @@
 | SYS-05 | Semua | Generic destructive confirm | M | Batal / lanjut |
 | SYS-06 | Semua | Not found/unauthorized | P | Kembali |
 
-**Total minimum:** 77 entri interaksi/layar (termasuk shared states); jumlah final dapat bertambah saat spesifikasi aktual diverifikasi. Jangan menyamakan setiap entri dengan route yang harus ada.
+**Total minimum:** 84 entri interaksi/layar (termasuk shared states); jumlah final dapat bertambah saat spesifikasi aktual diverifikasi. Jangan menyamakan setiap entri dengan route yang harus ada.
 
 ## 3. Alur pengguna kritis
 ### Flow A — First-time setup
@@ -103,6 +110,7 @@
 ### Flow C — Belanja hingga pembayaran
 `ND-01 → ND-02 → ND-01 → ND-03 → ND-04 → TR-02 (jika real payment) → ND-03`
 - Kebutuhan baru tetap berstatus rencana.
+- Kebutuhan dapat ditugaskan kepada anggota aktif workspace; ringkasan PIC membedakan estimasi kebutuhan aktif dan realisasi yang sudah dibeli.
 - Kebutuhan boleh ditautkan ke satu acara atau disimpan sebagai kebutuhan umum; filter acara dan detail EV-02 menampilkan kebutuhan beserta subtotalnya.
 - Menghapus acara mengosongkan tautan kebutuhan (menjadi umum), tetapi tidak menghapus catatan kebutuhan.
 - Pembelian/pembayaran harus jelas apakah sudah lunas, DP, atau belum dibayar; hindari pencatatan ganda.

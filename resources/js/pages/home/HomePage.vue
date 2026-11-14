@@ -31,6 +31,15 @@ async function load() {
     }
 }
 
+async function snoozePriority(key) {
+    try {
+        await axios.post(`/api/workspaces/${props.workspaceId}/home/priorities/snooze`, { key });
+        await load();
+    } catch {
+        error.value = 'Pengingat belum berhasil ditunda. Coba lagi.';
+    }
+}
+
 function formatDate(value) {
     if (!value) return 'Belum ada tenggat';
     return new Date(`${value}T00:00:00`).toLocaleDateString('id-ID', { day: 'numeric', month: 'long' });
@@ -59,6 +68,12 @@ onMounted(load);
                     <RouterLink class="button button--primary" to="/app/tasks"><FaIcon :icon="['fas', 'circle-check']" aria-hidden="true" /> Lihat Checklist</RouterLink>
                     <RouterLink class="button button--quiet" to="/app/tasks?create=1"><FaIcon :icon="['fas', 'plus']" aria-hidden="true" /> Tambah tugas</RouterLink>
                 </div>
+            </section>
+
+            <section class="home-priorities" aria-labelledby="home-priorities-title">
+                <div class="home-priorities__heading"><div><span class="eyebrow">SARAN DARI DATA TERKINI</span><h2 id="home-priorities-title">Perlu perhatian</h2></div><span>{{ data.priorities.length ? `${data.priorities.length} prioritas` : 'Semua tertinjau' }}</span></div>
+                <div v-if="data.priorities.length" class="home-priorities__list"><article v-for="priority in data.priorities" :key="priority.key" class="home-priority" :class="`home-priority--${priority.level}`"><RouterLink :to="priority.href" class="home-priority__link"><span class="home-priority__icon"><FaIcon :icon="['fas', priority.level === 'urgent' ? 'triangle-exclamation' : 'circle-info']" aria-hidden="true" /></span><span><strong>{{ priority.title }}</strong><small>{{ priority.detail }}</small></span><FaIcon :icon="['fas','arrow-right']" aria-hidden="true" /></RouterLink><button class="home-priority__snooze" type="button" @click="snoozePriority(priority.key)">Tunda 7 hari</button></article></div>
+                <p v-else class="home-priorities__empty">Belum ada tenggat yang memerlukan perhatian. Prioritas akan muncul saat ada tugas, pembayaran, atau RSVP yang perlu ditindaklanjuti.</p>
             </section>
 
             <section class="home-metrics" aria-label="Progres rencana dan bersama">

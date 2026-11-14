@@ -35,7 +35,9 @@ Controllers should remain thin: validate through Form Requests, authorize via Po
 - `User` belongs to one or more `Workspace` records through `workspace_members`; owner and partner are the MVP roles.
 - Workspace invitation tokens are stored only as hashes, expire, and are accepted once. Pending invitees have no workspace access.
 - Preparation entities (milestones, tasks, events, needs, guests, invitations) are workspace-scoped.
-- Financial entities (accounts, transactions, savings goals/deposits, budgets, obligations/payments) are distinct. Transfers, deposits, budget allocations, purchase plans, and actual expenses must not be conflated.
+- A workspace supports multiple events. Tasks, needs, agenda items, and payment obligations can link to one event or remain workspace-wide; deleting an event releases those links without deleting the records.
+- Financial entities (accounts, transactions, savings goals/deposits, budgets, obligations/payments) are distinct. Non-cash assets and valuation history are separate from cash accounts and savings, and allocations to needs create no ledger entries.
+- Workspace activity records actor, timestamp, action, and a concise subject summary. Decisions are editable workspace records with options, status, and outcome; activity is not the source of current domain values.
 - Public invitation URLs identify a published invitation through an unguessable slug. Public payloads exclude guest contact data and all other workspace data.
 
 ## API and security conventions

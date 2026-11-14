@@ -25,8 +25,8 @@ class EventController extends Controller
 
         $events = $eventsQuery
             ->withCount(['tasks', 'tasks as open_tasks_count' => fn ($tasks) => $tasks->where('status', '!=', 'completed')])
-            ->withCount(['agendaItems', 'needs', 'needs as open_needs_count' => fn ($needs) => $needs->where('status', '!=', 'purchased')])
-            ->withSum(['needs as estimated_needs_total' => fn ($needs) => $needs->where('status', '!=', 'purchased')], 'estimated_amount')
+            ->withCount(['agendaItems', 'needs', 'needs as open_needs_count' => fn ($needs) => $needs->whereIn('status', ['planned', 'shortlisted'])])
+            ->withSum(['needs as estimated_needs_total' => fn ($needs) => $needs->whereIn('status', ['planned', 'shortlisted'])], 'estimated_amount')
             ->withSum(['needs as actual_needs_total' => fn ($needs) => $needs->where('status', 'purchased')], 'purchased_amount')
             ->paginate(min(max($request->integer('per_page', 20), 1), 100));
         $nextEvent = $workspace->events()
@@ -144,7 +144,7 @@ class EventController extends Controller
         if ($event->relationLoaded('agendaItems')) $row['agenda_items'] = $event->agendaItems;
         if ($event->relationLoaded('needs')) {
             $needs = $event->needs;
-            $openNeeds = $needs->where('status', '!=', 'purchased');
+            $openNeeds = $needs->whereIn('status', ['planned', 'shortlisted']);
             $purchasedNeeds = $needs->where('status', 'purchased');
             $row['needs'] = $needs->map(fn ($need) => [
                 'id' => $need->id,

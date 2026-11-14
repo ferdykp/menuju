@@ -14,6 +14,8 @@ const NeedDetailPage = defineAsyncComponent(() => import('../pages/needs/NeedDet
 const InvitationStudio = defineAsyncComponent(() => import('../pages/invitations/InvitationStudio.vue'));
 const FinanceHomePage = defineAsyncComponent(() => import('../pages/finance/FinanceHomePage.vue'));
 const FinancialRecordsPage = defineAsyncComponent(() => import('../pages/finance/FinancialRecordsPage.vue'));
+const AssetsPage = defineAsyncComponent(() => import('../pages/finance/AssetsPage.vue'));
+const ActivityPage = defineAsyncComponent(() => import('../pages/activity/ActivityPage.vue'));
 const SettingsPage = defineAsyncComponent(() => import('../pages/settings/SettingsPage.vue'));
 import { usePageReveal } from '../composables/usePageReveal';
 
@@ -41,6 +43,8 @@ const navigation = [
     { label: 'Anggaran', icon: 'scale-balanced', href: '/app/budgets', group: 'keuangan' },
     { label: 'Transaksi', icon: 'arrow-right-arrow-left', href: '/app/transactions', group: 'keuangan' },
     { label: 'Akun', icon: 'building-columns', href: '/app/accounts', group: 'keuangan' },
+    { label: 'Aset', icon: 'gem', href: '/app/assets', group: 'keuangan' },
+    { label: 'Aktivitas', icon: 'clock-rotate-left', href: '/app/activity', group: 'keuangan' },
 ];
 
 const groups = [
@@ -225,6 +229,8 @@ function isActive(href) {
                 <EventDetailPage v-else-if="route.path.startsWith('/app/events/') && currentWorkspace" :key="route.path" :workspace-id="currentWorkspace.id" :timezone="currentWorkspace.timezone" />
                 <NeedsIndex v-else-if="route.path === '/app/needs' && currentWorkspace" :workspace-id="currentWorkspace.id" />
                 <NeedDetailPage v-else-if="route.path.startsWith('/app/needs/') && currentWorkspace" :key="route.path" :workspace-id="currentWorkspace.id" />
+                <AssetsPage v-else-if="route.path.startsWith('/app/assets') && currentWorkspace" :key="route.path" :workspace-id="currentWorkspace.id" />
+                <ActivityPage v-else-if="route.path === '/app/activity' && currentWorkspace" :workspace-id="currentWorkspace.id" />
                 <InvitationStudio v-else-if="route.path.startsWith('/app/invitations') && currentWorkspace" :workspace-id="currentWorkspace.id" :workspace="currentWorkspace" />
                 <FinanceHomePage v-else-if="route.path === '/app/finance' && currentWorkspace" :workspace-id="currentWorkspace.id" />
                 <FinancialRecordsPage v-else-if="['accounts','transactions','budgets','savings'].includes(route.path.split('/')[2]) && currentWorkspace" :key="route.path.split('/')[2]" :workspace-id="currentWorkspace.id" :mode="route.path.split('/')[2]" />

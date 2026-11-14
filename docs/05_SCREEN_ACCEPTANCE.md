@@ -1,5 +1,5 @@
 # MENUJU — Screen Acceptance, Design Handoff & QA Gate
-**Versi:** 1.0 · **Status:** Release/design checklist
+**Versi:** 1.1 · **Status:** Release/design checklist
 
 ## 1. Definisi selesai
 Sebuah halaman **tidak selesai** hanya karena mockup sudah ada atau aplikasi berhasil build. Harus melalui: **Designed → Reviewed → Implemented → Functionally tested → Visually verified**. Status boleh **Blocked**, tidak boleh diberi PASS tanpa bukti.
@@ -42,6 +42,7 @@ Gunakan satu baris untuk **setiap ID** di `03_USER_FLOWS_AND_SCREENS.md`.
 - [ ] Aksi destructive meminta konfirmasi akurat.
 
 ## Checklist per acara
+- [ ] Satu workspace dapat mengelola beberapa acara; tanggal, jadwal, progres, dan hubungan kebutuhan/tugas tiap acara tidak tercampur.
 - [ ] Detail acara menampilkan tugas terkait, jumlah selesai, dan persentase progres; tugas umum tidak ikut dihitung.
 - [ ] Tombol dari detail acara membuka Checklist terfilter dan tombol tambah membuka form dengan acara tersebut terpilih.
 - [ ] Menghapus acara melepas tugas ke Umum tanpa menghapus tugasnya.
@@ -53,6 +54,8 @@ Gunakan satu baris untuk **setiap ID** di `03_USER_FLOWS_AND_SCREENS.md`.
 - [ ] Jumlah dalam dashboard sesuai data sumber.
 - [ ] Setoran ≠ pemasukan otomatis kecuali workflow jelas.
 - [ ] Kebutuhan yang direncanakan ≠ transaksi yang sudah dibayar.
+- [ ] Setiap kebutuhan dapat ditugaskan kepada anggota aktif workspace; ringkasan menampilkan rencana dan realisasi per penanggung jawab secara terpisah.
+- [ ] Filter penanggung jawab membatasi daftar kebutuhan tanpa mengubah ringkasan workspace; anggota aktif tanpa kebutuhan tetap terlihat dengan total nol.
 - [ ] Kategori kebutuhan dipilih dari daftar workspace; tambah kategori baru tersedia dari form tanpa mengetik ulang label untuk setiap item.
 - [ ] Filter kategori menampilkan jumlah item, estimasi belum dibeli, dan realisasi pembelian kategori tersebut.
 - [ ] Form kebutuhan menyediakan pilihan satu acara aktif pada workspace atau “Umum / tanpa acara”; filter acara membatasi daftar kebutuhan dan dapat direset.
@@ -61,6 +64,13 @@ Gunakan satu baris untuk **setiap ID** di `03_USER_FLOWS_AND_SCREENS.md`.
 - [ ] Transfer rekening tidak dihitung sebagai pengeluaran total.
 - [ ] Penghapusan/pembatalan transaksi mengikuti aturan audit.
 - [ ] User tidak melihat akun/workspace lain.
+- [ ] Nilai aset non-tunai ditampilkan terpisah dari saldo tunai, transaksi, dan target tabungan.
+- [ ] Perubahan nilai aset menyimpan histori nilai dan tanggal; catatan lama tidak ditimpa.
+- [ ] Jumlah alokasi aset tidak dapat melampaui jumlah tersedia; lepaskan alokasi sebelum menghapus aset.
+- [ ] Kebutuhan yang disiapkan dari aset tidak menulis transaksi pembelian atau mengurangi saldo.
+- [ ] Beranda menyarankan prioritas hanya dari kondisi data aktual, memberi alasan dan tautan ke layar terkait.
+- [ ] Menunda prioritas berlaku untuk pengguna yang menundanya selama tujuh hari; kondisi yang sudah terselesaikan tidak ditampilkan lagi.
+- [ ] Aktivitas dan keputusan dibatasi ke workspace; riwayat tidak menyimpan dump data sensitif seperti email, telepon, atau catatan penuh.
 
 ## 6. Checklist undangan publik
 - [ ] Publish/unpublish dan preview sesuai state.
@@ -104,6 +114,8 @@ Interpretasi: 0 = gagal, 1 = bermasalah, 2 = layak dengan perbaikan, 3 = matang.
 6. Undangan: pilih tema → edit → preview → publish → buka link publik.
 7. Keuangan: opening balance → pemasukan/pengeluaran → transfer → saldo tepat.
 8. Security: akses lintas-workspace ditolak.
+9. Aset: catat emas → nilai ulang tanpa menghapus histori → alokasikan ke kebutuhan mahar → pastikan saldo tunai dan transaksi tidak berubah.
+10. Kolaborasi: buat keputusan terkait acara → tandai diputuskan → lihat jejak perubahan oleh anggota workspace.
 
 ## 10. Handoff Stitch → engineering
 - Sertakan link/frame dan ID screen.

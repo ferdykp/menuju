@@ -1,5 +1,5 @@
 # MENUJU — Information Architecture & Navigation
-**Versi:** 1.0 · **Status:** Proposed · **Ruang lingkup:** MVP (modul Next/Later diberi label)
+**Versi:** 1.1 · **Status:** Proposed · **Ruang lingkup:** MVP (modul Next/Later diberi label)
 
 ## 1. Prinsip navigasi
 1. **Terpisah berdasarkan niat, terhubung berdasarkan data.** Tabungan dan Belanja boleh terhubung, tetapi bukan satu mega-page.
@@ -28,11 +28,13 @@ KEUANGAN
   Anggaran
   Transaksi
   Akun
+  Aset
+  Aktivitas & Keputusan
 
 LAINNYA
   Pengaturan
 ```
-**Catatan:** sidebar memuat 12 destinasi yang cukup berbeda; kategori hanya label visual, bukan parent yang membuka mega-page. Bila pengujian pengguna menemukan terlalu padat, gunakan bagian collapsible dengan label jelas, jangan sembunyikan fitur penting secara arbitrer.
+**Catatan:** sidebar memuat 15 destinasi yang cukup berbeda; kategori hanya label visual, bukan parent yang membuka mega-page. Bila pengujian pengguna menemukan terlalu padat, gunakan bagian collapsible dengan label jelas, jangan sembunyikan fitur penting secara arbitrer.
 
 **Next:** Vendor dapat ditambahkan sebagai menu Persiapan jika implementasi valid; Pembayaran boleh muncul sebagai subview Anggaran, bukan harus menu baru. **Later:** Kenangan hanya bila ada kebutuhan jelas; jangan menghidupkan modul lama tanpa validasi.
 
@@ -41,7 +43,8 @@ LAINNYA
 |---|---|---|
 | Perjalanan vs Checklist | **Terpisah**, saling taut | Timeline milestone ≠ daftar tugas harian |
 | Acara vs Checklist | **Terpisah**, saling taut | Detail acara menampilkan progres; tugas per acara tetap dibuat dan dikelola di Checklist |
-| Kebutuhan vs Anggaran | **Terpisah**, relasi data | Item belanja ≠ rencana kategori biaya |
+| Kebutuhan vs Anggaran | **Terpisah**, relasi data | Item belanja punya penanggung jawab dan estimasi; anggaran tetap rencana kategori biaya |
+| Aset vs Akun/Tabungan | **Terpisah**, alokasi opsional | Kepemilikan non-tunai ≠ uang cair atau kontribusi tabungan |
 | Tabungan vs Akun | **Terpisah**, relasi alokasi | Tujuan menabung ≠ saldo rekening |
 | Transaksi vs Akun | **Terpisah**, taut dari detail akun | Riwayat aktivitas ≠ daftar sumber dana |
 | Tamu vs Undangan | **Terpisah**, deep link | Mengelola orang ≠ merancang undangan |
@@ -49,6 +52,7 @@ LAINNYA
 | Acara vs Jadwal | **Satu destinasi, dua view** | Data acara dan agenda yang sangat berkaitan |
 | Vendor (Next) vs Anggaran | **Terpisah**, hubungan opsional | Kontak penyedia jasa ≠ catatan biaya |
 | RSVP | **Subview Tamu** | Operasional daftar tamu |
+| Aktivitas vs Keputusan | **Satu destinasi dengan dua view** | Riwayat perubahan otomatis ≠ keputusan yang perlu dibahas |
 | Public invitation | **Aplikasi publik terpisah** | Visual, privasi, dan navigasi berbeda |
 
 ## 4. Hierarki halaman dan route konseptual
@@ -61,6 +65,7 @@ LAINNYA
 | Checklist | `/app/tasks` | `/app/tasks/:id` jika perlu | Drawer tugas |
 | Acara & Jadwal | `/app/events` (tabs agenda/detail) | `/app/events/:id` | Page acara kompleks / modal agenda |
 | Kebutuhan | `/app/needs` | `/app/needs/:id` | Drawer item |
+| Aset | `/app/assets` | `/app/assets/:id` | Drawer aset; form alokasi pada detail aset/kebutuhan |
 | Tamu | `/app/guests` | `/app/guests/:id` opsional | Drawer tamu, modal impor |
 | Undangan | `/app/invitations` | `/app/invitations/:id` preview | `/app/invitations/:id/edit` dedicated editor |
 | Ringkasan | `/app/finance` | — | Quick actions mengarah ke modul |
@@ -68,6 +73,7 @@ LAINNYA
 | Anggaran | `/app/budgets` | `/app/budgets/:id` | Drawer kategori, modal pembayaran |
 | Transaksi | `/app/transactions` | `/app/transactions/:id` opsional | Drawer transaksi |
 | Akun | `/app/accounts` | `/app/accounts/:id` | Modal akun |
+| Aktivitas & Keputusan | `/app/activity` | `/app/activity/decisions/:id` | Drawer catatan keputusan |
 | Pengaturan | `/app/settings` (tab settings) | — | Inline fields khusus settings |
 | Undangan publik | `/i/:slug` | — | RSVP inline dalam section publik |
 
@@ -101,6 +107,9 @@ Tidak memakai sidebar aplikasi. Halaman full-bleed mobile-first, editorial, beru
 - Dari kebutuhan → kategori anggaran terkait; dari anggaran → kebutuhan yang menghabiskan anggaran.
 - Dari detail akun → transaksi akun yang terfilter.
 - Dari target tabungan → histori setoran; bila terkait, lihat kebutuhan yang dibiayai.
+- Dari kebutuhan → aset yang dialokasikan atau kategori anggaran; perubahan alokasi tidak membuat transaksi.
+- Dari aset → kebutuhan yang dipenuhi; aset dan nilai saat ini tetap dapat ditinjau terpisah.
+- Dari prioritas Beranda → objek terkait dengan filter/status yang sesuai.
 - Dari tamu → status RSVP; dari invitation library → penerima dan hasil RSVP.
 - Dari dashboard → tugas dan tenggat terdekat (deep link).
 

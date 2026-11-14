@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\AssetController;
+use App\Http\Controllers\Api\WorkspaceActivityController;
 use App\Http\Controllers\Api\GuestController;
 use App\Http\Controllers\Api\EventController;
 use App\Http\Controllers\Api\HomeController;
@@ -18,6 +20,7 @@ use App\Http\Controllers\Api\PaymentObligationController;
 use App\Http\Controllers\Api\SettingsController;
 use App\Http\Controllers\Api\TaskController;
 use App\Http\Controllers\Api\WorkspaceController;
+use App\Http\Middleware\PreventPrivateResponseCaching;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 
@@ -47,7 +50,7 @@ Route::middleware('web')->group(function (): void {
         Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:6,1');
         Route::post('/forgot-password', [AuthController::class, 'forgotPassword'])->middleware('throttle:3,1');
         Route::post('/reset-password', [AuthController::class, 'resetPassword'])->middleware('throttle:5,1');
-        Route::middleware('auth')->group(function (): void {
+        Route::middleware(['auth', PreventPrivateResponseCaching::class])->group(function (): void {
             Route::get('/me', [AuthController::class, 'me']);
             Route::post('/logout', [AuthController::class, 'logout']);
         });
@@ -59,7 +62,7 @@ Route::middleware('web')->group(function (): void {
     Route::get('/public/invitations/{invitation:slug}/gallery/{galleryImage}', [PublicInvitationController::class, 'galleryImage'])->middleware('throttle:60,1');
     Route::post('/public/invitations/{invitation:slug}/rsvp', [PublicInvitationController::class, 'rsvp'])->middleware('throttle:8,1');
 
-    Route::middleware('auth')->group(function (): void {
+    Route::middleware(['auth', PreventPrivateResponseCaching::class])->group(function (): void {
         Route::get('/workspaces', [WorkspaceController::class, 'index']);
         Route::post('/workspaces', [WorkspaceController::class, 'store']);
         Route::get('/workspaces/{workspace}/members', [WorkspaceController::class, 'members']);
@@ -68,6 +71,11 @@ Route::middleware('web')->group(function (): void {
         Route::delete('/workspaces/{workspace}/invitations/pending', [SettingsController::class, 'cancelInvitation']);
         Route::delete('/workspaces/{workspace}/members/{member}', [SettingsController::class, 'revokePartner']);
         Route::get('/workspaces/{workspace}/home', [HomeController::class, 'show']);
+        Route::post('/workspaces/{workspace}/home/priorities/snooze', [HomeController::class, 'snoozePriority']);
+        Route::get('/workspaces/{workspace}/activity', [WorkspaceActivityController::class, 'index']);
+        Route::post('/workspaces/{workspace}/decisions', [WorkspaceActivityController::class, 'store']);
+        Route::patch('/workspaces/{workspace}/decisions/{decision}', [WorkspaceActivityController::class, 'update']);
+        Route::delete('/workspaces/{workspace}/decisions/{decision}', [WorkspaceActivityController::class, 'destroy']);
         Route::get('/workspaces/{workspace}/tasks', [TaskController::class, 'index']);
         Route::get('/workspaces/{workspace}/milestones', [MilestoneController::class, 'index']);
         Route::post('/workspaces/{workspace}/milestones', [MilestoneController::class, 'store']);
@@ -89,6 +97,13 @@ Route::middleware('web')->group(function (): void {
         Route::patch('/events/{event}/agenda-items/{agendaItem}', [EventController::class, 'updateAgenda']);
         Route::delete('/events/{event}/agenda-items/{agendaItem}', [EventController::class, 'destroyAgenda']);
         Route::get('/workspaces/{workspace}/needs', [NeedController::class, 'index']);
+        Route::get('/workspaces/{workspace}/assets', [AssetController::class, 'index']);
+        Route::post('/workspaces/{workspace}/assets', [AssetController::class, 'store']);
+        Route::get('/assets/{asset}', [AssetController::class, 'show']);
+        Route::patch('/assets/{asset}', [AssetController::class, 'update']);
+        Route::delete('/assets/{asset}', [AssetController::class, 'destroy']);
+        Route::post('/assets/{asset}/allocations', [AssetController::class, 'allocate']);
+        Route::delete('/assets/{asset}/allocations/{allocation}', [AssetController::class, 'release']);
         Route::post('/workspaces/{workspace}/needs', [NeedController::class, 'store']);
         Route::post('/workspaces/{workspace}/need-categories', [NeedCategoryController::class, 'store']);
         Route::get('/needs/{need}', [NeedController::class, 'show']);

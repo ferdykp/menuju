@@ -1,5 +1,5 @@
 # MENUJU — Product Requirements Document
-**Versi:** 1.0 · **Status:** Proposed product baseline · **Tanggal:** 11 November 2026
+**Versi:** 1.1 · **Status:** Proposed product baseline · **Tanggal:** 14 November 2026
 
 > Dokumen ini adalah rancangan produk BARU, bukan deskripsi fitur yang sudah tersedia di repository. Semua keputusan diberi label **MVP**, **Next**, atau **Later**. Jangan mengklaim telah diimplementasikan.
 
@@ -36,6 +36,8 @@
 - Akun kas/bank dan transaksi.
 - Anggaran kategori, rencana biaya, pembayaran.
 - Kebutuhan & belanja: item, estimasi, status, realisasi pembelian.
+- Aset yang telah dimiliki dan alokasinya ke kebutuhan pernikahan.
+- Aktivitas workspace dan catatan keputusan bersama.
 - Tamu: daftar, grup, impor CSV terkontrol.
 - Undangan: library, editor terpisah, preview, publish, RSVP, tema unggulan.
 - Pengaturan workspace, profil, akses partner.
@@ -44,7 +46,9 @@
 - Vendor directory dengan kontak, penawaran, relasi ke anggaran.
 - Reminder, pengingat pembayaran, kalender ekspor.
 - Rekap RSVP & seating plan sederhana.
+- Penargetan tamu dan status RSVP yang berbeda untuk tiap acara.
 - Financial readiness proyeksi dengan asumsi yang transparan.
+- Beranda prioritas adaptif berdasarkan tenggat, pembayaran, progres RSVP, dan kondisi anggaran.
 - Pilihan tema undangan tambahan, galeri foto publik, guestbook termoderasi.
 
 ### Later — hanya setelah kebutuhan terbukti
@@ -57,8 +61,12 @@
 - **Akun:** sumber saldo nyata (kas/bank) dan opening balance.
 - **Transaksi:** catatan mutasi riil, transfer antar-akun tidak dihitung sebagai pemasukan/pengeluaran eksternal dua kali.
 - **Anggaran:** rencana alokasi biaya per kategori/event; bukan bukti pengeluaran.
-- **Kebutuhan:** daftar item/jasa yang ingin dibeli; estimasi tidak mengurangi saldo.
+- **Kebutuhan:** daftar item/jasa yang harus disiapkan; cara pemenuhan dapat berupa pembelian atau aset yang sudah dimiliki. Estimasi tidak mengurangi saldo. Setiap item dapat ditugaskan kepada anggota workspace; ringkasan membedakan estimasi kebutuhan aktif dan realisasi pembelian per penanggung jawab.
+- **Aset:** barang atau kepemilikan non-tunai yang dicatat jumlahnya, pemiliknya, dan nilai perkiraannya pada tanggal tertentu. Alokasi aset ke kebutuhan tidak membuat saldo kas, tabungan, atau transaksi berubah.
+- **Aktivitas dan keputusan:** perubahan penting memiliki pelaku dan waktu; catatan keputusan menyimpan pertanyaan, opsi, status, dan hasil keputusan. Aktivitas tidak menggantikan nilai terkini sebagai sumber kebenaran.
 - Setiap kebutuhan dapat ditautkan ke satu acara aktif di workspace atau dibiarkan sebagai kebutuhan umum. Detail acara menampilkan jumlah item, estimasi kebutuhan yang belum dibeli, dan realisasi kebutuhan yang telah dibeli. Menghapus acara melepas relasinya tanpa menghapus kebutuhan.
+- Satu workspace pasangan dapat memiliki beberapa acara. Tugas, agenda, kebutuhan, anggaran, dan kewajiban pembayaran dapat terkait ke acara; data umum/biaya bersama boleh tidak terkait ke acara. Tamu dan undangan tetap dikelola pada tingkat workspace; RSVP terpisah per acara perlu divalidasi sebagai kebutuhan lanjutan.
+- Emas fisik dicatat sebagai aset dengan berat dan kadar sebagai fakta utama serta nilai rupiah dan tanggal penilaian sebagai estimasi. Kebutuhan mahar dapat dipenuhi oleh sebagian atau seluruh aset; perubahan harga tidak menulis ulang nilai historis.
 - **Pembayaran:** kewajiban/termin dan realisasi, dihubungkan ke transaksi saat pembayaran benar-benar terjadi.
 - **Vendor:** penyedia jasa, bukan kategori anggaran; data dapat direlasikan.
 - **Tamu:** identitas dan status undangan/RSVP; akses publik tidak membuka data tamu lain.
@@ -84,10 +92,13 @@
 | CASH-01 | CRUD akun & transaksi | Saldo/transfer tidak double counted |
 | BUD-01 | Kelola kategori & anggaran | Planned vs actual jelas |
 | NEED-01 | CRUD kebutuhan, kategori workspace, filter dan rekap per kategori/acara | Estimasi dan realisasi terpisah; item pada satu kategori atau acara dapat dijumlahkan |
+| ASSET-01 | CRUD aset dan alokasi aset ke kebutuhan | Jumlah/nilai tercatat tanpa memengaruhi saldo kas; alokasi tidak melebihi jumlah tersedia |
 | GUEST-01 | CRUD tamu, cari/filter, impor | Isolasi workspace dan duplicate handling |
 | INV-01 | Buat/edit/preview/publish undangan | Preview mirip hasil publik, unpublished privat |
 | RSVP-01 | Tamu RSVP melalui token/link aman | Status terkirim tanpa akses data lain |
 | SETTINGS-01 | Profil, workspace, undang/cabut akses | Otorisasi dan konfirmasi tersedia |
+| HOME-02 | Rekomendasi tindakan dari data aktual | Prioritas punya alasan dan deep link; pengguna dapat menunda tujuh hari; saran hilang saat kondisi selesai |
+| COLLAB-01 | Aktivitas workspace dan catatan keputusan | Pelaku/waktu terlihat; data dibatasi ke workspace; anggota dapat memperbarui status keputusan |
 
 ## 7. Non-functional requirements
 - **Accessibility:** keyboard access, focus visible, meaningful labels, contrast WCAG AA sebagai target; prefers-reduced-motion.
@@ -114,10 +125,9 @@
 
 ## 10. Keputusan yang masih perlu divalidasi sebelum produksi
 - Kebijakan undangan partner dan pembagian kewenangan keuangan.
-- Apakah satu workspace hanya satu acara atau mendukung beberapa agenda.
 - Model rekonsiliasi setoran dengan transaksi kas/bank.
 - Aturan perubahan RSVP dan batas plus-one.
 - Storage dan privasi foto undangan.
 - Cara memigrasikan data dari modul lama jika struktur domain berubah.
 
-**Aturan pengembangan:** Jangan menambah fitur di luar scope sebagai fakta; tandai sebagai usulan dan minta validasi produk sebelum mengubah data model atau aturan keuangan.
+**Aturan pengembangan:** Aset non-tunai tidak boleh dicampur dengan saldo cair atau transaksi. Rekomendasi Beranda harus dapat dijelaskan dengan data dan aturan yang terlihat; jangan menyajikan saran sebagai keputusan otomatis.

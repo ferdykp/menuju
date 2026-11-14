@@ -21,12 +21,15 @@ import {
     faChevronLeft,
     faChevronRight,
     faCircleCheck,
+    faCircleInfo,
     faChartPie,
     faClock,
+    faClockRotateLeft,
     faEllipsis,
     faEye,
     faEnvelopeOpenText,
     faGear,
+    faGem,
     faHeart,
     faHouse,
     faImage,
@@ -49,6 +52,7 @@ import {
     faRightFromBracket,
     faScaleBalanced,
     faTrash,
+    faTriangleExclamation,
     faLink,
     faUserGroup,
     faWallet,
@@ -62,10 +66,10 @@ import { useToast } from './composables/toastBus';
 
 library.add(
     faArrowDown, faArrowLeft, faArrowRight, faArrowUp, faArrowUpRightFromSquare, faBars, faBuildingColumns, faCalendarDays, faCheck, faChartPie, faChevronDown,
-    faChevronLeft, faChevronRight, faCircleCheck, faClock, faEllipsis,
-    faEnvelopeOpenText, faEye, faGear, faHeart, faHouse, faImage, faImages, faLeaf, faLink, faListCheck, faLock, faLocationDot, faMagnifyingGlass,
+    faChevronLeft, faChevronRight, faCircleCheck, faCircleInfo, faClock, faClockRotateLeft, faEllipsis,
+    faEnvelopeOpenText, faEye, faGear, faGem, faHeart, faHouse, faImage, faImages, faLeaf, faLink, faListCheck, faLock, faLocationDot, faMagnifyingGlass,
     faMoneyBillWave, faPalette, faPeopleGroup, faPen, faPiggyBank, faPlus, faArrowRightArrowLeft, faBoxArchive, faRoute, faRotate, faScaleBalanced,
-    faRightFromBracket, faTrash, faUserGroup, faWallet, faVolumeHigh, faVolumeXmark, faXmark,
+    faRightFromBracket, faTrash, faTriangleExclamation, faUserGroup, faWallet, faVolumeHigh, faVolumeXmark, faXmark,
 );
 
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';

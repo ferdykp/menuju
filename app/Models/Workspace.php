@@ -72,4 +72,8 @@ class Workspace extends Model
     public function budgetCategories(): HasMany { return $this->hasMany(BudgetCategory::class); }
     public function savingsGoals(): HasMany { return $this->hasMany(SavingsGoal::class); }
     public function paymentObligations(): HasMany { return $this->hasMany(PaymentObligation::class); }
+    public function assets(): HasMany { return $this->hasMany(Asset::class); }
+    public function activities(): HasMany { return $this->hasMany(WorkspaceActivity::class); }
+    public function decisions(): HasMany { return $this->hasMany(WorkspaceDecision::class); }
+    public function prioritySnoozes(): HasMany { return $this->hasMany(HomePrioritySnooze::class); }
 }

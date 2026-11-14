@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\RecordsWorkspaceActivity;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class BudgetCategory extends Model
 {
+    use RecordsWorkspaceActivity;
     protected $fillable = ['workspace_id','event_id','name','planned_amount','color','notes'];
     protected function casts(): array { return ['planned_amount'=>'decimal:2']; }
     public function workspace(): BelongsTo { return $this->belongsTo(Workspace::class); }

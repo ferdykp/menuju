@@ -36,6 +36,25 @@ const router = createRouter({
 router.beforeEach(async (to) => {
     if (!await confirmUnsavedChanges()) return false;
 
+    const guestOnly = ['welcome', 'login', 'register'];
+    if (guestOnly.includes(to.name)) {
+        let user = getRememberedUser();
+        if (!user) {
+            try {
+                const { data } = await axios.get('/api/auth/me');
+                user = data.user;
+                rememberUser(user);
+            } catch {
+                // No active session; keep the public page available.
+            }
+        }
+
+        if (user) {
+            return user.workspaces?.length ? { name: 'app' } : { name: 'onboarding-workspace' };
+        }
+        return true;
+    }
+
     const needsSession = to.name === 'app' || to.name === 'invite' || String(to.name).startsWith('onboarding-');
     if (!needsSession) return true;
 

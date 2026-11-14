@@ -15,6 +15,7 @@ class FinanceController extends Controller
     {
         $this->authorize('view', $workspace);
         $summary = $ledger->overview($workspace);
+        $summary['assets_estimated_value'] = (float) $workspace->assets()->where('status', '!=', 'sold')->sum('estimated_value');
         $summary['upcoming_payments'] = $workspace->paymentObligations()->where('status', '!=', 'paid')->whereNotNull('due_at')->orderBy('due_at')->limit(5)->get()->map(fn ($item) => DateOnly::model($item, ['due_at']));
         $summary['recent_transactions'] = $workspace->financialTransactions()->with(['account:id,name', 'destinationAccount:id,name'])->whereNull('voided_at')->orderByDesc('occurred_at')->orderByDesc('id')->limit(6)->get()->map(fn (FinancialTransaction $transaction) => DateOnly::model($transaction, ['occurred_at']));
 
