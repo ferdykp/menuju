@@ -763,7 +763,7 @@ select:not([multiple]) { appearance: none; background-image: url("data:image/svg
     animation: toast-enter 260ms var(--motion-ease-out) both;
     background: var(--surface);
     border: 1px solid var(--champagne);
-    border-left: 4px solid var(--success);
+    border-left: 4px solid var(--accent);
     border-radius: 13px;
     box-shadow: 0 12px 34px rgb(57 31 35 / 13%), 0 2px 6px rgb(57 31 35 / 5%);
     display: flex;
@@ -776,9 +776,9 @@ select:not([multiple]) { appearance: none; background-image: url("data:image/svg
 }
 .toast-card__icon {
     align-items: center;
-    background: color-mix(in srgb, var(--success) 11%, var(--surface));
+    background: var(--surface-soft);
     border-radius: 50%;
-    color: var(--success);
+    color: var(--accent);
     display: inline-flex;
     flex: 0 0 34px;
     height: 34px;
@@ -803,7 +803,7 @@ select:not([multiple]) { appearance: none; background-image: url("data:image/svg
 }
 .toast-card__close:hover { background: var(--surface-soft); color: var(--burgundy-deep); }
 .toast-card__close:focus-visible { outline: 3px solid var(--focus); outline-offset: 1px; }
-.toast-card__timer { animation: toast-timer var(--toast-duration) linear both; background: var(--success); bottom: 0; height: 2px; left: 0; opacity: .58; position: absolute; transform-origin: left; width: 100%; }
+.toast-card__timer { animation: toast-timer var(--toast-duration) linear both; background: var(--dusty-rose); bottom: 0; height: 2px; left: 0; opacity: .8; position: absolute; transform-origin: left; width: 100%; }
 .toast-enter-active, .toast-leave-active, .toast-move { transition: opacity 200ms var(--motion-ease), transform 200ms var(--motion-ease-out); }
 .toast-enter-from, .toast-leave-to { opacity: 0; transform: translateY(-8px) scale(.98); }
 .toast-leave-active { position: absolute; right: 0; width: 100%; }
